@@ -5,12 +5,11 @@ import { supabase } from '../lib/supabase';
 
 export default function Dashboard() {
   const { user, signOut } = useAuth();
-  const [orgId, setOrgId] = useState<string | null>(null);
+  // orgId managed implicitly via getOrCreateOrg
   const [stats, setStats] = useState({ clients: 0, cases: 0, tasks: 0, hearings: 0 });
   useEffect(() => {
     if (!user) return;
     getOrCreateOrg(user.id).then(async o => {
-      setOrgId(o);
       if (!o) return;
       const [c, ca, t, h] = await Promise.all([
         supabase.from('clients').select('id', { count: 'exact', head: true }).eq('organization_id', o),
