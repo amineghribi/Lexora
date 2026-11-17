@@ -2,18 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from './lib/auth';
 import { ProtectedRoute } from './components/ProtectedRoute';
 
-function Dashboard() {
-  const { user, signOut } = useAuth();
-  return (
-    <div className="min-h-screen bg-slate-50 p-8">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-2xl font-semibold text-slate-900">LEXORA Dashboard</h1>
-        <p className="mt-2 text-slate-600">Welcome, {user?.email}</p>
-        <button onClick={signOut} className="mt-4 px-4 py-2 bg-slate-900 text-white rounded-lg">Sign out</button>
-      </div>
-    </div>
-  );
-}
+import Dashboard from './pages/Dashboard';
 
 function Login() {
   const { signIn } = useAuth();
@@ -45,7 +34,6 @@ import Tasks from './pages/Tasks';
 import Hearings from './pages/Hearings';
 import Documents from './pages/Documents';
 import Financial from './pages/Financial';
-
 function Register() {
   const { signUp } = useAuth();
   const [email, setEmail] = useState('');
