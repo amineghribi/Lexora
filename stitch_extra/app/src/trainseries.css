@@ -1,0 +1,37 @@
+/* ===== Séries par spécialité ===== */
+.tsl { display: flex; flex-direction: column; gap: 14px; }
+.tsl-top { display: flex; align-items: center; gap: 10px; }
+.tsl-crumb { font-size: 12.5px; color: var(--muted); font-weight: 600; }
+.tsl-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.tsl-eyebrow { display: block; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--acc2); margin-bottom: 6px; }
+.tsl-head h1 { margin: 0; font-size: clamp(23px, 3vw, 30px); letter-spacing: -.02em; }
+.tsl-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.tsl-actions .soft { background: var(--acc-soft); border-color: transparent; color: var(--acc); font-weight: 600; }
+.tsl-kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.tsl-kpi { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; }
+.tsl-kpi .k { font-size: 10px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+.tsl-kpi b { font-family: var(--fh); font-size: 20px; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.tsl-kpi span:last-child { font-size: 11px; color: var(--muted); }
+.tsl-filters { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 9px 10px; }
+.tsl-search { display: flex; align-items: center; gap: 7px; width: 250px; max-width: 100%; border: 1px solid var(--line); border-radius: var(--r-sm); padding: 0 10px; height: 36px; color: var(--muted); }
+.tsl-search input { border: 0; outline: none; background: none; width: 100%; height: 100%; font: inherit; font-size: 13px; color: var(--fg); }
+.tsl-chip { min-height: 32px; padding: 5px 12px; border-radius: 99px; border: 1px solid var(--line); background: var(--card); color: var(--muted); font-size: 12.5px; font-weight: 600; }
+.tsl-chip.on { background: var(--acc); border-color: var(--acc); color: #fff; }
+.tsl-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.tsl-list li { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(80px, 1fr) 64px auto; align-items: center; gap: 14px; background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 12px 14px; }
+.tsl-sp { display: flex; flex-direction: column; min-width: 0; }
+.tsl-sp b { font-size: 14.5px; }
+.tsl-sp small { font-size: 11.5px; color: var(--muted); }
+.tsl-bar { display: block; height: 6px; border-radius: 99px; background: var(--line2); overflow: hidden; }
+.tsl-bar i { display: block; height: 100%; border-radius: 99px; background: var(--acc); }
+.tsl-bar i.ok { background: var(--good); }
+.tsl-bar i.weak { background: var(--bad); }
+.tsl-pct { text-align: right; font-size: 12.5px; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--muted); }
+.tsl-pct.ok { color: var(--good); }
+.tsl-pct.weak { color: var(--bad); }
+.tsl-go { min-height: 36px; font-size: 13px; background: var(--acc-soft); border-color: transparent; color: var(--acc); font-weight: 600; }
+@media (max-width: 860px) {
+  .tsl-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tsl-list li { grid-template-columns: minmax(0, 1fr) auto; row-gap: 6px; }
+  .tsl-bar { grid-column: 1 / -1; }
+}

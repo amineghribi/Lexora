@@ -1,0 +1,63 @@
+/* ===== Ma Progression (maquette Stitch 86347122) ===== */
+
+.pg { display: flex; flex-direction: column; gap: 14px; }
+
+.pg-hero { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.pg-eyebrow { display: block; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--acc2); margin-bottom: 6px; }
+.pg-hero h1 { margin: 0 0 4px; font-size: clamp(23px, 3vw, 30px); letter-spacing: -.02em; line-height: 1.15; }
+.pg-hero p { margin: 0; font-size: 13px; }
+.pg-hero-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.pg-hero-actions .soft { background: var(--acc-soft); border-color: transparent; color: var(--acc); font-weight: 600; min-height: 38px; font-size: 13px; }
+
+.pg-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.pg-tab { min-height: 32px; padding: 5px 12px; border-radius: 99px; border: 1px solid var(--line); background: var(--card); color: var(--muted); font-size: 12.5px; font-weight: 600; }
+.pg-tab.on { background: var(--acc); border-color: var(--acc); color: #fff; }
+
+.pg-kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.pg-kpi { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 13px 14px; display: flex; flex-direction: column; gap: 3px; }
+.pg-kpi .k { font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.pg-kpi b { font-family: var(--fh); font-size: 24px; line-height: 1.15; letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
+.pg-kpi b small { font-size: 12px; font-weight: 600; color: var(--muted); margin-left: 2px; }
+.pg-kpi b.good { color: var(--good); }
+.pg-kpi b.warn { color: var(--warn); }
+.pg-kpi .s { font-size: 11.5px; color: var(--muted); }
+
+.pg-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 16px; }
+.pg-card-h { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+.pg-card-h h2 { margin: 0 0 2px; font-size: 16.5px; }
+.pg-card-h p { margin: 0; }
+
+.pg-week { list-style: none; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; margin: 10px 0 0; padding: 0; }
+.pg-week li { display: flex; flex-direction: column; gap: 2px; align-items: center; padding: 8px 4px; border-radius: var(--r-sm); background: var(--line2); }
+.pg-week .d { font-size: 10.5px; font-weight: 700; text-transform: capitalize; color: var(--muted); }
+.pg-week b { font-size: 15px; font-variant-numeric: tabular-nums; }
+.pg-week .v { font-size: 10.5px; color: var(--muted); }
+
+.pg-specs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 22px; }
+.pg-specs li { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(60px, 1fr) 48px; align-items: center; gap: 10px; padding: 7px 0; border-top: 1px solid var(--line2); }
+.pg-specs li:nth-child(1), .pg-specs li:nth-child(2) { border-top: 0; }
+.pg-specs .sp { display: flex; flex-direction: column; min-width: 0; font-size: 12.5px; font-weight: 600; }
+.pg-specs .sp small { font-size: 10.5px; color: var(--muted); font-weight: 500; }
+.pg-specs .bar { display: block; height: 6px; border-radius: 99px; background: var(--line2); overflow: hidden; }
+.pg-specs .bar i { display: block; height: 100%; border-radius: 99px; background: var(--acc); }
+.pg-specs .bar i.good { background: var(--good); }
+.pg-specs .bar i.weak { background: var(--bad); }
+.pg-specs .pct { text-align: right; font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+@media (max-width: 1000px) {
+  .pg-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pg-specs { grid-template-columns: 1fr; }
+  .pg-specs li:nth-child(2) { border-top: 1px solid var(--line2); }
+}
+@media (max-width: 560px) {
+  .pg-kpis { grid-template-columns: 1fr; }
+  .pg-week { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* alignement sur la maquette : KPI en 2x2, semaine en libellés de ligne de base */
+.pg-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.pg-kpi { padding: 15px 16px; }
+.pg-week { gap: 4px; margin-top: 8px; }
+.pg-week li { background: none; border: 0; border-radius: 0; padding: 5px 2px; text-align: center; }
+.pg-week li .d { font-size: 10.5px; }
+.pg-week li .v { font-size: 11px; }

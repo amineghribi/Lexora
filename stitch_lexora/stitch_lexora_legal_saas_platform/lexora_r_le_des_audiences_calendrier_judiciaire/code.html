@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-tint": "#565e74",
+          "surface-container-high": "#dce9ff",
+          "on-secondary-fixed-variant": "#3a485b",
+          "secondary-container": "#d5e3fc",
+          "on-secondary-container": "#57657a",
+          "outline": "#76777d",
+          "surface-bright": "#f8f9ff",
+          "on-tertiary-fixed-variant": "#5c4209",
+          "inverse-surface": "#213145",
+          "on-primary-container": "#7c839b",
+          "primary-fixed": "#dae2fd",
+          "surface-variant": "#d3e4fe",
+          "error": "#ba1a1a",
+          "on-tertiary-fixed": "#271900",
+          "surface-container-low": "#eff4ff",
+          "on-background": "#0b1c30",
+          "inverse-primary": "#bec6e0",
+          "surface-container": "#e5eeff",
+          "on-primary-fixed-variant": "#3f465c",
+          "primary-fixed-dim": "#bec6e0",
+          "surface-dim": "#cbdbf5",
+          "inverse-on-surface": "#eaf1ff",
+          "tertiary-fixed": "#ffdea8",
+          "on-tertiary-container": "#a07f42",
+          "on-tertiary": "#ffffff",
+          "primary": "#000000",
+          "on-surface-variant": "#45464d",
+          "secondary-fixed-dim": "#b9c7df",
+          "surface": "#f8f9ff",
+          "tertiary-container": "#271900",
+          "background": "#f8f9ff",
+          "on-secondary": "#ffffff",
+          "tertiary": "#000000",
+          "outline-variant": "#c6c6cd",
+          "surface-container-highest": "#d3e4fe",
+          "tertiary-fixed-dim": "#e8c17d",
+          "on-primary-fixed": "#131b2e",
+          "secondary": "#515f74",
+          "on-error": "#ffffff",
+          "primary-container": "#131b2e",
+          "surface-container-lowest": "#ffffff",
+          "on-primary": "#ffffff",
+          "on-error-container": "#93000a",
+          "secondary-fixed": "#d5e3fc",
+          "error-container": "#ffdad6",
+          "on-surface": "#0b1c30",
+          "on-secondary-fixed": "#0d1c2e"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "margin": "1rem",
+          "space-xl": "1.5rem",
+          "margin-lg": "2rem",
+          "gutter-lg": "1.5rem",
+          "space-md": "0.75rem",
+          "gutter": "1rem",
+          "space-lg": "1rem",
+          "space-sm": "0.5rem",
+          "space-xs": "0.25rem",
+          "margin-md": "1.5rem"
+        },
+        "fontFamily": {
+          "body-lg": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "headline-xl": [
+            "Inter"
+          ],
+          "tabular-mono": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Inter"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-sm": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "letterSpacing": "-0.005em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-xl": [
+            "30px",
+            {
+              "lineHeight": "38px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "tabular-mono": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "500"
+            }
+          ],
+          "body-sm": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-sm": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-primary-container text-surface flex flex-col z-50 select-none"><div class="p-space-lg"><div class="flex items-center gap-space-sm"><img alt="Lexora Legal Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrA40fADVzl1mFS8xWbOEs6D5_wA91qhS1x8cmcmi0g-BpFzZoMxwG0RAYKYQvxIPGQnSNiSPcKT9i2W_6tz1LUCX6pxjtA84DLIpVeCE5BLZU7taK1uAqaH7JE2EyMx9eg_IaPO7WuLuliaMQCNqSmrFDKN7v4G0pTZ1_9yu2arK6nBvwozFJ5HXN0sh3FpF5Z56t0n7zOYUqWXQxOSi1EvAHZB2szpgJX0Ecp69jLlcg"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-surface tracking-tight leading-none">Lexora</span><span class="font-label-sm text-label-sm text-primary-fixed-dim tracking-wider uppercase leading-tight mt-space-xs">Legal Practice Suite</span></div></div><div class="mt-space-lg p-space-sm bg-surface-container-high/10 rounded-lg flex items-center justify-between cursor-pointer hover:bg-surface-container-high/20 transition-colors"><div class="flex flex-col min-w-0 pr-space-xs"><span class="font-label-sm text-label-sm text-on-tertiary-container uppercase tracking-wider font-semibold">Cabinet Titulaire</span><span class="font-body-sm text-body-sm text-surface font-medium truncate">Cabinet Me. K. Ben Ammar &amp; Associés</span></div><span class="material-symbols-outlined text-primary-fixed-dim text-lg shrink-0">unfold_more</span></div></div><nav class="flex-1 px-space-md py-space-xs overflow-y-auto space-y-space-xs" data-active-classes="bg-surface-container-lowest text-primary font-semibold shadow-[0_1px_8px_rgba(0,0,0,0.04)] rounded-lg"><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="dashboard" href="#"><span class="truncate">Tableau de bord</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="clients" href="#"><span class="truncate">Clients</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="cases" href="#"><span class="truncate">Affaires &amp; Dossiers</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="calendar" href="#"><span class="truncate">Audiences &amp; Délais</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="tasks" href="#"><span class="truncate">Tâches &amp; Actes</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="documents" href="#"><span class="truncate">Documents &amp; Pièces</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="payments" href="#"><span class="truncate">Honoraires &amp; Règlements</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="reports" href="#"><span class="truncate">Rapports &amp; Statistiques</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="team" href="#"><span class="truncate">Collaborateurs</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="settings" href="#"><span class="truncate">Paramètres</span></a></nav><div class="p-space-lg bg-primary-container/80 space-y-space-md"><div class="bg-surface-container-high/10 p-space-sm rounded-lg space-y-space-xs"><div class="flex justify-between items-center text-primary-fixed-dim font-label-sm text-label-sm"><span>Cloud Sécurisé</span><span class="font-tabular-mono text-tabular-mono text-surface font-semibold">64%</span></div><div class="w-full h-1.5 bg-surface-container-high/20 rounded-full overflow-hidden"><div class="h-full bg-secondary-fixed w-[64%] rounded-full"></div></div><p class="font-label-sm text-label-sm text-primary-fixed-dim">32 GB / 50 GB utilisés</p></div><div class="flex items-center justify-between pt-space-xs font-label-sm text-label-sm text-primary-fixed-dim"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span><span class="truncate">Serveur Tunisie • En ligne</span></div><a class="text-primary-fixed-dim hover:text-surface transition-colors flex items-center" href="#"><span class="material-symbols-outlined text-base">help</span></a></div></div></aside><div class="pl-64 flex flex-col min-h-screen bg-background"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-gutter-lg flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><span class="font-medium">Cabinet</span><span class="material-symbols-outlined text-base">chevron_right</span><span class="font-semibold text-on-surface">Affaires &amp; Dossiers</span></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-xs bg-secondary-container/50 text-on-secondary-container rounded-lg font-label-sm text-label-sm font-medium"><span class="material-symbols-outlined text-sm text-on-tertiary-container">account_balance</span><span>Tribunal de 1ère Instance de Tunis</span><span class="material-symbols-outlined text-sm">arrow_drop_down</span></div></div><div class="flex-1 max-w-xl mx-auto"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-space-md text-on-surface-variant text-lg pointer-events-none">search</span><input class="w-full h-10 pl-10 pr-16 bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm rounded-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)] focus:outline-none focus:bg-surface" placeholder="Rechercher un dossier, client, audience..." type="text"/><kbd class="absolute right-space-md px-1.5 py-0.5 bg-surface-container font-label-sm text-label-sm text-on-surface-variant rounded font-mono">⌘K</kbd></div></div><div class="flex items-center gap-space-md shrink-0"><button class="flex items-center gap-space-xs px-space-md h-9 bg-primary text-on-primary rounded-lg font-label-md text-label-md font-semibold hover:bg-secondary transition-all shadow-[0_1px_8px_rgba(0,0,0,0.04)]" type="button"><span class="material-symbols-outlined text-base text-tertiary-fixed">add</span><span>Nouveau Dossier</span><span class="material-symbols-outlined text-sm">arrow_drop_down</span></button><div class="flex items-center gap-space-xs"><button class="relative p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" title="Audiences urgentes" type="button"><span class="material-symbols-outlined text-xl">event_upcoming</span><span class="absolute top-1 right-1 flex items-center justify-center min-w-[18px] h-[18px] px-1 bg-error text-on-error rounded-full font-label-sm text-label-sm font-bold leading-none">3</span></button><button class="relative p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" title="Notifications" type="button"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1 right-1 flex items-center justify-center min-w-[18px] h-[18px] px-1 bg-secondary text-on-secondary rounded-full font-label-sm text-label-sm font-bold leading-none">5</span></button><button class="px-space-sm py-1 font-label-sm text-label-sm font-semibold text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" type="button">FR | عربي</button></div><div class="flex items-center gap-space-sm pl-space-sm"><div class="relative shrink-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-tertiary-fixed-dim/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMOanJW9zWHCNgIcyMycsVa43Fgj45jo8L-ETtD-WrgAA0LBPLd_R5C1IIOe7vTnsFvBLZAVWAazF3kibT0bUzBwExNFLSPow5Ap6P3qbZsNU5DSbe3JoE6q3Xk94rneTWtfbtqYdyvQ-lOUVl5WdPre9pIzvhtwZiWcf002zQwDVlwID6bQTLaa4Miv5ECWlp2RxnEy2UMZxR17JKmsNpwuO-96LtiN8oXY6M1LX0"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary-fixed ring-2 ring-surface"></span></div><div class="hidden 2xl:flex flex-col text-left"><span class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Me. Karim Ben Ammar</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight truncate">Avocat à la Cour de Cassation</span></div><span class="material-symbols-outlined text-on-surface-variant text-lg hidden 2xl:block">arrow_drop_down</span></div></div></header><main class="relative pt-16 bg-background flex-1 w-full px-gutter-lg py-space-xl"><div class="flex flex-col w-full">
+<!-- Interactive View State Controller Script for Tab/Filter Micro-interactions -->
+<script>
+    function switchCalendarTab(tabName) {
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm', 'font-semibold');
+        btn.classList.add('text-on-surface-variant');
+      });
+      const activeBtn = document.getElementById('tab-' + tabName);
+      if (activeBtn) {
+        activeBtn.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm', 'font-semibold');
+        activeBtn.classList.remove('text-on-surface-variant');
+      }
+    }
+    function toggleQuickAdd() {
+      const form = document.getElementById('quick-add-form');
+      if (form) {
+        form.classList.toggle('hidden');
+      }
+    }
+    function toggleEventFilter(filterType) {
+      const cards = document.querySelectorAll(`[data-category]`);
+      cards.forEach(card => {
+        if (filterType === 'all' || card.getAttribute('data-category') === filterType) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+<!-- Navigation indicator sync (highlights calendar item) -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const calNav = document.querySelector('aside a[data-path="calendar"]');
+      if (calNav) {
+        calNav.classList.add('bg-surface-container-lowest', 'text-primary', 'font-semibold', 'shadow-sm');
+        calNav.classList.remove('text-primary-fixed-dim');
+      }
+    });
+  </script>
+<!-- Top Hero Bar & Executive Judicial Meta -->
+<div class="flex flex-col gap-space-md mb-space-lg">
+<!-- Header Row -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md pb-space-xs">
+<div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-tabular-mono text-label-sm uppercase tracking-wider">Session Judiciaire 2024–2025</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-sm">verified</span>
+            e-Greffe National Connecté
+          </span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Rôle des Audiences &amp; Calendrier Judiciaire</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">Planning centralisé des audiences de tribunaux, délais de procédure, rendez-vous clients et diligences du cabinet.</p>
+</div>
+<!-- Action Suite -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="inline-flex items-center gap-space-xs px-space-md h-9 bg-surface-container-lowest text-on-surface hover:bg-surface-container-low rounded-lg shadow-sm font-label-md text-label-md transition-all" type="button">
+<span class="material-symbols-outlined text-base text-secondary">sync</span>
+<span>Synchroniser e-Greffe</span>
+<span class="inline-block w-2 h-2 rounded-full bg-secondary-fixed"></span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md h-9 bg-surface-container-lowest text-on-surface hover:bg-surface-container-low rounded-lg shadow-sm font-label-md text-label-md transition-all" type="button">
+<span class="material-symbols-outlined text-base text-secondary">print</span>
+<span>Imprimer Rôle Hebdo</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md h-9 bg-primary-container text-surface hover:bg-secondary transition-all rounded-lg shadow-md font-label-md text-label-md font-semibold" onclick="toggleQuickAdd()" type="button">
+<span class="material-symbols-outlined text-base text-tertiary-fixed">add_circle</span>
+<span>Nouvel Événement / Audience</span>
+</button>
+</div>
+</div>
+<!-- Navigation & Filter Toolbar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-space-md">
+<!-- Left: Date Navigator + View Switcher -->
+<div class="flex flex-wrap items-center gap-space-md">
+<!-- Date Scroller -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg">
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest rounded-md transition-colors" title="Semaine précédente" type="button">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<button class="px-space-md h-8 text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container-lowest rounded-md transition-colors" type="button">
+            Aujourd'hui
+          </button>
+<button class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest rounded-md transition-colors" title="Semaine suivante" type="button">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Semaine 43 • 21 – 27 Octobre 2024</span>
+<span class="material-symbols-outlined text-outline text-lg">event</span>
+</div>
+<!-- View Segmented Tabs -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg">
+<button class="tab-btn px-space-md py-1 rounded-md font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" id="tab-mois" onclick="switchCalendarTab('mois')" type="button">
+            Mois
+          </button>
+<button class="tab-btn px-space-md py-1 rounded-md font-label-md text-label-md bg-surface-container-lowest text-on-surface shadow-sm font-semibold transition-all" id="tab-semaine" onclick="switchCalendarTab('semaine')" type="button">
+            Semaine
+          </button>
+<button class="tab-btn px-space-md py-1 rounded-md font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" id="tab-jour" onclick="switchCalendarTab('jour')" type="button">
+            Jour
+          </button>
+<button class="tab-btn px-space-md py-1 rounded-md font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" id="tab-liste" onclick="switchCalendarTab('liste')" type="button">
+            Agenda / Liste
+          </button>
+</div>
+</div>
+<!-- Right: Dropdown Filters -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<!-- Lawyer Filter -->
+<div class="relative">
+<select aria-label="Filtrer par avocat" class="appearance-none bg-surface-container-low hover:bg-surface-container h-8 pl-space-md pr-8 rounded-lg font-body-sm text-body-sm text-on-surface cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary">
+<option>Tous les avocats du cabinet</option>
+<option selected="">Me. Karim Ben Ammar (Titulaire)</option>
+<option>Me. Amira Trabelsi (Associée)</option>
+<option>Me. Selim Mansour (Collaborateur)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2 text-on-surface-variant pointer-events-none text-base">expand_more</span>
+</div>
+<!-- Category Filter -->
+<div class="relative">
+<select aria-label="Filtrer par type d'événement" class="appearance-none bg-surface-container-low hover:bg-surface-container h-8 pl-space-md pr-8 rounded-lg font-body-sm text-body-sm text-on-surface cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary" onchange="toggleEventFilter(this.value)">
+<option value="all">Toutes les catégories</option>
+<option value="audience">Audiences Judiciaires</option>
+<option value="rdv">Rendez-vous Clients</option>
+<option value="delai">Délais de Recours &amp; Forclusion</option>
+<option value="tache">Tâches &amp; Délibérés</option>
+<option value="expertise">Expertises &amp; Huissiers</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2 text-on-surface-variant pointer-events-none text-base">filter_list</span>
+</div>
+<!-- Jurisdiction Filter -->
+<div class="relative">
+<select aria-label="Filtrer par juridiction" class="appearance-none bg-surface-container-low hover:bg-surface-container h-8 pl-space-md pr-8 rounded-lg font-body-sm text-body-sm text-on-surface cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary">
+<option>Toutes les juridictions</option>
+<option>TPI Tunis (Bab Bnet)</option>
+<option>Cour d'Appel de Tunis</option>
+<option>Tribunal Administratif</option>
+<option>Tribunal Cantonal La Marsa</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2 text-on-surface-variant pointer-events-none text-base">account_balance</span>
+</div>
+</div>
+</div>
+<!-- Event Category Interactive Legend Bar -->
+<div class="bg-surface-container-lowest px-space-md py-space-xs rounded-xl shadow-sm flex flex-wrap items-center justify-between gap-space-sm text-label-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined text-base">label</span>
+<span class="font-semibold uppercase tracking-wider">Légende du Rôle :</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-md">
+<!-- Audiences -->
+<button class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-primary-container text-surface hover:opacity-90 transition-opacity" onclick="toggleEventFilter('audience')" type="button">
+<span class="material-symbols-outlined text-sm text-secondary-fixed">gavel</span>
+<span class="font-medium">Audiences Judiciaires</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface/20 font-tabular-mono text-[10px]">14</span>
+</button>
+<!-- Rendez-vous -->
+<button class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container hover:opacity-90 transition-opacity" onclick="toggleEventFilter('rdv')" type="button">
+<span class="material-symbols-outlined text-sm">groups</span>
+<span class="font-medium">RDV Clients &amp; Préparations</span>
+<span class="px-1.5 py-0.2 rounded-full bg-on-secondary-container/10 font-tabular-mono text-[10px]">8</span>
+</button>
+<!-- Délais Légaux & Recours -->
+<button class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-error-container text-on-error-container hover:opacity-90 transition-opacity" onclick="toggleEventFilter('delai')" type="button">
+<span class="material-symbols-outlined text-sm">warning</span>
+<span class="font-semibold">Délais d'Ordre Public / Forclusion</span>
+<span class="px-1.5 py-0.2 rounded-full bg-error/20 font-tabular-mono text-[10px]">3</span>
+</button>
+<!-- Tâches & Délibérés Internes -->
+<button class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant hover:opacity-90 transition-opacity" onclick="toggleEventFilter('tache')" type="button">
+<span class="material-symbols-outlined text-sm">assignment_turned_in</span>
+<span class="font-medium">Délibérés &amp; Tâches Internes</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-dim font-tabular-mono text-[10px]">9</span>
+</button>
+<!-- Expertises & Huissiers -->
+<button class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-tertiary-fixed text-on-tertiary-fixed hover:opacity-90 transition-opacity" onclick="toggleEventFilter('expertise')" type="button">
+<span class="material-symbols-outlined text-sm">badge</span>
+<span class="font-medium">Expertises &amp; Huissiers Notaires</span>
+<span class="px-1.5 py-0.2 rounded-full bg-tertiary-container/10 font-tabular-mono text-[10px]">2</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Collapsible Quick Event Creation Form Panel (Triggered by + Button) -->
+<div class="hidden mb-space-lg bg-surface-container-lowest rounded-xl p-space-lg shadow-md animate-fadeIn" id="quick-add-form">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-tertiary-fixed flex items-center justify-center material-symbols-outlined">edit_calendar</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Programmation Immédiate d'Audience ou d'Acte</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Rattachement automatique au dossier, calcul des délais légaux d'appel et avertissement SMS au greffe.</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1 rounded-md hover:bg-surface-container-low" onclick="toggleQuickAdd()" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1 font-semibold">Type d'Événement</label>
+<select class="w-full h-9 bg-surface-container-low px-space-sm rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest">
+<option>Audience Plaidoirie (Fond)</option>
+<option>Audience Référé</option>
+<option>Rendez-vous Client</option>
+<option>Notification Décision / Délai d'Appel</option>
+<option>Opération d'Expertise Judiciaire</option>
+</select>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1 font-semibold">Dossier / Réf Cabinet</label>
+<div class="relative">
+<input class="w-full h-9 bg-surface-container-low px-space-sm rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest" placeholder="Rechercher ex: 2024/4819 ou Carthage Logistics" type="text"/>
+<span class="material-symbols-outlined absolute right-2.5 top-2 text-on-surface-variant text-base">folder_open</span>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1 font-semibold">Date &amp; Plage Horaire</label>
+<div class="grid grid-cols-2 gap-1">
+<input class="h-9 bg-surface-container-low px-2 rounded-lg font-tabular-mono text-label-md text-on-surface focus:outline-none" type="date" value="2024-10-25"/>
+<input class="h-9 bg-surface-container-low px-2 rounded-lg font-tabular-mono text-label-md text-on-surface focus:outline-none" type="time" value="09:00"/>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1 font-semibold">Juridiction &amp; Salle d'Audience</label>
+<input class="w-full h-9 bg-surface-container-low px-space-sm rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest" placeholder="ex: TPI Tunis - 3ème Ch. Com. - Salle 4" type="text"/>
+</div>
+<div class="lg:col-span-2">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1 font-semibold">Objet / Diligence Requise</label>
+<input class="w-full h-9 bg-surface-container-low px-space-sm rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest" placeholder="Ex: Dépôt des conclusions en réponse + communication bordereau de pièces N° 1 à 14" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1 font-semibold">Avocat Mandataire</label>
+<select class="w-full h-9 bg-surface-container-low px-space-sm rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest">
+<option>Me. Karim Ben Ammar</option>
+<option>Me. Amira Trabelsi</option>
+<option>Me. Selim Mansour</option>
+</select>
+</div>
+<div class="flex items-end gap-space-sm">
+<button class="w-full h-9 bg-primary-container text-surface hover:bg-secondary rounded-lg font-label-md text-label-md font-semibold shadow-sm transition-all flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-base">check</span>
+<span>Enregistrer &amp; Notifier</span>
+</button>
+<button class="h-9 px-3 bg-surface-container hover:bg-surface-container-high rounded-lg text-on-surface-variant font-label-md text-label-md" onclick="toggleQuickAdd()" type="button">
+          Annuler
+        </button>
+</div>
+</form>
+</div>
+<!-- MAIN OPERATIONAL WORKSPACE (72% Calendar Grid / 28% Sidebar) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT 72% - TIME-SLOTTED WEEKLY JUDICIAL AGENDA -->
+<div class="lg:col-span-8 xl:col-span-9 flex flex-col gap-space-md">
+<!-- Week Calendar Header Days Grid -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- Week Strip Header (Days) -->
+<div class="grid grid-cols-5 bg-surface-container-low p-space-xs gap-1 text-center font-label-md">
+<!-- Lundi -->
+<div class="py-space-sm px-space-xs rounded-lg bg-surface-container-lowest/50 text-on-surface">
+<span class="block text-label-sm text-on-surface-variant font-medium">LUN</span>
+<span class="block font-headline-sm text-headline-sm font-bold text-on-surface">21</span>
+<span class="block font-label-sm text-[10px] text-on-surface-variant">3 Événements</span>
+</div>
+<!-- Mardi -->
+<div class="py-space-sm px-space-xs rounded-lg bg-surface-container-lowest/50 text-on-surface">
+<span class="block text-label-sm text-on-surface-variant font-medium">MAR</span>
+<span class="block font-headline-sm text-headline-sm font-bold text-on-surface">22</span>
+<span class="block font-label-sm text-[10px] text-on-surface-variant">4 Événements</span>
+</div>
+<!-- Mercredi -->
+<div class="py-space-sm px-space-xs rounded-lg bg-surface-container-lowest/50 text-on-surface">
+<span class="block text-label-sm text-on-surface-variant font-medium">MER</span>
+<span class="block font-headline-sm text-headline-sm font-bold text-on-surface">23</span>
+<span class="block font-label-sm text-[10px] text-on-surface-variant">2 Événements</span>
+</div>
+<!-- Jeudi (TODAY - HIGHLIGHTED) -->
+<div class="py-space-sm px-space-xs rounded-lg bg-primary-container text-surface shadow-sm relative overflow-hidden">
+<div class="absolute top-1 right-1.5 flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-fixed opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary-fixed"></span>
+</div>
+<span class="block text-label-sm text-primary-fixed uppercase tracking-wider font-bold">JEU (AUJ.)</span>
+<span class="block font-headline-sm text-headline-sm font-bold text-surface">24</span>
+<span class="block font-label-sm text-[10px] text-tertiary-fixed font-semibold">5 Audiences &amp; Délais</span>
+</div>
+<!-- Vendredi -->
+<div class="py-space-sm px-space-xs rounded-lg bg-surface-container-lowest/50 text-on-surface">
+<span class="block text-label-sm text-on-surface-variant font-medium">VEN</span>
+<span class="block font-headline-sm text-headline-sm font-bold text-on-surface">25</span>
+<span class="block font-label-sm text-[10px] text-on-surface-variant">3 Événements</span>
+</div>
+</div>
+<!-- Weekly Time-Slots Container -->
+<div class="p-space-lg flex flex-col gap-space-lg">
+<!-- SECTION: JEUDI 24 OCTOBRE (AUJOURD'HUI - DETAILED VIEW) -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between bg-surface-container-low px-space-md py-space-xs rounded-lg">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Rôle du Jour • Jeudi 24 Octobre 2024</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[10px] font-bold">SESSION INTENSE</span>
+</div>
+<span class="font-tabular-mono text-label-sm text-on-surface-variant">5 dossiers appelés aujourd'hui</span>
+</div>
+<!-- Card 1: 09:00 Plaidoyer au Fond (High Impact Commercial) -->
+<div class="group bg-surface-container-low hover:bg-surface-container transition-all rounded-xl p-space-md shadow-sm relative overflow-hidden" data-category="audience">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md pl-2">
+<!-- Main Info -->
+<div class="space-y-1.5 flex-1">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-primary-container text-surface font-label-sm text-[11px] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary-fixed">gavel</span>
+                      09:00 - 10:30 • Audience Plaidoirie
+                    </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-tabular-mono text-label-sm font-semibold">
+                      TPI Tunis • 3ème Ch. Commerciale • Salle 4 (2ème Étage)
+                    </span>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-[11px] font-medium">
+                      Rang d'appel: #07
+                    </span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                      Affaire Sté Carthage Logistics SA c/ Banque Tuniso-Koweïtienne (BTK)
+                    </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                      Dossier RG N° <span class="font-tabular-mono font-semibold text-on-surface">2024/4819</span> • Action en responsabilité bancaire et mainlevée de nantissement (Litige : 1.480.000 TND).
+                    </p>
+</div>
+<!-- Participants & Notes -->
+<div class="flex flex-wrap items-center gap-space-md text-label-md text-on-surface-variant pt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">person</span>
+<span>Plaidant : <strong class="text-on-surface">Me. Karim Ben Ammar</strong></span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-outline">account_circle</span>
+<span>Adverse : <strong class="text-on-surface-variant">Me. Fadhel Cherif</strong></span>
+</div>
+<div class="flex items-center gap-1 text-on-tertiary-container font-medium">
+<span class="material-symbols-outlined text-sm">description</span>
+<span>Dossier de plaidoirie complet déposé</span>
+</div>
+</div>
+</div>
+<!-- Action Controls -->
+<div class="flex md:flex-col items-end justify-between gap-space-xs shrink-0 pt-space-xs md:pt-0">
+<div class="flex items-center gap-1">
+<button class="h-8 px-space-sm bg-surface-container-lowest text-on-surface hover:bg-surface-dim rounded-lg font-label-sm text-label-sm font-semibold shadow-sm transition-colors flex items-center gap-1" title="Voir les écritures" type="button">
+<span class="material-symbols-outlined text-sm">folder</span>
+<span>Pièces</span>
+</button>
+<button class="h-8 px-space-sm bg-surface-container-lowest text-on-surface hover:bg-surface-dim rounded-lg font-label-sm text-label-sm font-semibold shadow-sm transition-colors flex items-center gap-1" title="Reporter l'audience" type="button">
+<span class="material-symbols-outlined text-sm text-outline">history</span>
+<span>Reporter</span>
+</button>
+</div>
+<span class="text-label-sm text-on-surface-variant font-tabular-mono flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> En cours d'appel
+                  </span>
+</div>
+</div>
+</div>
+<!-- Card 2: 10:30 Délibéré Cour d'Appel -->
+<div class="group bg-surface-container-low hover:bg-surface-container transition-all rounded-xl p-space-md shadow-sm relative overflow-hidden" data-category="audience">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md pl-2">
+<div class="space-y-1.5 flex-1">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-primary-container text-surface font-label-sm text-[11px] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary-fixed">balance</span>
+                      10:30 - 11:15 • Audience Délibéré &amp; Réquisitions
+                    </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-tabular-mono text-label-sm font-semibold">
+                      Cour d'Appel de Tunis • Ch. Fiscale &amp; Douanière • Salle B
+                    </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-[11px]">
+                      Arrêt avant dire droit attendu
+                    </span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                      Affaire Société Carthage Logistics c/ Direction Générale des Douanes &amp; OMMP
+                    </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                      Dossier RG N° <span class="font-tabular-mono font-semibold text-on-surface">2023/1105</span> • Appel du jugement N° 4518/2023 - Droits d'accises portuaires de Radès.
+                    </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-md text-label-md text-on-surface-variant pt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">person</span>
+<span>Suivi par : <strong class="text-on-surface">Me. Amira Trabelsi</strong></span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-outline">alarm</span>
+<span>Prononcé de l'arrêt fixé en fin d'audience</span>
+</div>
+</div>
+</div>
+<div class="flex md:flex-col items-end justify-between gap-space-xs shrink-0 pt-space-xs md:pt-0">
+<button class="h-8 px-space-sm bg-surface-container-lowest text-on-surface hover:bg-surface-dim rounded-lg font-label-sm text-label-sm font-semibold shadow-sm transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">notification_important</span>
+<span>Alerter Greffe</span>
+</button>
+<span class="text-label-sm text-on-surface-variant font-tabular-mono">Salle B • 1er Étage</span>
+</div>
+</div>
+</div>
+<!-- Card 3: 11:30 RDV Client Préparation (Emerald / Teal) -->
+<div class="group bg-surface-container-low hover:bg-surface-container transition-all rounded-xl p-space-md shadow-sm relative overflow-hidden" data-category="rdv">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary"></div>
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md pl-2">
+<div class="space-y-1.5 flex-1">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-[11px] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">handshake</span>
+                      11:30 - 12:30 • Consultation Cabinet
+                    </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-body-sm text-label-sm">
+                      Salle de Conférence Cabinet • Présentiel
+                    </span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                      Préparation de Plaidoirie &amp; Revue des Pièces Comptables
+                    </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                      Client : <span class="font-semibold text-on-surface">Dr. Selim Mehiri</span> (Président du Conseil d'Administration - Clinique Les Berges du Lac).
+                    </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-md text-label-md text-on-surface-variant pt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">groups</span>
+<span>Participants : Me. Karim Ben Ammar + Me. Amira Trabelsi + Dr. Mehiri</span>
+</div>
+</div>
+</div>
+<div class="flex md:flex-col items-end justify-between gap-space-xs shrink-0 pt-space-xs md:pt-0">
+<div class="flex items-center gap-1">
+<button class="h-8 px-space-sm bg-surface-container-lowest text-on-surface hover:bg-surface-dim rounded-lg font-label-sm text-label-sm font-semibold shadow-sm transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">call</span>
+<span>Appeler</span>
+</button>
+<button class="h-8 px-space-sm bg-surface-container-lowest text-on-surface hover:bg-surface-dim rounded-lg font-label-sm text-label-sm font-semibold shadow-sm transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">videocam</span>
+<span>Visio</span>
+</button>
+</div>
+<span class="text-label-sm text-secondary-fixed-variant font-medium">Confirmé par SMS à 08:15</span>
+</div>
+</div>
+</div>
+<!-- Card 4: 14:00 Tribunal Cantonal Référé -->
+<div class="group bg-surface-container-low hover:bg-surface-container transition-all rounded-xl p-space-md shadow-sm relative overflow-hidden" data-category="audience">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md pl-2">
+<div class="space-y-1.5 flex-1">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-primary-container text-surface font-label-sm text-[11px] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary-fixed">gavel</span>
+                      14:00 - 14:30 • Référé Urgent
+                    </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-tabular-mono text-label-sm font-semibold">
+                      Tribunal Cantonal de La Marsa • Salle Unique
+                    </span>
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-[11px] font-semibold">
+                      Urgence Constatée
+                    </span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                      Groupe Mabrouk Immo SA c/ M. Yassine Riahi (Occupation sans titre)
+                    </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                      Dossier RG N° <span class="font-tabular-mono font-semibold text-on-surface">2024/5120</span> • Demande d'expulsion d'urgence et désignation d'un huissier séquestre.
+                    </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-md text-label-md text-on-surface-variant pt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">person</span>
+<span>Plaidant : <strong class="text-on-surface">Me. Selim Mansour</strong></span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-outline">description</span>
+<span>Assignation par huissier Me. Khemiri produite</span>
+</div>
+</div>
+</div>
+<div class="flex md:flex-col items-end justify-between gap-space-xs shrink-0 pt-space-xs md:pt-0">
+<button class="h-8 px-space-sm bg-surface-container-lowest text-on-surface hover:bg-surface-dim rounded-lg font-label-sm text-label-sm font-semibold shadow-sm transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">edit_note</span>
+<span>Note d'audience</span>
+</button>
+<span class="text-label-sm text-on-surface-variant font-tabular-mono">Dossier N° 5120</span>
+</div>
+</div>
+</div>
+<!-- Card 5: 16:00 DÉLAI D'ORDRE PUBLIC / FORCLUSION (AMBER/ROSE WARNING) -->
+<div class="group bg-error-container/40 hover:bg-error-container/60 transition-all rounded-xl p-space-md shadow-sm relative overflow-hidden" data-category="delai">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-error"></div>
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md pl-2">
+<div class="space-y-1.5 flex-1">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-error text-on-error font-label-sm text-[11px] font-bold flex items-center gap-1 animate-pulse">
+<span class="material-symbols-outlined text-xs">alarm</span>
+                      16:00 • ÉCHÉANCE FORCLUSION (J-2)
+                    </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-error-container font-label-sm font-semibold">
+                      Délai d'Appel d'Ordre Public (30 Jours CPC)
+                    </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-tabular-mono text-label-sm">
+                      Cour d'Appel de Tunis
+                    </span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-error-container font-bold">
+                      Notification de la Déclaration d'Appel • SARL El Manar Plast c/ Direction Générale des Impôts
+                    </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                      Dossier RG N° <span class="font-tabular-mono font-semibold text-on-surface">2022/6301</span> • Notification d'acte d'appel avec constitution d'avocat. Péril de déchéance dans 48 heures.
+                    </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-md text-label-md text-on-surface-variant pt-1">
+<div class="flex items-center gap-1 font-semibold text-error">
+<span class="material-symbols-outlined text-sm">warning</span>
+<span>Statut : Signification confiée à l'étude Me. T. Dridi (Huissier à Tunis)</span>
+</div>
+</div>
+</div>
+<div class="flex md:flex-col items-end justify-between gap-space-xs shrink-0 pt-space-xs md:pt-0">
+<button class="h-8 px-space-md bg-error text-on-error hover:bg-on-error-container rounded-lg font-label-sm text-label-sm font-bold shadow-md transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span>Valider Dépôt Acte</span>
+</button>
+<span class="text-label-sm text-error font-bold font-tabular-mono">48H Restantes</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION: VENDREDI 25 OCTOBRE (APERÇU DU LENDEMAIN) -->
+<div class="flex flex-col gap-space-sm pt-space-sm">
+<div class="flex items-center justify-between bg-surface-container-low px-space-md py-space-xs rounded-lg">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-outline"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Vendredi 25 Octobre 2024</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-[10px]">3 Événements prévus</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Demain</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Event Ven 1 -->
+<div class="bg-surface-container-low p-space-md rounded-xl shadow-sm space-y-2 relative overflow-hidden" data-category="audience">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container"></div>
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-primary-container text-surface font-label-sm text-[10px] font-semibold">09:30 • Audience Mise en État</span>
+<span class="font-tabular-mono text-label-sm text-on-surface-variant">TPI Ben Arous</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Société Batimetal SA c/ Entreprise Travaux Sud</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Dossier N° 2024/2901 • Échange des mémoires responsifs &amp; désignation d'un expert géomètre.</p>
+<div class="flex items-center justify-between text-label-sm text-on-surface-variant pt-1">
+<span>Avocat : Me. Karim Ben Ammar</span>
+<span class="text-on-tertiary-container font-semibold">Salle 2 • 1er Étage</span>
+</div>
+</div>
+<!-- Event Ven 2: Expertise Judiciaire -->
+<div class="bg-surface-container-low p-space-md rounded-xl shadow-sm space-y-2 relative overflow-hidden" data-category="expertise">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-tertiary-fixed-dim"></div>
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[10px] font-bold">15:00 • Opération d'Expertise</span>
+<span class="font-tabular-mono text-label-sm text-on-surface-variant">Sur les lieux (La Goulette)</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Consorts Ben Salem c/ Sté Immobilière du Nord</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Constat contradictoire des désordres structurels par l'Expert Judiciaire M. Moncef Daoud.</p>
+<div class="flex items-center justify-between text-label-sm text-on-surface-variant pt-1">
+<span>Assistance : Me. Selim Mansour</span>
+<span class="font-medium text-on-surface">Rapport sous 15 jours</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Judicial Velocity Metric Box -->
+<div class="bg-gradient-to-r from-surface-container-low to-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl text-tertiary-fixed">analytics</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Rendement du Rôle d'Audience (Mois d'Octobre)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">38 affaires plaidées • 92% d'écritures déposées dans les délais stricts • 0 forclusion enregistrée.</p>
+</div>
+</div>
+<!-- Inline Metric Gauge SVG -->
+<div class="flex items-center gap-space-md shrink-0">
+<div class="flex items-center gap-2">
+<svg class="w-10 h-10 -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary-fixed" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="94, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="flex flex-col">
+<span class="font-tabular-mono text-headline-sm font-bold text-on-surface">94.8%</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">Conformité Délais</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT 28% - OPERATIONAL JUDICIAL DESK (SIDEBAR WIDGETS) -->
+<div class="lg:col-span-4 xl:col-span-3 flex flex-col gap-space-lg">
+<!-- WIDGET 1: Planning d'Aujourd'hui (Timeline Rapide) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-base text-primary">schedule</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Aujourd'hui (24 Oct)</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container font-tabular-mono text-label-sm font-bold text-on-surface">4 Jalons</span>
+</div>
+<!-- Vertical Timeline Node Graph -->
+<div class="relative pl-6 space-y-space-md before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container">
+<!-- Node 1 -->
+<div class="relative">
+<span class="absolute -left-[23px] top-1 w-3 h-3 rounded-full bg-primary-container ring-4 ring-surface-container-lowest"></span>
+<div class="space-y-0.5">
+<span class="font-tabular-mono text-label-sm text-on-surface-variant">09:00 • TPI Tunis</span>
+<p class="font-body-sm text-body-sm font-semibold text-on-surface">Plaidoirie Carthage Logistics</p>
+<div class="flex items-center gap-2 pt-1">
+<button class="text-label-sm text-primary hover:underline font-semibold flex items-center gap-0.5" type="button">
+<span class="material-symbols-outlined text-xs">visibility</span> Conclusions
+                </button>
+</div>
+</div>
+</div>
+<!-- Node 2 -->
+<div class="relative">
+<span class="absolute -left-[23px] top-1 w-3 h-3 rounded-full bg-primary-container ring-4 ring-surface-container-lowest"></span>
+<div class="space-y-0.5">
+<span class="font-tabular-mono text-label-sm text-on-surface-variant">10:30 • Cour d'Appel</span>
+<p class="font-body-sm text-body-sm font-semibold text-on-surface">Délibéré OMMP Fiscale</p>
+<button class="text-label-sm text-on-tertiary-container hover:underline font-medium" type="button">Notifier renvoi</button>
+</div>
+</div>
+<!-- Node 3 -->
+<div class="relative">
+<span class="absolute -left-[23px] top-1 w-3 h-3 rounded-full bg-secondary-fixed ring-4 ring-surface-container-lowest animate-pulse"></span>
+<div class="space-y-0.5">
+<span class="font-tabular-mono text-label-sm text-secondary-fixed-variant font-semibold">11:30 • Cabinet</span>
+<p class="font-body-sm text-body-sm font-semibold text-on-surface">RDV Dr. Selim Mehiri</p>
+<div class="flex items-center gap-2 pt-1">
+<button class="text-label-sm text-on-secondary-container hover:underline font-semibold flex items-center gap-0.5" type="button">
+<span class="material-symbols-outlined text-xs">phone_in_talk</span> Appeler client
+                </button>
+</div>
+</div>
+</div>
+<!-- Node 4 -->
+<div class="relative">
+<span class="absolute -left-[23px] top-1 w-3 h-3 rounded-full bg-error ring-4 ring-surface-container-lowest"></span>
+<div class="space-y-0.5">
+<span class="font-tabular-mono text-label-sm text-error font-bold">16:00 • Forclusion</span>
+<p class="font-body-sm text-body-sm font-bold text-on-error-container">Délai Notification d'Appel</p>
+<span class="inline-block px-1.5 py-0.5 bg-error-container text-on-error-container text-[10px] font-semibold rounded">Urgent</span>
+</div>
+</div>
+</div>
+</div>
+<!-- WIDGET 2: Délais Légaux d'Urgence (Péril Forclusion) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs text-error">
+<span class="material-symbols-outlined text-lg">crisis_alert</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Délais d'Urgence</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-[11px] font-bold">Forclusion J-7</span>
+</div>
+<div class="space-y-space-sm">
+<!-- Urgent Deadline 1 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface truncate">Délai d'Appel (30j CPC)</span>
+<span class="px-1.5 py-0.5 rounded bg-error text-on-error font-tabular-mono text-[10px] font-bold">48h</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Affaire Bourguiba c/ Banque Centrale</p>
+<div class="flex items-center justify-between text-label-sm text-on-surface-variant pt-1">
+<span>Date limite : 26 Octobre</span>
+<button class="text-error font-semibold hover:underline" type="button">Déposer</button>
+</div>
+</div>
+<!-- Urgent Deadline 2 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface truncate">Dépôt Mémoire Réplique</span>
+<span class="px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-tabular-mono text-[10px] font-bold">J-4</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Affaire Batimetal SA c/ ETS Travaux</p>
+<div class="flex items-center justify-between text-label-sm text-on-surface-variant pt-1">
+<span>Date limite : 28 Octobre</span>
+<button class="text-primary font-semibold hover:underline" type="button">Rédiger</button>
+</div>
+</div>
+<!-- Urgent Deadline 3 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface truncate">Recours en Cassation</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-tabular-mono text-[10px] font-bold">J-6</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Dossier N° 1092 • Clinique Hannibal</p>
+<div class="flex items-center justify-between text-label-sm text-on-surface-variant pt-1">
+<span>Date limite : 30 Octobre</span>
+<button class="text-primary font-semibold hover:underline" type="button">Signifier</button>
+</div>
+</div>
+</div>
+</div>
+<!-- WIDGET 3: Prochaines Audiences (7 Jours) & Répartition Juridictionnelle -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-base text-secondary">account_balance</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Prochains 7 Jours</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-surface font-tabular-mono text-label-sm font-bold">8 Audiences</span>
+</div>
+<div class="space-y-space-sm">
+<!-- Summary Jurisdictions Breakdown -->
+<div class="space-y-2">
+<div class="space-y-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-medium">TPI Tunis (Bab Bnet)</span>
+<span class="font-tabular-mono text-on-surface-variant">5 dossiers</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[62%] rounded-full"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-medium">Cour d'Appel de Tunis</span>
+<span class="font-tabular-mono text-on-surface-variant">2 dossiers</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-variant w-[25%] rounded-full"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-medium">Tribunal Administratif</span>
+<span class="font-tabular-mono text-on-surface-variant">1 dossier</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-fixed-dim w-[13%] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Quick Preview Card -->
+<div class="mt-space-md p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="space-y-0.5">
+<span class="text-label-sm text-on-surface-variant font-medium">Lundi Prochain • 28 Oct</span>
+<p class="font-body-sm text-body-sm font-semibold text-on-surface">Plaidoirie Cour de Cassation</p>
+</div>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface flex items-center justify-center shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- WIDGET 4: Automations & Rappels SMS / e-Greffe -->
+<div class="bg-primary-container rounded-xl p-space-lg text-surface shadow-md space-y-space-md relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed">sms</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-surface">Rappels Automatiques</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface/10 font-label-sm text-[10px] text-primary-fixed uppercase font-bold">Actifs</span>
+</div>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim">
+          Lexora notifie automatiquement les clients et collaborateurs :
+        </p>
+<div class="space-y-2 font-label-sm text-label-sm text-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-sm">check_circle</span>
+<span>SMS d'audience aux clients à <strong>J-7 et J-1</strong></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-sm">check_circle</span>
+<span>Alerte avocat plaideur <strong>2h avant l'appel</strong></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-sm">check_circle</span>
+<span>Synchronisation automatique calendrier Outlook / Apple</span>
+</div>
+</div>
+<div class="pt-space-xs">
+<button class="w-full h-8 bg-surface-container-lowest text-primary-container hover:bg-surface font-label-md text-label-md font-semibold rounded-lg shadow-sm transition-all flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">tune</span>
+<span>Configurer les Modèles SMS</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

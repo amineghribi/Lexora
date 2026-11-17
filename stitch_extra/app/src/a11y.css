@@ -1,0 +1,55 @@
+/* Phase 7 — socle d'accessibilité : focus visible, cibles 44 px, mouvement réduit.
+   Ce fichier est importé après styles.css : il ne redéfinit aucun token de thème. */
+
+/* 1. Focus clavier toujours visible, quel que soit le composant */
+:where(a, button, [role="button"], input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--acc);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+:where(button, a, [role="button"]):focus:not(:focus-visible) { outline: none; }
+
+/* 2. Cible d'interaction minimale de 44 px (WCAG 2.5.5), sans casser la densité visuelle :
+      la zone cliquable est étendue, le contenu reste centré. */
+.sh-icon-btn, .sh-avatar, .sh-menu, .mo-h .ghost, .nt-h .ghost,
+.ae-mini button, .xs-dots button, .tb-tabs button, .ar-tabs button, .am-tabs button,
+.mo-chips button, .acc-seg button, .sr-tabs button, .vl-tabs button, .stp-tabs button,
+.ex-cfg-card, .ex-cfg-card .r {
+  min-height: 44px;
+}
+.sh-icon-btn, .sh-avatar, .sh-menu, .mo-h .ghost, .nt-h .ghost { min-width: 44px; }
+
+/* contrôles dont le dessin reste petit mais dont la cible atteint 44 px */
+.ae-mini button, .xs-dots button { position: relative; }
+.ae-mini button::after, .xs-dots button::after {
+  content: ''; position: absolute; inset: -11px; border-radius: 8px;
+}
+
+/* 3. Liens en ligne : cible étendue verticalement sans modifier le flux du texte */
+.link { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* 4. Mouvement réduit : respect de la préférence système, en plus du réglage applicatif */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 5. Contraste du focus sur fond sombre (bandeau, projection, en-têtes) */
+.xs-bar :focus-visible, .ap :focus-visible, .lec-player :focus-visible {
+  outline-color: #FFFFFF;
+  box-shadow: 0 0 0 5px rgba(15, 76, 92, .65);
+}
+
+/* cible globale 44 px (WCAG 2.5.5) : plancher d'accessibilité, prioritaire sur les densités locales */
+button, [role="button"], input:not([type="hidden"]):not([type="radio"]):not([type="checkbox"]),
+select, textarea, a.link {
+  min-height: 44px !important;
+}
+:where(input[type="radio"], input[type="checkbox"]) { width: 20px; height: 20px; }
+
+/* champs de recherche : largeur utile minimale, la cible 44 px ne doit pas écraser le champ */
+.sr-input input, .stp-search input, .tb-search input, .ar-search input, .vl-search input { min-width: 160px; }

@@ -1,0 +1,44 @@
+/* ===== S'entraîner — accueil (maquette f023b4d3) ===== */
+.tr { display: flex; flex-direction: column; gap: 14px; }
+.tr-hero { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(300px, 1fr); gap: 18px; align-items: start; }
+.tr-eyebrow { display: block; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--acc2); margin-bottom: 6px; }
+.tr-hero h1 { margin: 0 0 6px; font-size: clamp(24px, 3.1vw, 31px); letter-spacing: -.02em; }
+.tr-hero p { margin: 0; font-size: 14px; max-width: 62ch; }
+.tr-kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.tr-kpi { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 11px 12px; display: flex; flex-direction: column; gap: 1px; }
+.tr-kpi .k { font-size: 9.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+.tr-kpi b { font-family: var(--fh); font-size: 19px; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.tr-kpi span:last-child { font-size: 10.5px; color: var(--muted); }
+
+.tr-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.tr-actions .primary, .tr-actions .soft { min-height: 40px; font-size: 13.5px; }
+.tr-actions .soft { background: var(--acc-soft); border-color: transparent; color: var(--acc); font-weight: 600; }
+
+.tr-filters { display: flex; align-items: center; gap: 10px; background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 9px 10px; }
+.tr-search { display: flex; align-items: center; gap: 7px; width: 260px; max-width: 100%; border: 1px solid var(--line); border-radius: var(--r-sm); padding: 0 10px; height: 36px; color: var(--muted); }
+.tr-search input { border: 0; outline: none; background: none; width: 100%; height: 100%; font: inherit; font-size: 13px; color: var(--fg); }
+
+.tr-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.tr-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 14px; display: flex; flex-direction: column; gap: 8px; height: 100%; }
+.tr-card header { display: flex; align-items: center; gap: 6px; }
+.tr-tag { font-size: 10.5px; font-weight: 700; padding: 3px 8px; border-radius: 4px; background: var(--line2); color: var(--muted); }
+.tr-tag.ok { margin-left: auto; background: color-mix(in srgb, var(--good) 12%, var(--card)); color: var(--good); }
+.tr-card header .tr-tag:first-child { background: var(--acc-soft); color: var(--acc); }
+.tr-card h3 { margin: 0; font-size: 16px; }
+.tr-card p { margin: 0; }
+.tr-bar { height: 6px; border-radius: 99px; background: var(--line2); overflow: hidden; }
+.tr-bar i { display: block; height: 100%; border-radius: 99px; background: var(--acc); }
+.tr-cta { margin-top: auto; width: 100%; min-height: 36px; font-size: 13px; background: var(--acc-soft); border-color: transparent; color: var(--acc); font-weight: 600; }
+
+@media (max-width: 1000px) {
+  .tr-hero { grid-template-columns: 1fr; }
+  .tr-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+  .tr-grid { grid-template-columns: 1fr; }
+  .tr-kpis { grid-template-columns: 1fr; }
+  .tr-search { width: 100%; }
+}
+
+/* contraste AA : étiquette d'état lisible sur son fond clair (même palette) */
+.tr-tag.ok { color: var(--acc); }

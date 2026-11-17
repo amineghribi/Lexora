@@ -1,0 +1,40 @@
+/* ===== Débriefing ARC : radar, jury, chronologie ===== */
+.db { display: flex; flex-direction: column; gap: 16px; }
+.db-block { display: flex; flex-direction: column; gap: 8px; }
+.db-label { font-size: 10.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+.db-radar-wrap { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+.db-radar { width: 230px; height: 230px; flex: none; }
+.db-comps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; min-width: 200px; flex: 1; }
+.db-comps li { border: 1px solid var(--line); border-radius: var(--r-sm); padding: 8px 10px; display: flex; justify-content: space-between; gap: 8px; font-size: 12.5px; }
+.db-comps span { color: var(--muted); }
+.db-comps b { font-variant-numeric: tabular-nums; }
+.db-jury { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.db-jury li { border-radius: var(--r-sm); padding: 9px 12px; border: 1px solid transparent; }
+.db-jury li.ok { background: var(--goodbg); border-color: color-mix(in srgb, var(--good) 35%, transparent); }
+.db-jury li.ko { background: var(--warnbg); border-color: color-mix(in srgb, var(--warn) 35%, transparent); }
+.db-jury b { display: block; font-size: 12.5px; }
+.db-jury p { margin: 2px 0 0; font-size: 13px; line-height: 1.5; }
+.db-table-wrap { overflow-x: auto; }
+.db-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.db-table th, .db-table td { text-align: left; padding: 7px 8px; border-top: 1px solid var(--line2); vertical-align: top; }
+.db-table thead th { font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); border-top: 0; }
+.db-table td.n { width: 26px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.db-hint { color: var(--muted); }
+
+/* --- Bilan en page pleine (maquette « score final ») --- */
+.dbp { display: flex; flex-direction: column; gap: 16px; }
+.dbp-top { display: flex; align-items: center; gap: 12px; }
+.dbp-crumb { font-size: 12.5px; color: var(--muted); font-weight: 600; }
+.dbp-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 0.9fr); gap: 16px; align-items: stretch; }
+.dbp-score, .dbp-radar { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 16px; display: flex; align-items: center; gap: 16px; }
+.dbp-radar { flex-direction: column; align-items: flex-start; justify-content: center; }
+.dbp-dial { width: 104px; height: 104px; flex: none; border-radius: 50%; display: grid; place-items: center; text-align: center; border: 7px solid var(--line2); }
+.dbp-dial b { font-family: var(--fh); font-size: 32px; line-height: 1; }
+.dbp-dial small { display: block; font-size: 10px; color: var(--muted); }
+.dbp-dial.ok { border-color: var(--good); color: var(--good); }
+.dbp-dial.mid { border-color: var(--warn); color: var(--warn); }
+.dbp-dial.ko { border-color: var(--bad); color: var(--bad); }
+.dbp-score-txt { display: flex; flex-direction: column; gap: 3px; }
+.dbp-score-txt b { font-size: 18px; }
+.dbp-empty { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 24px; display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+@media (max-width: 860px) { .dbp-hero { grid-template-columns: 1fr; } }

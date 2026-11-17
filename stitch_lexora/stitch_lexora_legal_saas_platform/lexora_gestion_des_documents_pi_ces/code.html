@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-secondary-fixed": "#0d1c2e",
+          "on-error-container": "#93000a",
+          "surface": "#f8f9ff",
+          "tertiary-fixed": "#ffdea8",
+          "primary-container": "#131b2e",
+          "primary": "#000000",
+          "error": "#ba1a1a",
+          "tertiary-fixed-dim": "#e8c17d",
+          "inverse-surface": "#213145",
+          "surface-variant": "#d3e4fe",
+          "on-tertiary": "#ffffff",
+          "on-secondary-fixed-variant": "#3a485b",
+          "tertiary-container": "#271900",
+          "on-surface-variant": "#45464d",
+          "on-tertiary-fixed-variant": "#5c4209",
+          "on-secondary": "#ffffff",
+          "secondary-container": "#d5e3fc",
+          "inverse-primary": "#bec6e0",
+          "on-tertiary-container": "#a07f42",
+          "surface-container-lowest": "#ffffff",
+          "inverse-on-surface": "#eaf1ff",
+          "on-primary-fixed": "#131b2e",
+          "tertiary": "#000000",
+          "surface-container": "#e5eeff",
+          "primary-fixed-dim": "#bec6e0",
+          "background": "#f8f9ff",
+          "outline": "#76777d",
+          "on-tertiary-fixed": "#271900",
+          "outline-variant": "#c6c6cd",
+          "surface-container-low": "#eff4ff",
+          "secondary": "#515f74",
+          "surface-dim": "#cbdbf5",
+          "surface-bright": "#f8f9ff",
+          "on-surface": "#0b1c30",
+          "surface-container-high": "#dce9ff",
+          "primary-fixed": "#dae2fd",
+          "surface-tint": "#565e74",
+          "on-primary-container": "#7c839b",
+          "on-background": "#0b1c30",
+          "on-secondary-container": "#57657a",
+          "secondary-fixed-dim": "#b9c7df",
+          "on-primary": "#ffffff",
+          "on-error": "#ffffff",
+          "error-container": "#ffdad6",
+          "secondary-fixed": "#d5e3fc",
+          "on-primary-fixed-variant": "#3f465c",
+          "surface-container-highest": "#d3e4fe"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xl": "1.5rem",
+          "gutter": "1rem",
+          "margin-lg": "2rem",
+          "space-sm": "0.5rem",
+          "gutter-lg": "1.5rem",
+          "space-md": "0.75rem",
+          "space-lg": "1rem",
+          "space-xs": "0.25rem",
+          "margin-md": "1.5rem",
+          "margin": "1rem"
+        },
+        "fontFamily": {
+          "headline-md": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "tabular-mono": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Inter"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "headline-xl": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-lg": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "tabular-mono": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-sm": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "letterSpacing": "-0.005em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-sm": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-sm": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-xl": [
+            "30px",
+            {
+              "lineHeight": "38px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-primary-container text-surface flex flex-col z-50 select-none"><div class="p-space-lg"><div class="flex items-center gap-space-sm"><img alt="Lexora Legal Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrA40fADVzl1mFS8xWbOEs6D5_wA91qhS1x8cmcmi0g-BpFzZoMxwG0RAYKYQvxIPGQnSNiSPcKT9i2W_6tz1LUCX6pxjtA84DLIpVeCE5BLZU7taK1uAqaH7JE2EyMx9eg_IaPO7WuLuliaMQCNqSmrFDKN7v4G0pTZ1_9yu2arK6nBvwozFJ5HXN0sh3FpF5Z56t0n7zOYUqWXQxOSi1EvAHZB2szpgJX0Ecp69jLlcg"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-surface tracking-tight leading-none">Lexora</span><span class="font-label-sm text-label-sm text-primary-fixed-dim tracking-wider uppercase leading-tight mt-space-xs">Legal Practice Suite</span></div></div><div class="mt-space-lg p-space-sm bg-surface-container-high/10 rounded-lg flex items-center justify-between cursor-pointer hover:bg-surface-container-high/20 transition-colors"><div class="flex flex-col min-w-0 pr-space-xs"><span class="font-label-sm text-label-sm text-on-tertiary-container uppercase tracking-wider font-semibold">Cabinet Titulaire</span><span class="font-body-sm text-body-sm text-surface font-medium truncate">Cabinet Me. K. Ben Ammar &amp; Associés</span></div><span class="material-symbols-outlined text-primary-fixed-dim text-lg shrink-0">unfold_more</span></div></div><nav class="flex-1 px-space-md py-space-xs overflow-y-auto space-y-space-xs" data-active-classes="bg-surface-container-lowest text-primary font-semibold shadow-[0_1px_8px_rgba(0,0,0,0.04)] rounded-lg"><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="dashboard" href="#"><span class="truncate">Tableau de bord</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="clients" href="#"><span class="truncate">Clients</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="cases" href="#"><span class="truncate">Affaires &amp; Dossiers</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="lexora---role-des-audiences-et-calendrier-judiciaire" href="#"><span class="truncate">Audiences &amp; Délais</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="tasks" href="#"><span class="truncate">Tâches &amp; Actes</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="documents-et-pieces" href="#"><span class="truncate">Documents &amp; Pièces</span><span class="px-1.5 py-0.5 rounded bg-surface-container-high/20 text-on-tertiary-container font-tabular-mono text-label-sm font-semibold">142</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="payments" href="#"><span class="truncate">Honoraires &amp; Règlements</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="reports" href="#"><span class="truncate">Rapports &amp; Statistiques</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="team" href="#"><span class="truncate">Collaborateurs</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="settings" href="#"><span class="truncate">Paramètres</span></a></nav><div class="p-space-lg bg-primary-container/80 space-y-space-md"><div class="bg-surface-container-high/10 p-space-sm rounded-lg space-y-space-xs"><div class="flex justify-between items-center text-primary-fixed-dim font-label-sm text-label-sm"><span>Cloud Sécurisé</span><span class="font-tabular-mono text-tabular-mono text-surface font-semibold">64%</span></div><div class="w-full h-1.5 bg-surface-container-high/20 rounded-full overflow-hidden"><div class="h-full bg-secondary-fixed w-[64%] rounded-full"></div></div><p class="font-label-sm text-label-sm text-primary-fixed-dim">32 GB / 50 GB utilisés</p></div><div class="flex items-center justify-between pt-space-xs font-label-sm text-label-sm text-primary-fixed-dim"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span><span class="truncate">Serveur Tunisie • En ligne</span></div><a class="text-primary-fixed-dim hover:text-surface transition-colors flex items-center" href="#"><span class="material-symbols-outlined text-base">help</span></a></div></div></aside><div class="pl-64 flex flex-col min-h-screen bg-background"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-gutter-lg flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><span class="font-medium">Cabinet</span><span class="material-symbols-outlined text-base">chevron_right</span><span class="font-semibold text-on-surface">Affaires &amp; Dossiers</span></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-xs bg-secondary-container/50 text-on-secondary-container rounded-lg font-label-sm text-label-sm font-medium"><span class="material-symbols-outlined text-sm text-on-tertiary-container">account_balance</span><span>Tribunal de 1ère Instance de Tunis</span><span class="material-symbols-outlined text-sm">arrow_drop_down</span></div></div><div class="flex-1 max-w-xl mx-auto"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-space-md text-on-surface-variant text-lg pointer-events-none">search</span><input class="w-full h-10 pl-10 pr-16 bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm rounded-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)] focus:outline-none focus:bg-surface" placeholder="Rechercher un dossier, client, audience..." type="text"/><kbd class="absolute right-space-md px-1.5 py-0.5 bg-surface-container font-label-sm text-label-sm text-on-surface-variant rounded font-mono">⌘K</kbd></div></div><div class="flex items-center gap-space-md shrink-0"><button class="flex items-center gap-space-xs px-space-md h-9 bg-primary text-on-primary rounded-lg font-label-md text-label-md font-semibold hover:bg-secondary transition-all shadow-[0_1px_8px_rgba(0,0,0,0.04)]" type="button"><span class="material-symbols-outlined text-base text-tertiary-fixed">add</span><span>Nouveau Dossier</span><span class="material-symbols-outlined text-sm">arrow_drop_down</span></button><div class="flex items-center gap-space-xs"><button class="relative p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" title="Audiences urgentes" type="button"><span class="material-symbols-outlined text-xl">event_upcoming</span><span class="absolute top-1 right-1 flex items-center justify-center min-w-[18px] h-[18px] px-1 bg-error text-on-error rounded-full font-label-sm text-label-sm font-bold leading-none">3</span></button><button class="relative p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" title="Notifications" type="button"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1 right-1 flex items-center justify-center min-w-[18px] h-[18px] px-1 bg-secondary text-on-secondary rounded-full font-label-sm text-label-sm font-bold leading-none">5</span></button><button class="px-space-sm py-1 font-label-sm text-label-sm font-semibold text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" type="button">FR | عربي</button></div><div class="flex items-center gap-space-sm pl-space-sm"><div class="relative shrink-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-tertiary-fixed-dim/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMOanJW9zWHCNgIcyMycsVa43Fgj45jo8L-ETtD-WrgAA0LBPLd_R5C1IIOe7vTnsFvBLZAVWAazF3kibT0bUzBwExNFLSPow5Ap6P3qbZsNU5DSbe3JoE6q3Xk94rneTWtfbtqYdyvQ-lOUVl5WdPre9pIzvhtwZiWcf002zQwDVlwID6bQTLaa4Miv5ECWlp2RxnEy2UMZxR17JKmsNpwuO-96LtiN8oXY6M1LX0"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary-fixed ring-2 ring-surface"></span></div><div class="hidden 2xl:flex flex-col text-left"><span class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Me. Karim Ben Ammar</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight truncate">Avocat à la Cour de Cassation</span></div><span class="material-symbols-outlined text-on-surface-variant text-lg hidden 2xl:block">arrow_drop_down</span></div></div></header><main class="relative pt-16 bg-background flex-1 w-full px-gutter-lg py-space-xl"><div class="flex flex-col w-full gap-space-lg">
+<!-- Top Workspace Action Bar & Breadcrumbs -->
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant mb-1">
+<span class="hover:text-on-surface transition-colors cursor-pointer">Cabinet</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-on-surface font-medium">Documents &amp; Pièces</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-secondary font-medium">Dossiers Contentieux &amp; Actes Certifiés</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Documents &amp; Pièces Juridiques</h1>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-on-primary-fixed-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+            GED Certifiée TunTrust
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 max-w-3xl">
+          Gestion électronique des documents (GED), archivage sécurisé à valeur probante, horodatage certifié TunTrust et contrôle rigoureux des versions d'actes.
+        </p>
+</div>
+<div class="flex items-center flex-wrap gap-space-sm shrink-0">
+<button class="inline-flex items-center gap-space-xs px-space-md h-9 bg-surface-container-lowest text-on-surface font-label-md text-label-md rounded-lg shadow-sm hover:bg-surface-container transition-all" type="button">
+<span class="material-symbols-outlined text-lg text-secondary">cloud_sync</span>
+<span>Synchroniser e-Greffe</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md h-9 bg-surface-container-lowest text-on-surface font-label-md text-label-md rounded-lg shadow-sm hover:bg-surface-container transition-all" type="button">
+<span class="material-symbols-outlined text-lg text-secondary">file_download</span>
+<span>Exporter l'inventaire</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md h-9 bg-primary text-on-primary font-label-md text-label-md rounded-lg shadow-sm hover:bg-secondary transition-all" type="button">
+<span class="material-symbols-outlined text-lg text-tertiary-fixed">cloud_upload</span>
+<span>Importer des Documents</span>
+</button>
+</div>
+</div>
+<!-- Quick KPI Stats Bar -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex items-center justify-between">
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Documents</span>
+<span class="font-headline-md text-headline-md text-on-surface font-tabular-mono mt-0.5">1,842 <span class="font-body-sm text-body-sm font-normal text-on-surface-variant">pièces</span></span>
+<div class="flex items-center gap-1.5 mt-1">
+<div class="w-16 h-1 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[76%] rounded-full"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-tabular-mono">38.4 Go / 50 Go</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-xl">folder</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex items-center justify-between">
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Pièces Scellées &amp; Signées</span>
+<span class="font-headline-md text-headline-md text-on-surface font-tabular-mono mt-0.5">614 <span class="font-body-sm text-body-sm font-normal text-on-surface-variant">actes e-ID</span></span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-medium mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">verified_user</span> Certilis TunTrust actif
+          </span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant text-xl">workspace_premium</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex items-center justify-between">
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">En Révision / Visa</span>
+<span class="font-headline-md text-headline-md text-on-surface font-tabular-mono mt-0.5">28 <span class="font-body-sm text-body-sm font-normal text-on-surface-variant">en attente</span></span>
+<span class="font-label-sm text-label-sm text-error font-medium mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> 6 délais sous 48h
+          </span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-error-container/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-error text-xl">pending_actions</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex items-center justify-between">
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Partagés Clients</span>
+<span class="font-headline-md text-headline-md text-on-surface font-tabular-mono mt-0.5">142 <span class="font-body-sm text-body-sm font-normal text-on-surface-variant">accès actifs</span></span>
+<span class="font-label-sm text-label-sm text-secondary font-medium mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">lock_person</span> Espace sécurisé 2FA
+          </span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-secondary-container/40 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-xl">share_reviews</span>
+</div>
+</div>
+</div>
+</div>
+<!-- THREE-COLUMN WORKSPACE -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- A. LEFT COLUMN: Folder Navigation & Tree Structure (approx 260-280px) -->
+<div class="lg:col-span-3 xl:col-span-3 flex flex-col gap-space-md">
+<!-- Quick Upload Dropzone -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col items-center justify-center text-center cursor-pointer group hover:bg-surface-container-low transition-all">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-xl text-primary">upload_file</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface mt-2">Glissez vos pièces ici</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">PDF, DOCX, scans jusqu'à 50 Mo</p>
+<span class="mt-2.5 px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-medium">
+          Téléversement multiple actif
+        </span>
+</div>
+<!-- Folders Directory Tree -->
+<div class="bg-surface-container-lowest rounded-lg shadow-sm p-space-md flex flex-col gap-space-md">
+<!-- Search folders -->
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-2.5 text-on-surface-variant text-base">search</span>
+<input class="w-full h-8 pl-8 pr-3 bg-surface text-on-surface font-body-sm text-body-sm rounded focus:outline-none placeholder:text-on-surface-variant" placeholder="Filtrer les dossiers..." type="text"/>
+</div>
+<!-- Folder Categories -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between px-2.5 py-2 rounded-lg bg-primary text-on-primary cursor-pointer">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-lg text-tertiary-fixed">folder_open</span>
+<span class="font-body-sm text-body-sm font-medium truncate">Tous les Documents</span>
+</div>
+<span class="font-tabular-mono text-label-sm font-semibold px-1.5 py-0.5 rounded bg-surface-container-high/20 text-on-primary">1,842</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center justify-between px-2.5 py-1.5 rounded-lg text-on-surface hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-lg text-on-surface-variant group-hover:text-primary">folder</span>
+<span class="font-body-sm text-body-sm font-medium truncate">Documents Clients</span>
+</div>
+<span class="font-tabular-mono text-label-sm text-on-surface-variant px-1.5 py-0.2 rounded bg-surface-container">486</span>
+</div>
+<div class="pl-7 flex flex-col gap-1 py-1">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface flex items-center justify-between py-0.5 pr-2" href="#">
+<span>Conventions &amp; Mandats</span>
+<span class="font-tabular-mono text-label-sm">180</span>
+</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface flex items-center justify-between py-0.5 pr-2" href="#">
+<span>Pouvoirs &amp; PV d'AG</span>
+<span class="font-tabular-mono text-label-sm">142</span>
+</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface flex items-center justify-between py-0.5 pr-2" href="#">
+<span>RNE &amp; Statuts Fiscaux</span>
+<span class="font-tabular-mono text-label-sm">164</span>
+</a>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center justify-between px-2.5 py-1.5 rounded-lg text-on-surface hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-lg text-on-surface-variant group-hover:text-primary">folder_special</span>
+<span class="font-body-sm text-body-sm font-medium truncate">Pièces de Procédure</span>
+</div>
+<span class="font-tabular-mono text-label-sm text-on-surface-variant px-1.5 py-0.2 rounded bg-surface-container">724</span>
+</div>
+<div class="pl-7 flex flex-col gap-1 py-1">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface flex items-center justify-between py-0.5 pr-2" href="#">
+<span>Pièces de Fond</span>
+<span class="font-tabular-mono text-label-sm">340</span>
+</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface flex items-center justify-between py-0.5 pr-2" href="#">
+<span>PV Huissiers &amp; Notifications</span>
+<span class="font-tabular-mono text-label-sm">215</span>
+</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface flex items-center justify-between py-0.5 pr-2" href="#">
+<span>Rapports d'Expertise</span>
+<span class="font-tabular-mono text-label-sm">169</span>
+</a>
+</div>
+</div>
+<div class="flex items-center justify-between px-2.5 py-1.5 rounded-lg text-on-surface hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-lg text-on-surface-variant group-hover:text-primary">history_edu</span>
+<span class="font-body-sm text-body-sm font-medium truncate">Contrats &amp; Conventions</span>
+</div>
+<span class="font-tabular-mono text-label-sm text-on-surface-variant px-1.5 py-0.2 rounded bg-surface-container">215</span>
+</div>
+<div class="flex items-center justify-between px-2.5 py-1.5 rounded-lg text-on-surface hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-lg text-on-surface-variant group-hover:text-primary">gavel</span>
+<span class="font-body-sm text-body-sm font-medium truncate">Décisions &amp; Jugements</span>
+</div>
+<span class="font-tabular-mono text-label-sm text-on-surface-variant px-1.5 py-0.2 rounded bg-surface-container">184</span>
+</div>
+<div class="flex items-center justify-between px-2.5 py-1.5 rounded-lg text-on-surface hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-lg text-on-surface-variant group-hover:text-primary">menu_book</span>
+<span class="font-body-sm text-body-sm font-medium truncate">Conclusions &amp; Mémoires</span>
+</div>
+<span class="font-tabular-mono text-label-sm text-on-surface-variant px-1.5 py-0.2 rounded bg-surface-container">148</span>
+</div>
+<div class="flex items-center justify-between px-2.5 py-1.5 rounded-lg text-on-surface hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-lg text-on-surface-variant group-hover:text-primary">mark_email_read</span>
+<span class="font-body-sm text-body-sm font-medium truncate">Correspondances Officielles</span>
+</div>
+<span class="font-tabular-mono text-label-sm text-on-surface-variant px-1.5 py-0.2 rounded bg-surface-container">85</span>
+</div>
+</div>
+<!-- Filter by Formats -->
+<div class="pt-space-sm flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Format Fichier</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 rounded bg-secondary-container/60 text-on-secondary-container font-label-sm text-label-sm font-medium cursor-pointer">Tous</span>
+<span class="px-2 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm cursor-pointer">PDF (1,420)</span>
+<span class="px-2 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm cursor-pointer">DOCX (312)</span>
+<span class="px-2 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm cursor-pointer">Scans e-ID (26)</span>
+</div>
+</div>
+<!-- Security Badge -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-lg text-secondary shrink-0 mt-0.5">verified</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Chiffrement AES-256</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Souveraineté des données • Datacenter Tunis</span>
+</div>
+</div>
+</div>
+</div>
+<!-- B. CENTER COLUMN: Main Document Table & Filter Toolbar -->
+<div class="lg:col-span-9 xl:col-span-6 flex flex-col gap-space-md">
+<!-- Filter and Search Bar -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-lg">search</span>
+<input class="w-full h-10 pl-10 pr-4 bg-surface text-on-surface font-body-sm text-body-sm rounded-lg focus:outline-none placeholder:text-on-surface-variant shadow-inner" placeholder="Rechercher par nom, métadonnée, référence ou plein texte OCR..." type="text"/>
+</div>
+<button class="h-10 px-space-md bg-surface-container text-on-surface hover:bg-surface-container-high rounded-lg font-label-md text-label-md font-medium flex items-center gap-1.5 shrink-0 transition-colors" type="button">
+<span class="material-symbols-outlined text-lg text-secondary">tune</span>
+<span>Filtres avancés</span>
+</button>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-xs pt-1">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium mr-1">Filtres actifs:</span>
+<span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span>Client: Sté Carthage Logistics</span>
+<span class="material-symbols-outlined text-xs cursor-pointer hover:text-error">close</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span>Statut: Actif</span>
+<span class="material-symbols-outlined text-xs cursor-pointer hover:text-error">close</span>
+</span>
+<button class="text-secondary font-label-sm text-label-sm hover:underline ml-1" type="button">Réinitialiser</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Trier par:</span>
+<select class="bg-surface text-on-surface font-label-sm text-label-sm rounded px-2 py-1 focus:outline-none">
+<option>Plus récent en premier</option>
+<option>Nom alphabétique (A-Z)</option>
+<option>Poids du fichier</option>
+<option>Version la plus haute</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Action Toolbar for Selected Items -->
+<div class="flex items-center justify-between px-space-md py-2 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+<span class="font-label-md text-label-md font-medium text-on-surface">1 sélectionné</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">sur 7 affichés</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="px-2.5 py-1 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded font-label-sm text-label-sm flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-base">download</span>
+<span class="hidden sm:inline">Télécharger ZIP</span>
+</button>
+<button class="px-2.5 py-1 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded font-label-sm text-label-sm flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-base">merge_type</span>
+<span class="hidden sm:inline">Dossier de plaidoirie</span>
+</button>
+<button class="px-2.5 py-1 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded font-label-sm text-label-sm flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-base">share</span>
+<span class="hidden sm:inline">Partager</span>
+</button>
+</div>
+</div>
+<!-- Rich Document Data Table -->
+<div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider h-9">
+<th class="pl-4 pr-2 w-8"></th>
+<th class="py-2 px-3 font-semibold">Document &amp; Référence</th>
+<th class="py-2 px-3 font-semibold">Catégorie</th>
+<th class="py-2 px-3 font-semibold">Client / Affaire</th>
+<th class="py-2 px-3 font-semibold">Horodatage &amp; Auteur</th>
+<th class="py-2 px-3 font-semibold text-right">Taille</th>
+<th class="py-2 px-3 font-semibold text-center">Ver.</th>
+<th class="pr-4 pl-2 py-2 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-sm text-body-sm text-on-surface">
+<!-- Row 1: Selected / Highlighted for right panel preview -->
+<tr class="bg-secondary-container/20 hover:bg-secondary-container/30 transition-colors cursor-pointer">
+<td class="pl-4 pr-2 py-3">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-error text-2xl shrink-0 mt-0.5">picture_as_pdf</span>
+<div class="flex flex-col min-w-0">
+<span class="font-medium text-on-surface truncate hover:underline">Conclusions_en_replique_revisées_BTK_v3.2.pdf</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs">verified</span> Scellé TunTrust
+                        </span>
+<span class="font-tabular-mono text-label-sm text-on-surface-variant">DOC-2024-8942</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+                    Conclusions
+                  </span>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col min-w-0">
+<span class="font-medium truncate">Sté Carthage Logistics SA</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm truncate">RG 2024/4819 (TPI Tunis)</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col min-w-0">
+<span class="font-tabular-mono text-label-sm text-on-surface">24 Oct 2024, 17:42</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Me. K. Ben Ammar</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-tabular-mono text-label-sm text-on-surface-variant">
+                  3.4 Mo
+                </td>
+<td class="py-3 px-3 text-center">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-primary font-tabular-mono text-label-sm font-bold">v3.2</span>
+</td>
+<td class="pr-4 pl-2 py-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 hover:bg-surface-container rounded text-primary transition-colors" title="Aperçu rapide" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface transition-colors" title="Télécharger" type="button">
+<span class="material-symbols-outlined text-lg">download</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="pl-4 pr-2 py-3">
+<input class="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-error text-2xl shrink-0 mt-0.5">picture_as_pdf</span>
+<div class="flex flex-col min-w-0">
+<span class="font-medium text-on-surface truncate hover:underline">PV_Constat_huissier_saisie_conservatoire_Rades.pdf</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded bg-surface-container text-secondary font-label-sm text-label-sm">
+                          Signifié
+                        </span>
+<span class="font-tabular-mono text-label-sm text-on-surface-variant">PV-2024-1102</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+                    Pièce Procédure
+                  </span>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col min-w-0">
+<span class="font-medium truncate">Sté Carthage Logistics SA</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm truncate">RG 2024/4819</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col min-w-0">
+<span class="font-tabular-mono text-label-sm text-on-surface">19 Oct 2024, 09:15</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Me. Cherif (Huissier)</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-tabular-mono text-label-sm text-on-surface-variant">
+                  12.1 Mo
+                </td>
+<td class="py-3 px-3 text-center">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-tabular-mono text-label-sm">v1.0</span>
+</td>
+<td class="pr-4 pl-2 py-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface transition-colors" title="Aperçu rapide" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface transition-colors" title="Télécharger" type="button">
+<span class="material-symbols-outlined text-lg">download</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="pl-4 pr-2 py-3">
+<input class="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-error text-2xl shrink-0 mt-0.5">picture_as_pdf</span>
+<div class="flex flex-col min-w-0">
+<span class="font-medium text-on-surface truncate hover:underline">Rapport_expertise_comptable_douanes_2023_signe.pdf</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold">
+                          Certifié
+                        </span>
+<span class="font-tabular-mono text-label-sm text-on-surface-variant">EXP-2024-004</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+                    Expertise
+                  </span>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col min-w-0">
+<span class="font-medium truncate">Sté Carthage Logistics SA</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm truncate">RG 2023/1105 (Douanes)</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col min-w-0">
+<span class="font-tabular-mono text-label-sm text-on-surface">12 Oct 2024, 14:20</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Me. A. Trabelsi</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-tabular-mono text-label-sm text-on-surface-variant">
+                  8.6 Mo
+                </td>
+<td class="py-3 px-3 text-center">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-tabular-mono text-label-sm">v2.1</span>
+</td>
+<td class="pr-4 pl-2 py-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">download</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="pl-4 pr-2 py-3">
+<input class="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-2xl shrink-0 mt-0.5">description</span>
+<div class="flex flex-col min-w-0">
+<span class="font-medium text-on-surface truncate hover:underline">Protocole_accord_transactionnel_Maghreb_Plast.docx</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                          Brouillon partagé
+                        </span>
+<span class="font-tabular-mono text-label-sm text-on-surface-variant">CTR-2024-331</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+                    Contrat
+                  </span>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col min-w-0">
+<span class="font-medium truncate">SARL Maghreb Plast</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm truncate">RG 2024/1825</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col min-w-0">
+<span class="font-tabular-mono text-label-sm text-on-surface">08 Oct 2024, 16:50</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Me. S. Mansour</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-tabular-mono text-label-sm text-on-surface-variant">
+                  1.2 Mo
+                </td>
+<td class="py-3 px-3 text-center">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-tabular-mono text-label-sm">v4.0</span>
+</td>
+<td class="pr-4 pl-2 py-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">download</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="pl-4 pr-2 py-3">
+<input class="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-error text-2xl shrink-0 mt-0.5">picture_as_pdf</span>
+<div class="flex flex-col min-w-0">
+<span class="font-medium text-on-surface truncate hover:underline">Assignation_expulsion_urgence_Groupe_Mabrouk.pdf</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                          Enregistré
+                        </span>
+<span class="font-tabular-mono text-label-sm text-on-surface-variant">ASS-2024-512</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+                    Assignation
+                  </span>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col min-w-0">
+<span class="font-medium truncate">Groupe Mabrouk Immo</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm truncate">RG 2024/5120</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col min-w-0">
+<span class="font-tabular-mono text-label-sm text-on-surface">05 Oct 2024, 11:05</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Me. S. Mansour</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-tabular-mono text-label-sm text-on-surface-variant">
+                  2.8 Mo
+                </td>
+<td class="py-3 px-3 text-center">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-tabular-mono text-label-sm">v1.0</span>
+</td>
+<td class="pr-4 pl-2 py-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">download</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="pl-4 pr-2 py-3">
+<input class="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-error text-2xl shrink-0 mt-0.5">picture_as_pdf</span>
+<div class="flex flex-col min-w-0">
+<span class="font-medium text-on-surface truncate hover:underline">Extrait_RNE_Statuts_mis_a_jour_Carthage_Logistics.pdf</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold">
+                          Officiel RNE
+                        </span>
+<span class="font-tabular-mono text-label-sm text-on-surface-variant">RNE-0941829B</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+                    Documents Clients
+                  </span>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col min-w-0">
+<span class="font-medium truncate">Sté Carthage Logistics SA</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm truncate">Général Cabinet</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col min-w-0">
+<span class="font-tabular-mono text-label-sm text-on-surface">02 Fév 2024, 08:30</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Me. K. Ben Ammar</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-tabular-mono text-label-sm text-on-surface-variant">
+                  4.1 Mo
+                </td>
+<td class="py-3 px-3 text-center">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-tabular-mono text-label-sm">v1.0</span>
+</td>
+<td class="pr-4 pl-2 py-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">download</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 7 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="pl-4 pr-2 py-3">
+<input class="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-error text-2xl shrink-0 mt-0.5">picture_as_pdf</span>
+<div class="flex flex-col min-w-0">
+<span class="font-medium text-on-surface truncate hover:underline">Ordonnance_refere_suspension_execution_TPI_Tunis.pdf</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold">
+                          Grosse Délivrée
+                        </span>
+<span class="font-tabular-mono text-label-sm text-on-surface-variant">ORD-2022-771</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+                    Décision Justice
+                  </span>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col min-w-0">
+<span class="font-medium truncate">SARL El Manar Plast</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm truncate">RG 2022/6301</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col min-w-0">
+<span class="font-tabular-mono text-label-sm text-on-surface">28 Sept 2024, 18:00</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Me. H. Dridi</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-tabular-mono text-label-sm text-on-surface-variant">
+                  5.5 Mo
+                </td>
+<td class="py-3 px-3 text-center">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-tabular-mono text-label-sm">v1.1</span>
+</td>
+<td class="pr-4 pl-2 py-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">download</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="px-space-md py-3 bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Affichage 1 à 7 sur <span class="font-medium text-on-surface">1,842 pièces</span></span>
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Par page:</span>
+<select class="bg-surface text-on-surface font-label-sm text-label-sm rounded px-1.5 py-0.5 focus:outline-none">
+<option>25</option>
+<option>50</option>
+<option>100</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-base">chevron_left</span>
+</button>
+<span class="w-8 h-8 flex items-center justify-center rounded bg-primary text-on-primary font-tabular-mono text-label-sm font-semibold">1</span>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-tabular-mono text-label-sm" type="button">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-tabular-mono text-label-sm" type="button">3</button>
+<span class="px-1 text-on-surface-variant">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-tabular-mono text-label-sm" type="button">74</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-base">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- C. RIGHT COLUMN: Document Details & Interactive Preview Panel (approx 340-380px) -->
+<div class="lg:col-span-12 xl:col-span-3 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest rounded-lg shadow-sm p-space-md flex flex-col gap-space-md sticky top-20">
+<!-- Header with action controls -->
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">preview</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Aperçu de la Pièce</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<button class="p-1 hover:bg-surface-container rounded hover:text-on-surface transition-colors" title="Imprimer" type="button">
+<span class="material-symbols-outlined text-base">print</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded hover:text-on-surface transition-colors" title="Télécharger" type="button">
+<span class="material-symbols-outlined text-base">download</span>
+</button>
+<button class="p-1 hover:bg-surface-container rounded hover:text-on-surface transition-colors" title="Plein écran" type="button">
+<span class="material-symbols-outlined text-base">open_in_full</span>
+</button>
+</div>
+</div>
+<!-- PDF Reader Simulation Box -->
+<div class="flex flex-col rounded-lg bg-surface-container-low overflow-hidden shadow-inner">
+<!-- Reader Top Toolbar -->
+<div class="px-space-sm py-1.5 bg-surface-container flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1 font-tabular-mono">
+<span>Page 1 / 14</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm cursor-pointer hover:text-on-surface">zoom_out</span>
+<span class="font-tabular-mono">100%</span>
+<span class="material-symbols-outlined text-sm cursor-pointer hover:text-on-surface">zoom_in</span>
+</div>
+<span class="inline-flex items-center gap-1 text-on-tertiary-container font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span> Certilis
+            </span>
+</div>
+<!-- Document Sheet Simulation -->
+<div class="p-4 bg-surface-container-lowest m-2.5 rounded shadow-sm flex flex-col gap-2 relative overflow-hidden select-none">
+<!-- TunTrust Electronic Stamp Watermark Badge -->
+<div class="absolute right-3 top-3 border border-tertiary-fixed-dim/40 bg-tertiary-fixed/10 p-1.5 rounded text-center flex flex-col items-center">
+<span class="material-symbols-outlined text-on-tertiary-container text-sm">verified</span>
+<span class="font-label-sm text-[9px] leading-tight text-on-tertiary-container font-bold uppercase mt-0.5">Scellement Électronique</span>
+<span class="font-tabular-mono text-[8px] leading-tight text-on-surface-variant">ID: 8842-TUNTRUST</span>
+</div>
+<!-- Authentic Legal Header -->
+<div class="flex flex-col items-center text-center pb-2 border-b border-surface-container">
+<span class="font-label-sm text-[10px] tracking-widest uppercase font-semibold text-on-surface-variant">RÉPUBLIQUE TUNISIENNE</span>
+<span class="font-label-sm text-[11px] font-bold text-on-surface">TRIBUNAL DE PREMIÈRE INSTANCE DE TUNIS</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant">Chambre Commerciale &amp; Contentieux Bancaire</span>
+</div>
+<div class="text-center py-1">
+<span class="font-headline-sm text-[12px] font-bold text-primary tracking-wide uppercase">CONCLUSIONS EN RÉPLIQUE</span>
+<p class="font-label-sm text-[9px] text-on-surface-variant mt-0.5 font-tabular-mono">Affaire N° 2024/4819 - Audience du 14 Nov. 2024</p>
+</div>
+<div class="text-left font-body-sm text-[10px] leading-tight text-on-surface space-y-1 pt-1">
+<p><span class="font-semibold">POUR :</span> Société CARTHAGE LOGISTICS SA, représentée par ses dirigeants légaux, ayant pour conseil Me. Karim Ben Ammar.</p>
+<p><span class="font-semibold">CONTRE :</span> Banque Tuniso-Koweïtienne (BTK), société anonyme.</p>
+<p class="text-on-surface-variant italic pt-1 text-[9px]">
+                "Plaise au Tribunal : La requérante conclut au rejet pur et simple des prétentions adverses formulées dans leur mémoire du 12 Septembre 2024..."
+              </p>
+</div>
+<!-- Signature block with stamp -->
+<div class="pt-2 flex justify-between items-end">
+<div class="flex flex-col text-[8px] font-tabular-mono text-on-surface-variant">
+<span>Horodaté : 24/10/2024 17:42:01</span>
+<span>SHA-256 : 4b9a...7ec3</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-[9px] font-bold text-on-surface block">Me. K. Ben Ammar</span>
+<span class="font-label-sm text-[8px] text-tertiary-fixed-dim uppercase tracking-wider block">Signature Qualifiée</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Document Metadata Details Card -->
+<div class="flex flex-col gap-2.5 pt-1">
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-md font-semibold text-on-surface break-all">Conclusions_en_replique_revisées_BTK_v3.2.pdf</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-tabular-mono mt-0.5">DOC-2024-8942 • 3.4 Mo • Document PDF/A-2b</span>
+</div>
+<div class="grid grid-cols-2 gap-2 p-2.5 rounded-lg bg-surface-container-low text-label-sm font-label-sm">
+<div class="flex flex-col">
+<span class="text-on-surface-variant">Intégrité &amp; Cachet</span>
+<span class="font-medium text-on-surface flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span> TunTrust Certilis
+              </span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant">Affaire liée</span>
+<span class="font-medium text-on-surface truncate mt-0.5">RG 2024/4819 (BTK)</span>
+</div>
+<div class="flex flex-col col-span-2 pt-1">
+<span class="text-on-surface-variant">Droits d'accès &amp; Visibilité</span>
+<span class="font-medium text-on-surface flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-xs text-secondary">shield</span> Confidentiel Associés + Client (Lecture)
+              </span>
+</div>
+</div>
+</div>
+<!-- Version History Tab / Accordion -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-on-surface-variant">Historique des Versions</span>
+<span class="font-label-sm text-label-sm text-secondary hover:underline cursor-pointer">Voir tout</span>
+</div>
+<div class="flex flex-col relative pl-4 border-l-2 border-surface-container space-y-3 py-1">
+<!-- Current version -->
+<div class="relative flex flex-col group">
+<span class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-primary ring-2 ring-surface"></span>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Version 3.2 <span class="ml-1 text-[10px] font-normal px-1 rounded bg-secondary-container/50 text-on-secondary-container">Actuelle</span></span>
+<span class="font-tabular-mono text-label-sm text-on-surface-variant">24 Oct, 17:42</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">Intégration des pièces 14 et 15 suite à sommation</p>
+<span class="font-label-sm text-label-sm text-secondary mt-0.5">Par Me. K. Ben Ammar</span>
+</div>
+<!-- Version 3.1 -->
+<div class="relative flex flex-col group">
+<span class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-surface-variant ring-2 ring-surface"></span>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Version 3.1</span>
+<span class="font-tabular-mono text-label-sm text-on-surface-variant">22 Oct, 11:15</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">Relecture fiscale et ajustement des conclusions subsidiaires</p>
+<span class="font-label-sm text-label-sm text-secondary mt-0.5">Par Me. A. Trabelsi</span>
+</div>
+<!-- Version 2.0 -->
+<div class="relative flex flex-col group">
+<span class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-surface-variant ring-2 ring-surface"></span>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Version 2.0</span>
+<span class="font-tabular-mono text-label-sm text-on-surface-variant">15 Oct, 09:30</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">Première refonte après ordonnance de référé</p>
+<span class="font-label-sm text-label-sm text-secondary mt-0.5">Par Me. K. Ben Ammar</span>
+</div>
+</div>
+</div>
+<!-- Action Bar at Bottom of Panel -->
+<div class="flex flex-col gap-2 pt-2 border-t border-surface-container">
+<button class="w-full h-9 bg-primary text-on-primary rounded-lg font-label-md text-label-md font-semibold hover:bg-secondary transition-all flex items-center justify-center gap-2 shadow-sm" type="button">
+<span class="material-symbols-outlined text-base">edit_document</span>
+<span>Ouvrir l'éditeur / Annoter</span>
+</button>
+<button class="w-full h-9 bg-surface text-on-surface hover:bg-surface-container rounded-lg font-label-md text-label-md font-medium transition-all flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-base text-secondary">history</span>
+<span>Journal des accès &amp; Logs TunTrust</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Micro-interaction handlers for folder navigation and table row focus
+  document.addEventListener('DOMContentLoaded', () => {
+    const tableRows = document.querySelectorAll('tbody tr');
+    tableRows.forEach(row => {
+      row.addEventListener('click', (e) => {
+        // Prevent toggle if clicking checkbox or action buttons directly
+        if (e.target.closest('input') || e.target.closest('button')) return;
+        
+        tableRows.forEach(r => r.classList.remove('bg-secondary-container/20'));
+        row.classList.add('bg-secondary-container/20');
+      });
+    });
+  });
+</script></main></div></body></html>

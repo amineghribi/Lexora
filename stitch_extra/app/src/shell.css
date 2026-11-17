@@ -1,0 +1,251 @@
+/* ===== Coquille d'interface — barre latérale, barre supérieure, widget Objectif =====
+   Trois paliers :
+   - ≥1024 px : rail complet 256 px + colonne de contenu
+   - 768–1023 px : rail d'icônes 76 px
+   - ≤767 px : rail en tiroir (bouton menu), widget Objectif en carte dans le tiroir
+   Les couleurs viennent des jetons de styles.css ; --sb-bg porte le bleu glacé de la maquette. */
+
+:root {
+  --sb-w: 288px;
+  --sb-w-rail: 78px;
+  --tb-h: 62px;
+}
+
+/* ---------- Structure ---------- */
+.sh { display: grid; grid-template-columns: var(--sb-w) minmax(0, 1fr); min-height: 100dvh; background: var(--bg); }
+
+.sh-sb {
+  position: sticky; top: 0; align-self: start; height: 100dvh;
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 14px 12px 12px;
+  background: var(--sb-bg, #e5eff3);
+  border-right: 1px solid var(--line);
+  z-index: 30;
+}
+
+/* ---------- Marque ---------- */
+.sh-brand {
+  display: flex; align-items: center; gap: 10px; width: 100%;
+  border: 0; background: none; padding: 4px 6px; min-height: 46px; border-radius: var(--r-sm);
+  color: var(--fg); font-family: var(--fh); text-align: left;
+}
+.sh-brand:hover { border: 0; background: color-mix(in srgb, var(--card) 55%, transparent); }
+.sh-logo { position: relative; flex: none; width: 34px; height: 34px; border-radius: 10px; background: var(--acc); }
+.sh-logo i { position: absolute; left: 50%; top: 50%; background: #fff; border-radius: 2px; transform: translate(-50%, -50%); }
+.sh-logo i:first-child { width: 16px; height: 4px; }
+.sh-logo i:last-child { width: 4px; height: 16px; }
+.sh-brand-txt { min-width: 0; flex: 1 1 auto; font-size: 15px; font-weight: 700; line-height: 1.15; white-space: nowrap; }
+.sh-brand-txt b { color: var(--acc); }
+.sh-brand-txt small { display: block; font-size: 9px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--acc2); white-space: nowrap; }
+.sh-year { flex: none; margin-left: 6px; font-size: 10.5px; font-weight: 700; padding: 2px 7px; border-radius: 99px; background: var(--acc-soft); color: var(--acc); }
+
+/* ---------- Navigation ---------- */
+.sh-nav { display: flex; flex-direction: column; gap: 2px; margin-top: 12px; overflow-y: auto; overscroll-behavior: contain; flex: 1 1 auto; min-height: 0; scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+.sh-nav::-webkit-scrollbar { width: 6px; }
+.sh-nav::-webkit-scrollbar-thumb { background: var(--line); border-radius: 99px; }
+.sh-nav::-webkit-scrollbar-track { background: transparent; }
+.sh-grp { display: none; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: 10px 10px 6px; }
+
+.sh-item {
+  position: relative; display: flex; align-items: center; gap: 10px; width: 100%;
+  min-height: 40px; padding: 8px 10px; border: 0; border-radius: 9px;
+  background: none; color: #1e293b; font-size: 12px; font-weight: 600; text-align: left;
+  white-space: nowrap;
+  transition: background var(--t), color var(--t);
+}
+.sh-item svg { flex: none; width: 18px; height: 18px; color: var(--acc2); }
+.sh-item > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.sh-item:hover { background: color-mix(in srgb, var(--card) 70%, transparent); border: 0; }
+.sh-item.on { background: var(--acc); color: #fff; }
+.sh-item.on svg { color: #fff; }
+.sh-item .sh-badge { margin-left: auto; font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 99px; background: var(--line2); color: var(--muted); }
+.sh-item.on .sh-badge { background: rgba(255, 255, 255, .2); color: #fff; }
+
+.sh-more {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px; width: 100%;
+  min-height: 38px; margin-top: 8px; padding: 8px 11px; border: 0; border-radius: 9px;
+  background: none; color: var(--muted); font-size: 10.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
+}
+.sh-more:hover { background: color-mix(in srgb, var(--card) 70%, transparent); color: var(--fg); border: 0; }
+.sh-secondary { display: flex; flex-direction: column; gap: 2px; }
+
+/* ---------- Pied de rail : préférences + identité ---------- */
+.sh-foot { margin-top: auto; display: flex; flex-direction: column; gap: 6px; padding: 8px; border-radius: 12px; background: color-mix(in srgb, var(--card) 55%, transparent); border: 1px solid color-mix(in srgb, var(--line) 70%, transparent); }
+.sh-prefs { display: flex; flex-direction: column; gap: 4px; }
+.sh-pref { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 2px 4px; font-size: 11.5px; color: var(--muted); font-weight: 600; }
+.sh-pref-l { display: inline-flex; align-items: center; gap: 6px; }
+.sh-chip { font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 99px; background: var(--card); color: var(--fg); border: 1px solid var(--line); }
+.sh-user { display: flex; align-items: center; gap: 9px; width: 100%; min-height: 44px; padding: 4px 6px; border: 1px solid var(--line); border-radius: 9px; background: var(--card); color: var(--fg); text-align: left; }
+.sh-user .av { flex: none; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--acc); color: #fff; font-weight: 800; font-size: 13px; }
+.sh-user-txt { min-width: 0; }
+.sh-user-txt b { display: block; font-size: 13px; line-height: 1.2; max-width: 130px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sh-user-txt small { display: block; font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ---------- Barre supérieure ---------- */
+.sh-main { min-width: 0; display: flex; flex-direction: column; }
+.sh-tb {
+  position: sticky; top: 0; z-index: 20; height: var(--tb-h);
+  display: flex; align-items: center; gap: 14px; padding: 0 26px;
+  background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.sh-crumbs { display: flex; align-items: center; gap: 7px; min-width: 0; font-size: 12.5px; color: var(--muted); font-weight: 600; }
+.sh-crumbs b { color: var(--fg); font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sh-sep { color: color-mix(in srgb, var(--muted) 60%, transparent); }
+.sh-tb-right { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+
+.sh-status { display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; font-weight: 700; color: var(--acc2); padding: 4px 9px; border-radius: 99px; background: color-mix(in srgb, var(--good) 10%, var(--card)); }
+.sh-status i { width: 7px; height: 7px; border-radius: 50%; background: var(--good); }
+.sh-status.trial { background: var(--warnbg); color: var(--warn); }
+.sh-status.trial i { background: var(--warn); }
+.sh-status.expired { background: var(--badbg); color: var(--bad); }
+.sh-status.expired i { background: var(--bad); }
+
+.sh-goal { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 3px 10px; border: 1px solid var(--line); border-radius: 99px; background: var(--card); color: var(--fg); }
+.sh-goal:hover { border-color: var(--acc); }
+.sh-goal .obj-ring .val b { font-size: 10px; color: var(--acc); }
+.sh-goal-txt { display: flex; flex-direction: column; line-height: 1.15; text-align: left; }
+.sh-goal-txt small { font-size: 9.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+.sh-goal-txt b { font-size: 12.5px; font-variant-numeric: tabular-nums; }
+
+.sh-jchip { font-size: 12px; font-weight: 800; padding: 5px 10px; border-radius: 99px; background: var(--acc-soft); color: var(--acc); font-variant-numeric: tabular-nums; }
+.sh-icon-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; width: 38px; padding: 0; border: 1px solid var(--line); border-radius: 10px; background: var(--card); color: var(--muted); }
+.sh-icon-btn:hover { border-color: var(--acc); color: var(--acc); }
+.sh-icon-btn svg { width: 18px; height: 18px; }
+.sh-menu-btn { display: none; }
+.sh-avatar { flex: none; display: grid; place-items: center; width: 36px; height: 36px; border: 0; border-radius: 50%; background: var(--acc); color: #fff; font-weight: 800; font-size: 13px; padding: 0; }
+.sh-avatar:hover { filter: brightness(1.1); }
+
+.sh-content { min-width: 0; }
+.sh-content .wrap { max-width: 1120px; padding-bottom: 36px; }
+
+/* ---------- Widget Objectif (carte) ---------- */
+.obj { border: 1px solid var(--line); border-radius: var(--r); background: var(--card); padding: 12px; display: flex; flex-direction: column; gap: 10px; text-align: left; width: 100%; color: var(--fg); }
+.obj-h { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.obj-h span { font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+.obj-h button { min-height: 28px; padding: 2px 8px; font-size: 11.5px; border: 0; background: none; color: var(--acc2); font-weight: 700; }
+.obj-h button:hover { background: var(--acc-soft); border: 0; }
+.obj-body { display: flex; align-items: center; gap: 12px; }
+.obj-ring { position: relative; flex: none; display: grid; place-items: center; }
+.obj-ring .val { position: absolute; text-align: center; line-height: 1; }
+.obj-ring .val b { display: block; font-family: var(--fh); font-size: 21px; font-weight: 800; color: var(--acc); font-variant-numeric: tabular-nums; }
+.obj-ring .val small { display: block; font-size: 9.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-top: 2px; }
+.obj-meta { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.obj-meta b { font-size: 13.5px; line-height: 1.25; }
+.obj-meta span { font-size: 12px; color: var(--muted); }
+.obj-goal { display: flex; flex-direction: column; gap: 5px; }
+.obj-goal .lb { display: flex; justify-content: space-between; gap: 8px; font-size: 11.5px; color: var(--muted); font-weight: 600; font-variant-numeric: tabular-nums; }
+.obj-bar { height: 6px; border-radius: 99px; background: var(--line2); overflow: hidden; }
+.obj-bar i { display: block; height: 100%; border-radius: 99px; background: var(--acc); transition: width .3s ease; }
+.obj-bar.late i { background: var(--warn); }
+.obj-foot { display: flex; align-items: center; gap: 6px; font-size: 11.5px; font-weight: 600; color: var(--good); }
+.obj-foot.late { color: var(--warn); }
+.obj.flat { box-shadow: none; }
+.obj-note { font-size: 11px; color: var(--muted); line-height: 1.35; }
+
+/* Couleurs des indicateurs de l'écran Progression */
+.num.t-good { color: var(--good); }
+.num.t-bad { color: var(--bad); }
+
+/* ---------- Tiroir mobile ---------- */
+.sh-scrim { position: fixed; inset: 0; z-index: 40; background: rgba(6, 22, 27, .42); opacity: 0; pointer-events: none; transition: opacity var(--t); }
+.sh-scrim.open { opacity: 1; pointer-events: auto; }
+.sh-drawer {
+  position: fixed; inset: 0 auto 0 0; z-index: 41; width: min(88vw, 330px);
+  background: var(--sb-bg, #e5eff3); border-right: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: 6px; padding: 14px 12px;
+  transform: translateX(-102%); transition: transform .22s cubic-bezier(.2,.7,.2,1);
+  overflow-y: auto; overscroll-behavior: contain;
+}
+.sh-drawer.open { transform: none; }
+.sh-drawer .sh-nav { flex: 0 0 auto; overflow: visible; }
+.sh-drawer .sh-foot { margin-top: 12px; }
+.sh-drawer .obj { margin: 2px 0 6px; }
+
+/* ---------- Palier rail (768–1023) ---------- */
+@media (max-width: 1023px) {
+  .sh { grid-template-columns: var(--sb-w-rail) minmax(0, 1fr); }
+  .sh-sb { padding: 12px 10px; align-items: center; }
+  .sh-sb .sh-brand { justify-content: center; padding: 4px 0; }
+  .sh-sb .sh-brand-txt, .sh-sb .sh-year { display: none; }
+  .sh-sb .sh-item { justify-content: center; padding: 10px; }
+  .sh-sb .sh-item > span,
+  .sh-sb .sh-item .sh-badge,
+  .sh-sb .sh-grp,
+  .sh-sb .sh-more,
+  .sh-sb .sh-secondary,
+  .sh-sb .sh-prefs { display: none; }
+  .sh-sb .sh-foot { border-top: 0; }
+  .sh-sb .sh-user { justify-content: center; padding: 6px; border: 0; background: none; }
+  .sh-sb .sh-user-txt { display: none; }
+  .sh-tb { padding: 0 16px; gap: 10px; }
+  .sh-status { display: none; }
+}
+
+/* ---------- Palier mobile (≤767) ---------- */
+@media (max-width: 767px) {
+  .sh { display: block; }
+  .sh-sb { display: none; }
+  .sh-tb { padding: 0 10px; gap: 8px; height: 58px; }
+  .sh-menu-btn { display: inline-flex; }
+  .sh-crumbs span:first-child, .sh-sep { display: none; }
+  .sh-crumbs { font-size: 14px; }
+  .sh-goal { padding: 3px 7px; gap: 6px; }
+  .sh-goal-txt small { display: none; }
+  .sh-goal-txt b { font-size: 11.5px; }
+  .sh-search { display: none; }
+  .sh-jchip { padding: 4px 8px; font-size: 11px; }
+  .sh-content .wrap { padding: 12px 12px 96px; }
+}
+
+/* Quiz : barre supérieure mince, rail conservé */
+.sh.focus .sh-tb { height: 52px; }
+@media (max-width: 1023px) { .sh.focus { grid-template-columns: var(--sb-w-rail) minmax(0, 1fr); } }
+@media (max-width: 767px) { .sh.focus { display: block; } .sh.focus .sh-tb { height: 54px; } }
+
+@media print {
+  .sh { display: block; }
+  .sh-sb, .sh-tb, .sh-drawer, .sh-scrim { display: none !important; }
+}
+
+/* ---------- Cadre de section (commun à tous les écrans) ----------
+   Chaque page commence par le même en-tête : titre, sous-titre borné en largeur, filet de
+   séparation, puis le contenu. Les écrans qui utilisaient déjà `.page-h` en héritent sans
+   modification ; ceux qui ont besoin d'actions passent par <PageHead>. */
+.page-h {
+  display: flex; flex-direction: column; gap: 6px;
+  margin: 6px 0 18px; padding: 0 0 14px; border-bottom: 1px solid var(--line);
+}
+.page-h h1 { margin: 0; font-size: clamp(23px, 3.1vw, 30px); letter-spacing: -.02em; line-height: 1.15; }
+.page-h p { margin: 0; max-width: 68ch; font-size: 15px; line-height: 1.5; }
+.page-h p.small { font-size: 13px; }
+.page-h .ph-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.page-h .ph-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.page-h .ph-actions button { min-height: 38px; padding: 6px 14px; font-size: 14px; }
+@media (max-width: 640px) {
+  .page-h { margin-bottom: 14px; padding-bottom: 12px; }
+  .page-h h1 { font-size: 22px; }
+  .page-h p { font-size: 14px; }
+}
+
+/* Le bandeau d'accueil n'est plus un h1 : le titre de page vit dans <PageHead>. */
+.hero .hero-title { color: #fff; margin: 0 0 10px; font-family: var(--fh); font-size: clamp(23px, 4.2vw, 33px); line-height: 1.14; letter-spacing: -.02em; }
+
+/* ---------- État vide ---------- */
+.empty { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; padding: 28px 18px; background: var(--card); border: 1px solid var(--line); border-radius: var(--r); }
+.empty-ico { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--acc-soft); color: var(--acc); margin-bottom: 2px; }
+.empty b { font-size: 15.5px; }
+.empty p { margin: 0; max-width: 46ch; font-size: 13px; }
+.empty-actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
+.empty-actions button { min-height: 38px; font-size: 13px; }
+
+/* ---------- Petites largeurs : titres de carte et graphiques ---------- */
+@media (max-width: 640px) {
+  .sh-content .bar { flex-wrap: wrap; row-gap: 2px; }
+  .sh-content .bar strong { flex: 1 1 100%; }
+  .pg-src { display: none; }
+}
+
+/* contraste AA : ces deux libellés passent de --acc2 (4,28–4,41:1) à --acc, même palette */
+.sh-brand-txt > small { color: var(--acc); }
+.sh-status { color: var(--acc); }

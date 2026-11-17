@@ -1,0 +1,25 @@
+/* 5.1 — Banque des patients (enseignant, lecture) */
+.tb { display: flex; flex-direction: column; gap: 14px; }
+.tb-eyebrow { display: block; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--acc2); margin-bottom: 5px; }
+.tb-head h1 { margin: 0 0 4px; font-size: clamp(22px, 2.8vw, 28px); letter-spacing: -.02em; }
+.tb-head p { margin: 0; }
+.tb-err { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 14px; display: flex; flex-direction: column; gap: 4px; }
+.tb-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.tb-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.tb-tabs button { min-height: 32px; padding: 5px 11px; border-radius: 99px; border: 1px solid var(--line); background: var(--card); color: var(--muted); font-size: 12.5px; font-weight: 600; }
+.tb-tabs button.on { background: var(--acc); border-color: var(--acc); color: #fff; }
+.tb-search { display: flex; align-items: center; gap: 7px; border: 1px solid var(--line); border-radius: var(--r-sm); padding: 0 10px; height: 34px; color: var(--muted); background: var(--card); }
+.tb-search input { border: 0; outline: none; background: none; height: 100%; width: 230px; font: inherit; font-size: 12.5px; color: var(--fg); }
+.tb-empty { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 22px; text-align: center; display: flex; flex-direction: column; gap: 6px; }
+.tb-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.tb-list li { background: var(--card); border: 1px solid var(--line); border-left: 3px solid var(--line); border-radius: var(--r); padding: 12px 14px; display: flex; flex-direction: column; gap: 5px; }
+.tb-list li:has(.tb-st.published) { border-left-color: var(--good); }
+.tb-row { display: grid; grid-template-columns: 92px minmax(0, 1fr) auto; align-items: baseline; gap: 10px; }
+.tb-row b { font-size: 14px; }
+.tb-st { font-size: 10px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; border-radius: 99px; padding: 2px 9px; justify-self: start; color: var(--muted); background: var(--bg); border: 1px solid var(--line); }
+.tb-st.published { color: var(--acc); background: var(--acc-soft); border-color: color-mix(in srgb, var(--acc) 25%, var(--line)); }
+.tb-date { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tb-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 11px; color: var(--muted); }
+.tb-note { margin: 0; font-size: 11.5px; color: var(--muted); background: var(--bg); border: 1px solid var(--line); border-radius: var(--r-sm); padding: 9px 11px; }
+
+.tb-acts { display: flex; gap: 12px; }

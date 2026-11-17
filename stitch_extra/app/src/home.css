@@ -1,0 +1,145 @@
+/* ===== Accueil — tableau de bord =====
+   Reprend la maquette : en-tête d'accueil, rangée de 4 indicateurs, bandeau de tendance,
+   trois sections numérotées (Quotidien / Entraînement / Ressources), pied « conseil du jour ».
+   Les couleurs viennent des jetons de styles.css ; aucune couleur en dur hors du module. */
+
+.dash { display: flex; flex-direction: column; gap: 14px; }
+
+/* ---------- En-tête ---------- */
+.dash-hero { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-top: 2px; }
+.dash-hero-txt { min-width: 0; flex: 1 1 auto; }
+.dash-eyebrow { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--acc2); }
+.dash-hero h1 { margin: 4px 0 2px; font-size: clamp(23px, 3.2vw, 28px); letter-spacing: -.02em; line-height: 1.12; }
+.dash-hero p { margin: 0; font-size: 15px; color: var(--muted); }
+.dash-hero p b { color: var(--fg); font-variant-numeric: tabular-nums; }
+.dash-actions { display: flex; gap: 8px; flex-wrap: wrap; flex: none; }
+.dash-actions .soft { background: var(--acc-soft); border-color: transparent; color: var(--acc); font-weight: 600; }
+.dash-actions .primary { display: inline-flex; align-items: center; gap: 8px; }
+.dash-actions button { min-height: 42px; padding: 8px 16px; font-size: 14px; }
+
+/* ---------- Indicateurs ---------- */
+.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, 1.15fr); gap: 10px; align-items: stretch; }
+.kpi { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 12px; display: flex; flex-direction: column; gap: 6px; justify-content: space-between; height: 100%; }
+.kpi header { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.kpi header > span:first-child { font-size: 12.5px; font-weight: 600; color: var(--muted); }
+.kpi-ico { flex: none; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--acc-soft); color: var(--acc); }
+.kpi-ico.warm { background: var(--warnbg); color: var(--warn); }
+.kpi-val { font-family: var(--fh); font-size: 24px; font-weight: 800; line-height: 1; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.kpi-val small { font-size: 13px; font-weight: 600; color: var(--muted); margin-left: 3px; letter-spacing: 0; }
+.kpi > .kpi-sub, .kpi > .kpi-bar { margin-top: auto; min-height: 12px; }
+.kpi-sub { display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; color: var(--good); font-weight: 600; margin-top: auto; }
+.kpi-sub.down { color: var(--bad); }
+.kpi-sub .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--line); display: inline-block; }
+.kpi-sub .dot.on { background: var(--good); }
+.kpi-bar { display: block; height: 6px; border-radius: 99px; background: var(--line2); overflow: hidden; margin-top: auto; }
+.kpi-bar i { display: block; height: 100%; border-radius: 99px; background: var(--acc); transition: width .3s ease; }
+
+/* ---------- Tendance ---------- */
+.trend { margin: 0; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.trend .bar strong { font-size: 12.5px; }
+.trend-bars { display: flex; align-items: flex-end; gap: 5px; height: 62px; margin-top: auto; }
+.trend-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; height: 100%; }
+.trend-track { flex: 1; width: 100%; max-width: 46px; background: var(--line2); border-radius: 6px; display: flex; align-items: flex-end; overflow: hidden; }
+.trend-track i { display: block; width: 100%; min-height: 2px; background: color-mix(in srgb, var(--acc) 45%, var(--card)); border-radius: 6px 6px 0 0; transition: height .3s ease; }
+.trend-track i.max { background: var(--acc); }
+.trend-col span { font-size: 11px; color: var(--muted); font-weight: 600; }
+
+/* ---------- En-têtes de section ---------- */
+.sec-head { display: flex; align-items: center; gap: 10px; margin-top: 4px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+.sec-num { font-family: var(--fh); font-size: 12px; font-weight: 800; color: var(--acc); background: var(--acc-soft); border-radius: 8px; padding: 5px 8px; line-height: 1; letter-spacing: .04em; }
+.sec-head h2 { margin: 0; font-size: 18px; letter-spacing: -.01em; }
+.sec-kicker { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); }
+.sec-right { margin-left: auto; align-self: center; text-align: right; }
+
+/* ---------- Grilles de cartes ---------- */
+.cols3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; align-items: stretch; }
+.cols-arc { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 10px; align-items: stretch; }
+.dc { margin: 0; display: flex; flex-direction: column; gap: 6px; padding: 13px; }
+@media (min-width: 861px) { .dc { min-height: 196px; } }
+.dc header { display: flex; align-items: center; justify-content: space-between; gap: 8px; color: var(--acc); }
+.dc h3 { margin: 0; font-size: 16.5px; }
+.dc p { margin: 0; }
+.dc .wide { width: 100%; margin-top: auto; min-height: 40px; font-size: 14px; }
+.dc .soft { background: var(--acc-soft); border-color: transparent; color: var(--acc); font-weight: 600; }
+.dc-prog { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; color: var(--muted); font-weight: 600; margin-top: 2px; }
+.dc-prog b { color: var(--fg); font-variant-numeric: tabular-nums; }
+.dc-meta { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--acc); font-weight: 600; }
+.dc-callout { background: var(--acc-soft); border-radius: var(--r-sm); padding: 8px 10px; display: flex; flex-direction: column; gap: 2px; }
+.dc-callout b { font-size: 13px; }
+.dc-callout span { font-size: 11.5px; color: var(--muted); }
+.chips-row { display: flex; gap: 5px; flex-wrap: wrap; }
+.chips-row .chip { font-size: 11px; padding: 2px 8px; }
+
+.pill { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 99px; background: var(--line2); color: var(--muted); }
+.pill.info { background: var(--acc-soft); color: var(--acc); }
+.pill.warn { background: var(--badbg); color: var(--bad); }
+.pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); }
+.pill .dot.on { background: var(--good); }
+
+/* ---------- Lignes par spécialité ---------- */
+.sp-rows { list-style: none; margin: 2px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.sp-rows li { display: flex; flex-direction: column; gap: 4px; }
+.sp-rows li > span { display: flex; align-items: center; gap: 8px; }
+.sp-rows b { font-size: 12.5px; }
+.sp-rows i { display: block; height: 6px; flex: 1; border-radius: 99px; background: var(--acc); }
+.sp-rows li > span::after { content: ""; flex: 1; }
+.sp-rows small { font-size: 11.5px; color: var(--muted); font-weight: 600; }
+
+/* ---------- Carte ARC (fond sombre) ---------- */
+.arc-card { margin: 0; background: linear-gradient(135deg, var(--acc), color-mix(in srgb, var(--acc) 78%, #04222b)); color: #fff; border-color: transparent; display: flex; flex-direction: column; gap: 10px; }
+.arc-card header { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.arc-ico { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; background: rgba(255, 255, 255, .14); color: #fff; }
+.pill.on-dark { background: rgba(255, 255, 255, .16); color: #fff; }
+.pill.ghost-dark { background: transparent; color: rgba(255, 255, 255, .72); border: 1px solid rgba(255, 255, 255, .28); }
+.arc-card h3 { margin: 0; font-size: 19px; color: #fff; }
+.arc-card p { margin: 0; color: rgba(255, 255, 255, .84); font-size: 14px; max-width: 62ch; }
+.arc-strip { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; background: rgba(255, 255, 255, .1); border-radius: var(--r-sm); padding: 8px 12px; font-size: 12.5px; color: rgba(255, 255, 255, .9); }
+.arc-strip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--good); }
+.arc-strip .arc-level { margin-left: auto; font-weight: 700; color: #fff; }
+.arc-actions { display: flex; align-items: center; gap: 8px; flex-wrap: nowrap; margin-top: auto; }
+.arc-actions .primary { flex: 1 1 auto; min-width: 0; }
+.arc-actions .ghost-dark { flex: 0 0 auto; }
+.arc-actions .primary { background: #fff; color: var(--acc); border-color: #fff; font-weight: 700; }
+.arc-actions .ghost-dark { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .45); }
+
+/* ---------- Pied ---------- */
+.dash-foot { display: flex; align-items: center; gap: 12px; background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 12px 14px; }
+.foot-ico { flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; background: var(--acc); color: #fff; font-family: var(--fh); font-size: 22px; line-height: 1; }
+.dash-foot b { font-size: 13.5px; }
+.dash-foot p { margin: 2px 0 0; }
+.dash-foot .link { margin-left: auto; white-space: nowrap; }
+
+/* ---------- Pied : citation ---------- */
+.dash-foot.quote { align-items: center; }
+.dash-foot.quote .foot-ico { width: 32px; height: 32px; border-radius: 8px; font-size: 20px; }
+.quote-body { flex: 1 1 auto; min-width: 0; }
+.quote-text { margin: 0; font-family: var(--fh); font-size: 14px; line-height: 1.5; font-style: italic; color: var(--fg); }
+.quote-auth { display: block; margin-top: 4px; font-size: 11.5px; color: var(--muted); }
+.dash-foot.quote .link { align-self: center; white-space: nowrap; }
+
+/* ---------- Paliers ---------- */
+@media (max-width: 980px) {
+  .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .trend { grid-column: 1 / -1; }
+  .trend-bars { height: 90px; }
+  .cols-arc { grid-template-columns: 1fr 1fr; }
+  .arc-card { grid-column: 1 / -1; }
+}
+@media (max-width: 860px) {
+  .cols3 { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .dash-hero { flex-direction: column; align-items: stretch; gap: 10px; }
+  .dash-hero-txt { flex: 1 1 auto; }
+  .dash-actions { width: 100%; }
+  .dash-actions button { flex: 1 1 auto; }
+  .kpis { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .kpi { padding: 12px; }
+  .kpi-val { font-size: 22px; }
+  .cols-arc { grid-template-columns: 1fr; }
+  .sec-head { flex-wrap: wrap; }
+  .sec-right { margin-left: 0; width: 100%; text-align: left; }
+  .dash-foot { flex-wrap: wrap; }
+  .dash-foot .link { margin-left: 0; }
+  .trend-bars { gap: 6px; height: 96px; }
+}

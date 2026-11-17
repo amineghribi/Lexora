@@ -1,0 +1,38 @@
+/* ===== QCM en cours de réponse ===== */
+.qc { display: flex; flex-direction: column; gap: 10px; }
+.qc-bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.qc-count { font-size: 14px; font-weight: 600; color: var(--muted); }
+.qc-count b { color: var(--fg); font-family: var(--fh); font-size: 16px; }
+.qc-timer { font-family: var(--fh); font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--acc); background: var(--acc-soft); padding: 4px 10px; border-radius: 99px; }
+.qc-timer.low { color: var(--bad); background: var(--badbg); }
+.qc-score { font-size: 13px; color: var(--muted); margin-left: auto; }
+.qc-score b { color: var(--fg); }
+.qc-quit { min-height: 34px; font-size: 13px; padding: 4px 10px; }
+.qc-progress { height: 6px; border-radius: 99px; background: var(--line2); overflow: hidden; }
+.qc-progress i { display: block; height: 100%; background: var(--acc); border-radius: 99px; transition: width .25s ease; }
+.qc-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 18px; }
+.qc-case { background: var(--warnbg); border-left: 4px solid var(--warn); border-radius: var(--r-sm); padding: 10px 12px; margin-bottom: 12px; font-family: "Source Serif 4", Georgia, serif; font-size: 14.5px; line-height: 1.55; }
+.qc-q { margin: 0 0 14px; font-size: clamp(17px, 2.3vw, 20px); line-height: 1.4; }
+.qc-opts { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.qc-opt { width: 100%; display: flex; align-items: flex-start; gap: 10px; min-height: 48px; padding: 8px 10px; border: 1px solid var(--line); border-radius: var(--r-sm); background: var(--card); color: var(--fg); font-size: 14.5px; line-height: 1.45; text-align: left; }
+.qc-opt:hover:not(:disabled) { border-color: var(--acc); }
+.qc-opt .L { flex: none; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 4px; border: 1.5px solid var(--line); font-weight: 800; font-size: 12px; color: var(--muted); }
+.qc-opt .T { flex: 1; min-width: 0; }
+.qc-opt.on { border-color: var(--acc); background: var(--acc-soft); }
+.qc-opt.on .L { background: var(--acc); border-color: var(--acc); color: #fff; }
+.qc-opt.good { border-color: var(--good); background: var(--goodbg); }
+.qc-opt.good .L { background: var(--good); border-color: var(--good); color: #fff; }
+.qc-opt.bad { border-color: var(--bad); background: var(--badbg); }
+.qc-opt.bad .L { background: var(--bad); border-color: var(--bad); color: #fff; }
+.qc-opt .mk { flex: none; font-weight: 800; font-size: 13px; }
+.qc-opt.good .mk { color: var(--good); }
+.qc-opt.bad .mk { color: var(--bad); }
+.qc-fb { margin-top: 14px; border-radius: var(--r-sm); padding: 10px 12px; display: flex; gap: 10px; align-items: baseline; font-size: 13.5px; }
+.qc-fb.ok { background: var(--goodbg); }
+.qc-fb.ko { background: var(--badbg); }
+.qc-fb b { font-size: 14px; }
+.qc-fb.ok b { color: var(--good); }
+.qc-fb.ko b { color: var(--bad); }
+.qc-actions { position: sticky; bottom: 12px; }
+.qc-actions button { width: 100%; min-height: 48px; font-size: 15px; }
+@media (max-width: 560px) { .qc-card { padding: 14px; } .qc-q { font-size: 16.5px; } }

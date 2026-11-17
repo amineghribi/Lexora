@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-primary-container": "#7c839b",
+          "tertiary-container": "#271900",
+          "error": "#ba1a1a",
+          "surface-container-high": "#dce9ff",
+          "on-primary-fixed-variant": "#3f465c",
+          "surface-tint": "#565e74",
+          "inverse-on-surface": "#eaf1ff",
+          "surface-bright": "#f8f9ff",
+          "on-background": "#0b1c30",
+          "on-tertiary-fixed": "#271900",
+          "on-tertiary-fixed-variant": "#5c4209",
+          "outline": "#76777d",
+          "surface-container-low": "#eff4ff",
+          "primary-fixed-dim": "#bec6e0",
+          "on-tertiary": "#ffffff",
+          "secondary-fixed-dim": "#b9c7df",
+          "tertiary-fixed": "#ffdea8",
+          "on-error": "#ffffff",
+          "error-container": "#ffdad6",
+          "primary": "#000000",
+          "inverse-surface": "#213145",
+          "on-secondary": "#ffffff",
+          "on-secondary-fixed-variant": "#3a485b",
+          "primary-container": "#131b2e",
+          "surface": "#f8f9ff",
+          "on-surface": "#0b1c30",
+          "secondary-container": "#d5e3fc",
+          "on-surface-variant": "#45464d",
+          "surface-container": "#e5eeff",
+          "surface-variant": "#d3e4fe",
+          "on-primary": "#ffffff",
+          "surface-container-lowest": "#ffffff",
+          "background": "#f8f9ff",
+          "on-tertiary-container": "#a07f42",
+          "on-secondary-container": "#57657a",
+          "surface-dim": "#cbdbf5",
+          "primary-fixed": "#dae2fd",
+          "on-error-container": "#93000a",
+          "inverse-primary": "#bec6e0",
+          "tertiary-fixed-dim": "#e8c17d",
+          "secondary-fixed": "#d5e3fc",
+          "on-primary-fixed": "#131b2e",
+          "tertiary": "#000000",
+          "outline-variant": "#c6c6cd",
+          "surface-container-highest": "#d3e4fe",
+          "secondary": "#515f74",
+          "on-secondary-fixed": "#0d1c2e"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xl": "1.5rem",
+          "gutter-lg": "1.5rem",
+          "space-md": "0.75rem",
+          "margin-md": "1.5rem",
+          "space-sm": "0.5rem",
+          "margin": "1rem",
+          "space-lg": "1rem",
+          "margin-lg": "2rem",
+          "gutter": "1rem",
+          "space-xs": "0.25rem"
+        },
+        "fontFamily": {
+          "headline-lg": [
+            "Inter"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "headline-xl": [
+            "Inter"
+          ],
+          "tabular-mono": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "headline-lg": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "label-sm": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-xl": [
+            "30px",
+            {
+              "lineHeight": "38px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "tabular-mono": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "500"
+            }
+          ],
+          "body-sm": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "letterSpacing": "-0.005em",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-primary-container text-surface flex flex-col z-50 select-none"><div class="p-space-lg"><div class="flex items-center gap-space-sm"><img alt="Lexora Legal Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrA40fADVzl1mFS8xWbOEs6D5_wA91qhS1x8cmcmi0g-BpFzZoMxwG0RAYKYQvxIPGQnSNiSPcKT9i2W_6tz1LUCX6pxjtA84DLIpVeCE5BLZU7taK1uAqaH7JE2EyMx9eg_IaPO7WuLuliaMQCNqSmrFDKN7v4G0pTZ1_9yu2arK6nBvwozFJ5HXN0sh3FpF5Z56t0n7zOYUqWXQxOSi1EvAHZB2szpgJX0Ecp69jLlcg"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-surface tracking-tight leading-none">Lexora</span><span class="font-label-sm text-label-sm text-primary-fixed-dim tracking-wider uppercase leading-tight mt-space-xs">Legal Practice Suite</span></div></div><div class="mt-space-lg p-space-sm bg-surface-container-high/10 rounded-lg flex items-center justify-between cursor-pointer hover:bg-surface-container-high/20 transition-colors"><div class="flex flex-col min-w-0 pr-space-xs"><span class="font-label-sm text-label-sm text-on-tertiary-container uppercase tracking-wider font-semibold">Cabinet Titulaire</span><span class="font-body-sm text-body-sm text-surface font-medium truncate">Cabinet Me. K. Ben Ammar &amp; Associés</span></div><span class="material-symbols-outlined text-primary-fixed-dim text-lg shrink-0">unfold_more</span></div></div><nav class="flex-1 px-space-md py-space-xs overflow-y-auto space-y-space-xs" data-active-classes="bg-surface-container-lowest text-primary font-semibold shadow-[0_1px_8px_rgba(0,0,0,0.04)] rounded-lg"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-xl shrink-0">dashboard</span><span class="truncate">Tableau de bord</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="clients" href="#"><span class="material-symbols-outlined text-xl shrink-0">people</span><span class="truncate">Clients</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="cases" href="#"><span class="material-symbols-outlined text-xl shrink-0">gavel</span><span class="truncate">Affaires &amp; Dossiers</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="calendar" href="#"><span class="material-symbols-outlined text-xl shrink-0">calendar_month</span><span class="truncate">Audiences &amp; Délais</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="tasks" href="#"><span class="material-symbols-outlined text-xl shrink-0">check_box</span><span class="truncate">Tâches &amp; Actes</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="documents" href="#"><span class="material-symbols-outlined text-xl shrink-0">folder_open</span><span class="truncate">Documents &amp; Pièces</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="payments" href="#"><span class="material-symbols-outlined text-xl shrink-0">payments</span><span class="truncate">Honoraires &amp; Règlements</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="reports" href="#"><span class="material-symbols-outlined text-xl shrink-0">bar_chart</span><span class="truncate">Rapports &amp; Statistiques</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="team" href="#"><span class="material-symbols-outlined text-xl shrink-0">badge</span><span class="truncate">Collaborateurs</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-primary-fixed-dim font-body-md text-body-md hover:bg-surface-container-high/10 hover:text-surface transition-all" data-path="settings" href="#"><span class="material-symbols-outlined text-xl shrink-0">settings</span><span class="truncate">Paramètres</span></a></nav><div class="p-space-lg bg-primary-container/80 space-y-space-md"><div class="bg-surface-container-high/10 p-space-sm rounded-lg space-y-space-xs"><div class="flex justify-between items-center text-primary-fixed-dim font-label-sm text-label-sm"><span>Cloud Sécurisé</span><span class="font-tabular-mono text-tabular-mono text-surface font-semibold">64%</span></div><div class="w-full h-1.5 bg-surface-container-high/20 rounded-full overflow-hidden"><div class="h-full bg-secondary-fixed w-[64%] rounded-full"></div></div><p class="font-label-sm text-label-sm text-primary-fixed-dim">32 GB / 50 GB utilisés</p></div><div class="flex items-center justify-between pt-space-xs font-label-sm text-label-sm text-primary-fixed-dim"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span><span class="truncate">Serveur Tunisie • En ligne</span></div><a class="text-primary-fixed-dim hover:text-surface transition-colors flex items-center" href="#"><span class="material-symbols-outlined text-base">help</span></a></div></div></aside><div class="pl-64 flex flex-col min-h-screen bg-background"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-gutter-lg flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><span class="font-medium">Cabinet</span><span class="material-symbols-outlined text-base">chevron_right</span><span class="font-semibold text-on-surface">Tableau de bord</span></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-xs bg-secondary-container/50 text-on-secondary-container rounded-lg font-label-sm text-label-sm font-medium"><span class="material-symbols-outlined text-sm">account_balance</span><span>Tribunal de 1ère Instance de Tunis</span><span class="material-symbols-outlined text-sm">arrow_drop_down</span></div></div><div class="flex-1 max-w-xl mx-auto"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-space-md text-on-surface-variant text-lg pointer-events-none">search</span><input class="w-full h-10 pl-10 pr-16 bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm rounded-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)] focus:outline-none focus:bg-surface" placeholder="Rechercher un dossier, client, audience..." type="text"/><kbd class="absolute right-space-md px-1.5 py-0.5 bg-surface-container font-label-sm text-label-sm text-on-surface-variant rounded font-mono">⌘K</kbd></div></div><div class="flex items-center gap-space-md shrink-0"><button class="flex items-center gap-space-xs px-space-md h-9 bg-primary text-on-primary rounded-lg font-label-md text-label-md font-semibold hover:bg-secondary transition-all shadow-[0_1px_8px_rgba(0,0,0,0.04)]" type="button"><span class="material-symbols-outlined text-base">add</span><span>Nouveau Dossier</span><span class="material-symbols-outlined text-sm">arrow_drop_down</span></button><div class="flex items-center gap-space-xs"><button class="relative p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" title="Audiences urgentes" type="button"><span class="material-symbols-outlined text-xl">event_upcoming</span><span class="absolute top-1 right-1 flex items-center justify-center min-w-[18px] h-[18px] px-1 bg-error text-on-error rounded-full font-label-sm text-label-sm font-bold leading-none">3</span></button><button class="relative p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" title="Notifications" type="button"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1 right-1 flex items-center justify-center min-w-[18px] h-[18px] px-1 bg-secondary text-on-secondary rounded-full font-label-sm text-label-sm font-bold leading-none">5</span></button><button class="px-space-sm py-1 font-label-sm text-label-sm font-semibold text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" type="button">FR | عربي</button></div><div class="flex items-center gap-space-sm pl-space-sm"><div class="relative shrink-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMOanJW9zWHCNgIcyMycsVa43Fgj45jo8L-ETtD-WrgAA0LBPLd_R5C1IIOe7vTnsFvBLZAVWAazF3kibT0bUzBwExNFLSPow5Ap6P3qbZsNU5DSbe3JoE6q3Xk94rneTWtfbtqYdyvQ-lOUVl5WdPre9pIzvhtwZiWcf002zQwDVlwID6bQTLaa4Miv5ECWlp2RxnEy2UMZxR17JKmsNpwuO-96LtiN8oXY6M1LX0"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary-fixed ring-2 ring-surface"></span></div><div class="hidden 2xl:flex flex-col text-left"><span class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Me. Karim Ben Ammar</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight truncate">Avocat à la Cour de Cassation</span></div><span class="material-symbols-outlined text-on-surface-variant text-lg hidden 2xl:block">arrow_drop_down</span></div></div></header><main class="relative pt-16 bg-background flex-1 w-full px-gutter-lg py-space-xl"><div class="flex flex-col w-full">
+<!-- Top Utility Context Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md mb-space-lg">
+<!-- Breadcrumb & Badges -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<nav class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<a class="hover:text-on-surface transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-base">corporate_fare</span>
+          Cabinet
+        </a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<a class="hover:text-on-surface transition-colors" href="#">Clients</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="font-tabular-mono text-tabular-mono font-semibold text-on-surface">CLI-2024-0042</span>
+</nav>
+<div class="hidden sm:block h-3.5 w-[1px] bg-outline-variant/60 mx-1"></div>
+<!-- Verified Status Badges -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-high/60 text-on-surface font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          Mandataire Actif
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs text-on-tertiary-container">verified</span>
+          Conv. Honoraires (2024-2026)
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs text-on-tertiary-container">shield</span>
+          CARPA Vérifiée
+        </span>
+</div>
+</div>
+<!-- Right Header Actions -->
+<div class="flex items-center gap-space-xs shrink-0 self-start lg:self-auto">
+<button class="h-9 px-space-md rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-high/40 font-label-md text-label-md font-medium transition-colors shadow-sm flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-base text-on-surface-variant">edit</span>
+<span>Modifier la fiche</span>
+</button>
+<div class="relative group">
+<button class="h-9 w-9 flex items-center justify-center rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-high/40 transition-colors shadow-sm" title="Options supplémentaires" type="button">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+<button class="h-9 px-space-lg rounded-lg bg-primary-container text-surface hover:bg-primary-container/90 font-label-md text-label-md font-semibold transition-all shadow-sm flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-base">add</span>
+<span>Nouvelle Affaire</span>
+</button>
+</div>
+</div>
+<!-- Hero Client Entity Profile Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm mb-space-lg relative overflow-hidden">
+<!-- Ambient subtle motif watermark -->
+<div class="absolute -right-12 -bottom-12 w-64 h-64 bg-surface-container-high/30 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-lg relative z-10">
+<!-- Entity Identity -->
+<div class="flex flex-col sm:flex-row sm:items-center gap-space-md">
+<!-- Prestige Monogram -->
+<div class="relative shrink-0">
+<div class="w-16 h-16 rounded-xl bg-primary-container text-surface flex items-center justify-center shadow-md">
+<span class="font-headline-lg text-headline-lg tracking-tight font-bold">CL</span>
+</div>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="w-3.5 h-3.5 rounded-full bg-on-tertiary-container flex items-center justify-center text-[9px] text-surface font-bold">★</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex flex-wrap items-center gap-space-sm mb-0.5">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">Sté Carthage Logistics SA</h1>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">Grand Compte</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="font-tabular-mono text-tabular-mono text-on-surface font-medium">Réf: CLI-2024-0042</span>
+<span>•</span>
+<span>SA au capital de 2.500.000 TND</span>
+<span>•</span>
+<span>RNE: B14892012018</span>
+<span>•</span>
+<span class="text-on-secondary-container">Zone Portuaire de Radès</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs mt-2.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">domain</span>
+              Personne Morale
+            </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">balance</span>
+              TPI Tunis &amp; Cour d'Appel
+            </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">history_edu</span>
+              Contentieux Maritime &amp; Douane
+            </span>
+</div>
+</div>
+</div>
+<!-- Quick Contact Direct Strip -->
+<div class="flex flex-wrap items-center gap-2 pt-2 xl:pt-0">
+<a class="h-9 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-body-sm text-body-sm flex items-center gap-2 transition-colors" href="tel:+21671860120">
+<span class="material-symbols-outlined text-sm text-on-surface-variant">phone</span>
+<span class="font-tabular-mono text-tabular-mono">+216 71 860 120</span>
+</a>
+<a class="h-9 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-body-sm text-body-sm flex items-center gap-2 transition-colors" href="mailto:direction.juridique@carthage-logistics.tn">
+<span class="material-symbols-outlined text-sm text-on-surface-variant">mail</span>
+<span class="truncate max-w-[210px]">direction.juridique@carthage-logistics.tn</span>
+</a>
+<div class="h-9 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-on-tertiary-container">person</span>
+<span class="font-medium text-xs">M. Sofiene Ben Salem <span class="text-on-surface-variant font-normal">(PDG)</span></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Client Navigation Tabs -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-space-sm mb-space-lg no-scrollbar">
+<button class="h-9 px-space-md rounded-lg bg-primary-container text-surface font-label-md text-label-md font-semibold shrink-0 shadow-sm flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-base">dashboard_customize</span>
+<span>Vue d'ensemble</span>
+</button>
+<button class="h-9 px-space-md rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/40 font-label-md text-label-md font-medium shrink-0 transition-colors shadow-sm flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-base">gavel</span>
+<span>Affaires &amp; Dossiers</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface-variant font-tabular-mono text-xs">5</span>
+</button>
+<button class="h-9 px-space-md rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/40 font-label-md text-label-md font-medium shrink-0 transition-colors shadow-sm flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-base">folder_open</span>
+<span>Documents &amp; Pièces</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant font-tabular-mono text-xs">28</span>
+</button>
+<button class="h-9 px-space-md rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/40 font-label-md text-label-md font-medium shrink-0 transition-colors shadow-sm flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-base">account_balance_wallet</span>
+<span>Règlements &amp; CARPA</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-tertiary-container font-tabular-mono text-xs">142.4k TND</span>
+</button>
+<button class="h-9 px-space-md rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/40 font-label-md text-label-md font-medium shrink-0 transition-colors shadow-sm flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-base">history</span>
+<span>Historique &amp; Audit</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant font-tabular-mono text-xs">47</span>
+</button>
+</div>
+<!-- Key Metrics Row (4 Bento Stats) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-xl">
+<!-- Stat 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Affaires Actives</span>
+<span class="material-symbols-outlined text-lg text-primary-container">gavel</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface font-semibold tracking-tight">05</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">dossiers en juridiction</span>
+</div>
+<div class="mt-2 pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm bg-surface-container-low/50 px-2 py-1 rounded">
+<span>3 en cours de plaidoirie</span>
+<span class="font-tabular-mono font-medium text-on-tertiary-container">2 en délibéré</span>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Audiences à Venir</span>
+<span class="material-symbols-outlined text-lg text-secondary">event</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface font-semibold tracking-tight">02</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">fixées sous 15 jours</span>
+</div>
+<div class="mt-2 pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm bg-surface-container-low/50 px-2 py-1 rounded">
+<span class="truncate">Prochaine: 28 Oct 2024</span>
+<span class="font-medium text-on-surface shrink-0">TPI Tunis</span>
+</div>
+</div>
+<!-- Stat 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Encours Financier</span>
+<span class="material-symbols-outlined text-lg text-on-tertiary-container">payments</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface font-semibold tracking-tight">18.400 <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">TND</span></span>
+</div>
+<div class="mt-2 pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm bg-surface-container-low/50 px-2 py-1 rounded">
+<span>Facturé 2024: 64.2k TND</span>
+<span class="font-tabular-mono font-medium text-on-surface">Solde sain</span>
+</div>
+</div>
+<!-- Stat 4: Success Rate with Micro SVG -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Taux d'Issue Favorable</span>
+<span class="material-symbols-outlined text-lg text-on-tertiary-container">verified</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-xl text-headline-xl text-on-surface font-semibold tracking-tight">92%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">taux de succès</span>
+</div>
+<!-- Micro Inline SVG Gauge -->
+<svg class="w-9 h-9 -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="92, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+</div>
+<div class="mt-2 pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm bg-surface-container-low/50 px-2 py-1 rounded">
+<span>11 victoires</span>
+<span>1 transaction amiable</span>
+</div>
+</div>
+</div>
+<!-- Core Two-Column Asymmetric Workspace -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT MAIN COLUMN: Dossiers, Audiences, Pièces (68% width -> lg:col-span-8) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- SECTION 1: Active Cases / Dossiers Contentieux -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="p-space-md sm:p-space-lg flex items-center justify-between bg-surface-container-low/30">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-lg text-primary-container">folder_shared</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Affaires &amp; Contentieux en Cours</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-secondary-container font-label-sm text-label-sm font-semibold">5 actives</span>
+</div>
+<a class="font-label-md text-label-md text-on-tertiary-container hover:underline flex items-center gap-0.5 font-semibold" href="#">
+            Voir le registre complet
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Cases List Table / Cards -->
+<div class="divide-y divide-surface-container-low">
+<!-- Case Item 1 -->
+<div class="p-space-md sm:p-space-lg hover:bg-surface-bright transition-colors group">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-tabular-mono text-tabular-mono px-2 py-0.5 rounded bg-surface-container text-on-surface font-bold text-xs">
+                  N° 2024/4819
+                </span>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-medium">
+                  Contentieux Bancaire &amp; Recouvrement
+                </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                  En Plaidoirie (Audience: 28 Oct)
+                </span>
+</div>
+<span class="font-tabular-mono text-tabular-mono font-semibold text-on-surface text-sm sm:text-right shrink-0">
+                420.000 TND <span class="font-label-sm text-on-surface-variant font-normal">en jeu</span>
+</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1 group-hover:text-primary transition-colors">
+              Sté Carthage Logistics SA c/ Banque Tuniso-Koweïtienne (BTK Bank)
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm line-clamp-2">
+              Action en mainlevée de saisie conservatoire abusive sur comptes d'affrètement maritime et demande reconventionnelle en dommages-intérêts pour préjudice d'exploitation portuaire.
+            </p>
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">account_balance</span>
+                  TPI Tunis • 3ème Ch. Commerciale
+                </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">badge</span>
+                  Plaidant: <strong class="text-on-surface font-medium">Me. Karim Ben Ammar</strong>
+</span>
+</div>
+<a class="px-3 py-1 rounded bg-surface-container hover:bg-primary-container hover:text-surface text-on-surface font-label-sm text-label-sm font-semibold transition-colors flex items-center gap-1 shrink-0" href="#">
+<span>Ouvrir l'affaire</span>
+<span class="material-symbols-outlined text-xs">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Case Item 2 -->
+<div class="p-space-md sm:p-space-lg hover:bg-surface-bright transition-colors group">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-tabular-mono text-tabular-mono px-2 py-0.5 rounded bg-surface-container text-on-surface font-bold text-xs">
+                  N° 2023/1105
+                </span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-secondary-container font-label-sm text-label-sm font-medium">
+                  Droit Douanier &amp; Transit
+                </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-fixed-variant"></span>
+                  En Délibéré (ADD notifié)
+                </span>
+</div>
+<span class="font-tabular-mono text-tabular-mono font-semibold text-on-surface text-sm sm:text-right shrink-0">
+                185.200 TND
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1 group-hover:text-primary transition-colors">
+              Sté Carthage Logistics c/ Direction Générale des Douanes &amp; OMMP Radès
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+              Recours en annulation de redressement de taxes portuaires sous le régime de l'entrepôt franc sous douane. Rapport d'expertise judiciaire concluant en faveur du client déposé le 12 Octobre.
+            </p>
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">account_balance</span>
+                  Cour d'Appel de Tunis • Ch. Fiscale
+                </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">badge</span>
+                  Collaboratrice: <strong class="text-on-surface font-medium">Me. Amira Trabelsi</strong>
+</span>
+</div>
+<a class="px-3 py-1 rounded bg-surface-container hover:bg-primary-container hover:text-surface text-on-surface font-label-sm text-label-sm font-semibold transition-colors flex items-center gap-1 shrink-0" href="#">
+<span>Ouvrir l'affaire</span>
+<span class="material-symbols-outlined text-xs">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Case Item 3 -->
+<div class="p-space-md sm:p-space-lg hover:bg-surface-bright transition-colors group">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-tabular-mono text-tabular-mono px-2 py-0.5 rounded bg-surface-container text-on-surface font-bold text-xs">
+                  N° 2024/0912
+                </span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-secondary-container font-label-sm text-label-sm font-medium">
+                  Sinistre Maritime &amp; Assurance Fret
+                </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Échange de Mémoires (J-6)
+                </span>
+</div>
+<span class="font-tabular-mono text-tabular-mono font-semibold text-on-surface text-sm sm:text-right shrink-0">
+                88.000 EUR
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1 group-hover:text-primary transition-colors">
+              Carthage Logistics SA c/ Compagnie d'Assurances STAR (Fret International)
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+              Mise en cause de la police d'assurance corps &amp; cargaisons suite à avarie majeure survenue lors du transbordement conteneurisé du navire MV Tanit Trader.
+            </p>
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">account_balance</span>
+                  TPI Ben Arous • Ch. Commerciale
+                </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">badge</span>
+                  Référent: <strong class="text-on-surface font-medium">Me. Karim Ben Ammar</strong>
+</span>
+</div>
+<a class="px-3 py-1 rounded bg-surface-container hover:bg-primary-container hover:text-surface text-on-surface font-label-sm text-label-sm font-semibold transition-colors flex items-center gap-1 shrink-0" href="#">
+<span>Ouvrir l'affaire</span>
+<span class="material-symbols-outlined text-xs">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 2: Procedural Agenda & Court Hearings -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md sm:p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-lg text-primary-container">calendar_clock</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Prochaines Échéances Judiciaires &amp; Audiences</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Heure locale Tunis (GMT+1)</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Hearing Card 1 -->
+<div class="rounded-xl p-space-md bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded bg-primary-container text-surface font-tabular-mono text-tabular-mono text-xs font-semibold">
+                  28 OCT 2024 • 09:30
+                </span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+                  Plaidoirie Fond
+                </span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">
+                Tribunal de 1ère Instance de Tunis
+              </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">
+                Salle d'audience 4 • Affaire c/ BTK Bank (Réf. 2024/4819). Remise de la farde de plaidoirie par Me. Ben Ammar.
+              </p>
+</div>
+<div class="pt-2 flex items-center justify-between font-label-sm text-label-sm text-on-secondary-container">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-on-tertiary-container">check_circle</span>
+                Dossier de plaidoirie prêt &amp; côté
+              </span>
+<span class="font-tabular-mono font-medium">J - 4</span>
+</div>
+</div>
+<!-- Hearing Card 2 -->
+<div class="rounded-xl p-space-md bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-tabular-mono text-tabular-mono text-xs font-semibold">
+                  04 NOV 2024 • 11:00
+                </span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+                  Prononcé Arrêt
+                </span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">
+                Cour d'Appel de Tunis
+              </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">
+                Chambre Douanière • Délibéré final après dépôt du rapport de l'expert assermenté Radhouane Sassi.
+              </p>
+</div>
+<div class="pt-2 flex items-center justify-between font-label-sm text-label-sm text-on-secondary-container">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">schedule</span>
+                Notification greffe attendue
+              </span>
+<span class="font-tabular-mono font-medium">J - 11</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 3: Recent Documents & Judicial Deeds -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md sm:p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-lg text-primary-container">file_present</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Pièces Récentes du Dossier Client</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-secondary-container font-label-sm text-label-sm font-semibold">28 actes certifiés</span>
+</div>
+<button class="h-8 px-3 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high/60 font-label-sm text-label-sm font-semibold transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">upload_file</span>
+<span>Verser une pièce</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<!-- Doc 1 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between group">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center shrink-0 shadow-sm text-error">
+<span class="material-symbols-outlined text-xl">picture_as_pdf</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate group-hover:text-primary">
+                  Conclusions en réplique révisées - Affaire BTK.pdf
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span>Signé TunTrust e-ID</span>
+<span>•</span>
+<span>Hier, 17:42</span>
+</span>
+</div>
+</div>
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface transition-colors" title="Télécharger" type="button">
+<span class="material-symbols-outlined text-lg">download</span>
+</button>
+</div>
+<!-- Doc 2 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between group">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center shrink-0 shadow-sm text-error">
+<span class="material-symbols-outlined text-xl">description</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate group-hover:text-primary">
+                  PV de constat d'huissier (Port de Radès).pdf
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span>Me. Cherif (Huissier)</span>
+<span>•</span>
+<span>19 Oct</span>
+</span>
+</div>
+</div>
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface transition-colors" title="Télécharger" type="button">
+<span class="material-symbols-outlined text-lg">download</span>
+</button>
+</div>
+<!-- Doc 3 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between group">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center shrink-0 shadow-sm text-on-tertiary-container">
+<span class="material-symbols-outlined text-xl">handshake</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate group-hover:text-primary">
+                  Convention d'honoraires &amp; forfait annuel 2024.pdf
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span>Validé CARPA &amp; Bâtonnat</span>
+<span>•</span>
+<span>14 Jan</span>
+</span>
+</div>
+</div>
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface transition-colors" title="Télécharger" type="button">
+<span class="material-symbols-outlined text-lg">download</span>
+</button>
+</div>
+<!-- Doc 4 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between group">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center shrink-0 shadow-sm text-secondary">
+<span class="material-symbols-outlined text-xl">verified_user</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate group-hover:text-primary">
+                  Extrait RNE &amp; Statuts mis à jour 2024.pdf
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span>Conforme RNE Tunisie</span>
+<span>•</span>
+<span>02 Fév</span>
+</span>
+</div>
+</div>
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface transition-colors" title="Télécharger" type="button">
+<span class="material-symbols-outlined text-lg">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT SIDEBAR COLUMN: Juridical Sheet, Lawyer Confidential Notes & Feed (32% width -> lg:col-span-4) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- CARD 1: Legal Registration & Entity Fact Sheet -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md sm:p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm border-b-0">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg text-primary-container">apartment</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Identité &amp; Registres Juridiques</h3>
+</div>
+<span class="material-symbols-outlined text-sm text-on-tertiary-container" title="Données vérifiées Registre National des Entreprises">verified</span>
+</div>
+<div class="space-y-space-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Raison Sociale</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Société Carthage Logistics SA</span>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Matricule Fiscal</span>
+<span class="font-tabular-mono text-tabular-mono font-medium text-on-surface text-xs">1489201/A/M/000</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Registre (RNE)</span>
+<span class="font-tabular-mono text-tabular-mono font-medium text-on-surface text-xs">B14892012018</span>
+</div>
+</div>
+<div class="flex flex-col pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Siège Social &amp; Dépôt</span>
+<span class="font-body-sm text-body-sm text-on-surface">
+              Terminal Conteneurs, Zone Portuaire de Radès, 2040 Ben Arous, Tunisie
+            </span>
+</div>
+<!-- Key Contact Person: Représentant Légal -->
+<div class="mt-space-md p-space-sm rounded-lg bg-surface-container-low space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-secondary-container font-semibold">
+                Représentant Légal (PDG)
+              </span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-label-sm text-label-sm text-on-surface font-mono">CIN: 04891240</span>
+</div>
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-xs shrink-0">
+                SB
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">M. Sofiene Ben Salem</span>
+<span class="font-tabular-mono text-tabular-mono text-on-surface-variant text-xs">+216 98 440 112 (Ligne Directe)</span>
+</div>
+</div>
+</div>
+<!-- Directeur Juridique Interne -->
+<div class="p-space-sm rounded-lg bg-surface-container-low space-y-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-secondary-container font-semibold">
+              Correspondant Juridique Cabinet
+            </span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Me. Hichem Dridi</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Directeur des Affaires Juridiques &amp; Assurances</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-tabular-mono text-xs">h.dridi@carthage-logistics.tn</span>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 2: Strict Professional Secrecy Notes -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md sm:p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-lg text-on-tertiary-container">lock</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Notes Internes du Cabinet</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-medium">
+            Confidentiel
+          </span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm leading-relaxed mb-space-md">
+          « Client stratégique du cabinet depuis 2020. Traitement prioritaire ordonné par Me. Ben Ammar. Vigilance particulière sur les délais douaniers de Radès (délai de recours d'ordre public de 30 jours calendaires). Prochaine réunion de stratégie contentieuse fixée au vendredi 27 Octobre à 15h00 au cabinet. »
+        </div>
+<div class="flex flex-col gap-2 pt-1 font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center justify-between">
+<span>Avocat associé référent:</span>
+<span class="font-semibold text-on-surface">Me. Karim Ben Ammar</span>
+</div>
+<div class="flex items-center justify-between">
+<span>Collaboratrice en charge:</span>
+<span class="font-semibold text-on-surface">Me. Amira Trabelsi</span>
+</div>
+<div class="flex items-center justify-between">
+<span>Convention tarifaire:</span>
+<span class="font-tabular-mono font-medium text-on-surface">Forfait trimestriel + 8% success fee</span>
+</div>
+</div>
+</div>
+<!-- CARD 3: Procedural Timeline & Activity Log -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md sm:p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg text-primary-container">timeline</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Journal d'Activité Récent</h3>
+</div>
+<a class="font-label-sm text-label-sm text-on-tertiary-container hover:underline font-semibold" href="#">Audit complet</a>
+</div>
+<!-- Hairline Vertical Timeline -->
+<div class="relative pl-5 space-y-space-md before:content-[''] before:absolute before:left-2 before:top-2 before:bottom-2 before:w-[2px] before:bg-surface-container-high">
+<!-- Timeline Node 1 -->
+<div class="relative">
+<div class="absolute -left-5 top-1 w-2.5 h-2.5 rounded-full bg-primary-container ring-4 ring-surface-container-lowest"></div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Conclusions d'appel déposées</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Dépôt physique au greffe de la Cour d'Appel par Me. Amira Trabelsi (Affaire Douane).
+              </p>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-tabular-mono mt-0.5">Il y a 3 heures</span>
+</div>
+</div>
+<!-- Timeline Node 2 -->
+<div class="relative">
+<div class="absolute -left-5 top-1 w-2.5 h-2.5 rounded-full bg-on-tertiary-container ring-4 ring-surface-container-lowest"></div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Provision CARPA créditée</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Virement bancaire de provision reçu: <strong class="font-tabular-mono text-on-surface">8.500 TND</strong> avec attestation.
+              </p>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-tabular-mono mt-0.5">Hier, 16:30</span>
+</div>
+</div>
+<!-- Timeline Node 3 -->
+<div class="relative">
+<div class="absolute -left-5 top-1 w-2.5 h-2.5 rounded-full bg-secondary ring-4 ring-surface-container-lowest"></div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Avis d'audience réceptionné</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Notification officielle du TPI Tunis pour la 3ème Chambre Commerciale.
+              </p>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-tabular-mono mt-0.5">22 Octobre</span>
+</div>
+</div>
+<!-- Timeline Node 4 -->
+<div class="relative">
+<div class="absolute -left-5 top-1 w-2.5 h-2.5 rounded-full bg-surface-container-highest ring-4 ring-surface-container-lowest"></div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Conférence téléphonique client</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Entretien de 25 min avec le PDG Sofiene Ben Salem sur la stratégie d'exécution de la saisie.
+              </p>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-tabular-mono mt-0.5">21 Octobre</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

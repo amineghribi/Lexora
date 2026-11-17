@@ -1,0 +1,31 @@
+/* ===== Créer ma série (maquette « créer ma série ») ===== */
+.tc { display: flex; flex-direction: column; gap: 14px; padding-bottom: 76px; }
+.tc-top { display: flex; align-items: center; gap: 10px; }
+.tc-crumb { font-size: 12.5px; color: var(--muted); font-weight: 600; }
+.tc-eyebrow { display: block; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--acc2); margin-bottom: 6px; }
+.tc-head h1 { margin: 0 0 4px; font-size: clamp(23px, 3vw, 30px); letter-spacing: -.02em; }
+.tc-head p { margin: 0; font-size: 14px; }
+.tc-block { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.tc-block-h { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.tc-block-h h2 { margin: 0; font-size: 16px; }
+.tc-val { font-family: var(--fh); font-size: 18px; color: var(--acc); }
+.tc-specs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); gap: 8px; }
+.tc-specs button { width: 100%; display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 12px; border: 1px solid var(--line); border-radius: var(--r-sm); background: var(--card); color: var(--fg); font-size: 13.5px; font-weight: 600; text-align: left; }
+.tc-specs button:hover { border-color: var(--acc); }
+.tc-specs button.on { border-color: var(--acc); background: var(--acc-soft); color: var(--acc); }
+.tc-specs .nm { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tc-specs .ct { font-size: 11.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tc-specs .ck { color: var(--acc); font-weight: 800; }
+.tc-seg { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.tc-seg button { min-height: 38px; padding: 6px 14px; border-radius: var(--r-sm); border: 1px solid var(--line); background: var(--card); color: var(--muted); font-size: 13px; font-weight: 600; }
+.tc-seg button.on { background: var(--acc); border-color: var(--acc); color: #fff; }
+.tc-custom { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--muted); }
+.tc-custom input { width: 70px; height: 34px; padding: 0 8px; border: 1px solid var(--line); border-radius: var(--r-sm); font: inherit; font-size: 13px; }
+.tc-types { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 8px; }
+.tc-types button { width: 100%; min-height: 64px; padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--r-sm); background: var(--card); text-align: left; display: flex; flex-direction: column; gap: 2px; }
+.tc-types button.on { border-color: var(--acc); background: var(--acc-soft); }
+.tc-types b { font-size: 13.5px; }
+.tc-types span { font-size: 11.5px; color: var(--muted); }
+.tc-launch { position: sticky; bottom: 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; background: var(--card); border: 1px solid var(--acc); border-radius: var(--r); padding: 12px 16px; box-shadow: 0 8px 28px rgba(11,110,132,.18); }
+.tc-sum { font-size: 13px; color: var(--muted); }
+.tc-sum b { color: var(--fg); }

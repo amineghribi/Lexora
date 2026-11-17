@@ -1,0 +1,797 @@
+[
+  {
+    "A": "Est fugace",
+    "B": "Est de siège rétrosternal ou précordial",
+    "C": "Diminue en position penchée en avant",
+    "D": "Diminue en inspiration profonde",
+    "E": "Est transfixiante",
+    "rightAnswers": [
+      1,
+      2
+    ],
+    "title": "La douleur thoracique secondaire à une péricardite aiguë :"
+  },
+  {
+    "A": "Diminue en inspiration profonde",
+    "B": "Est transfixiante",
+    "C": "Survient à l’effort",
+    "D": "Est rapidement sensible à la trinitrine",
+    "E": "Est d’allure angineuse",
+    "rightAnswers": [
+      4
+    ],
+    "title": "La douleur thoracique secondaire à une péricardite aiguë :"
+  },
+  {
+    "A": "Est superficiel mésocardique",
+    "B": "Irradie vers l’aisselle",
+    "C": "Est fugace",
+    "D": "Est doux humé et aspiratif",
+    "E": "Est râpeux",
+    "rightAnswers": [
+      0,
+      2,
+      4
+    ],
+    "title": "Le frottement péricardique :"
+  },
+  {
+    "A": "Est râpeux",
+    "B": "Persiste en apnée",
+    "C": "Semble le crissement de cuir neuf",
+    "D": "Est ausculté en cas de péricardite de grande abondance",
+    "E": "Est un souffle systolique mésocardiaque",
+    "rightAnswers": [
+      0,
+      1,
+      2
+    ],
+    "title": "Le frottement péricardique :"
+  },
+  {
+    "A": "Néoplasique",
+    "B": "Virale",
+    "C": "Purulente",
+    "D": "Urémique",
+    "E": "Tuberculeuse",
+    "rightAnswers": [
+      1
+    ],
+    "title": "L’étiologie la plus fréquente des péricardites aiguës est :"
+  },
+  {
+    "A": "Un sus-décalage de ST en inférieur",
+    "B": "Un sous décalage du segment ST",
+    "C": "Un sus-décalage de PQ",
+    "D": "Des troubles de la repolarisation diffus",
+    "E": "Un bloc de branche",
+    "rightAnswers": [
+      3
+    ],
+    "title": "Le(s) signe(s) électrique(s) évocateur(s) d’une péricardite aiguë sont :"
+  },
+  {
+    "A": "Un bloc de branche",
+    "B": "Un BAV",
+    "C": "Un microvoltage",
+    "D": "Un allongement de PR",
+    "E": "Une onde Q",
+    "rightAnswers": [
+      2
+    ],
+    "title": "Le(s) signe(s) électrique(s) évocateur(s) d’une péricardite aiguë sont :"
+  },
+  {
+    "A": "La douleur est souvent prolongée de siège précordial ou rétrosternal",
+    "B": "Le frottement péricardique est fugace",
+    "C": "Son traitement est basé sur la corticothérapie",
+    "D": "Le diagnostic est éliminé en cas d’absence d’épanchement péricardique à l’échographie",
+    "E": "Évolue souvent vers la constriction",
+    "rightAnswers": [
+      0,
+      1
+    ],
+    "title": "Concernant la péricardite aiguë bénigne :"
+  },
+  {
+    "A": "Un sous décalage de PQ",
+    "B": "Un bloc de branche gauche",
+    "C": "Un microvoltage diffus",
+    "D": "Une alternance électrique",
+    "E": "Une HVG diastolique",
+    "rightAnswers": [
+      2,
+      3
+    ],
+    "title": "Les deux signes électriques évocateurs d’une tamponnade sont :"
+  },
+  {
+    "A": "Des œdèmes des membres inférieurs",
+    "B": "Des râles crépitants à l’auscultation pulmonaire",
+    "C": "Un reflux hépato-jugulaire",
+    "D": "Un pouls paradoxal de Kussmaul",
+    "E": "Un frottement péricardique",
+    "rightAnswers": [
+      2,
+      3
+    ],
+    "title": "Les signes cliniques en faveur d’une tamponnade sont :"
+  },
+  {
+    "A": "Un reflux hépato-jugulaire",
+    "B": "Un pouls paradoxal de Kussmaul",
+    "C": "Un frottement péricardique",
+    "D": "Une hépatomégalie douloureuse",
+    "E": "Une pression artérielle à 170/90 mmHg",
+    "rightAnswers": [
+      0,
+      1,
+      3
+    ],
+    "title": "Les signes cliniques en faveur d’une tamponnade sont :"
+  },
+  {
+    "A": "Un remplissage",
+    "B": "Des dérivés nitrés au pousse seringue électrique pour diminuer la précharge",
+    "C": "Des diurétiques pour forcer la diurèse et diminuer ainsi l’épanchement",
+    "D": "Des drogues vasoactives",
+    "E": "Un drainage péricardique dans les 24 heures",
+    "rightAnswers": [
+      0,
+      3
+    ],
+    "title": "La prise en charge d’une tamponnade comporte :"
+  },
+  {
+    "A": "Onde T négative",
+    "B": "Un sus-décalage de ST",
+    "C": "Une onde Q de nécrose",
+    "D": "Une ACFA",
+    "E": "Une déviation axiale droite",
+    "rightAnswers": [
+      0,
+      1,
+      3
+    ],
+    "title": "Les signes électriques suivants peuvent être rencontrés au cours d’une péricardite aiguë :"
+  },
+  {
+    "A": "Est transfixiante",
+    "B": "Varie avec les mouvements respiratoires",
+    "C": "Peut être associée à une douleur des membres inférieurs",
+    "D": "Irradie vers la pointe du cœur",
+    "E": "Est de durée brève",
+    "rightAnswers": [
+      0,
+      2
+    ],
+    "title": "La douleur thoracique d’une dissection aortique :"
+  },
+  {
+    "A": "Peut être associée à une douleur des membres inférieurs",
+    "B": "Irradie vers la pointe du cœur",
+    "C": "Est de durée brève",
+    "D": "Est sensible à la trinitrine",
+    "E": "Est associée à un souffle systolique au foyer aortique en cas d’extension de la dissection vers les sigmoïdes aortiques",
+    "rightAnswers": [
+      0
+    ],
+    "title": "La douleur thoracique d’une dissection aortique :"
+  },
+  {
+    "A": "Un élargissement des espaces intercostaux",
+    "B": "Une cardiomégalie",
+    "C": "Une scissurite",
+    "D": "Un élargissement médiastinal",
+    "E": "Un épanchement pleural",
+    "rightAnswers": [
+      3
+    ],
+    "title": "Le signe radiologique évocateur d’une dissection aortique est :"
+  },
+  {
+    "A": "Une radiographie de thorax",
+    "B": "Un électrocardiogramme",
+    "C": "Un angioscanner aortique",
+    "D": "Une échographie cardiaque trans-oesophagienne",
+    "E": "Un scanner thoracique",
+    "rightAnswers": [
+      2,
+      3
+    ],
+    "title": "Les examens qui peuvent confirmer une dissection aortique sont :"
+  },
+  {
+    "A": "Un angioscanner aortique",
+    "B": "Une échographie cardiaque trans-oesophagienne",
+    "C": "Un scanner thoracique",
+    "D": "Une échographie cardiaque trans-thoracique",
+    "E": "Une angio-IRM aortique",
+    "rightAnswers": [
+      0,
+      1,
+      3,
+      4
+    ],
+    "title": "Les examens qui peuvent confirmer une dissection aortique sont :"
+  },
+  {
+    "A": "Un souffle systolique récent au foyer mitral",
+    "B": "Un souffle diastolique récent au foyer aortique",
+    "C": "Une anisosphygmie",
+    "D": "Une anisotension",
+    "E": "Des râles crépitants",
+    "rightAnswers": [
+      1,
+      2,
+      3
+    ],
+    "title": "Les signes cliniques en faveur d'une dissection aortique sont :"
+  },
+  {
+    "A": "Une anisosphygmie",
+    "B": "Une anisotension",
+    "C": "Des râles crépitants",
+    "D": "Un bruit de Galop",
+    "E": "Une PA à 220/110 mmHg",
+    "rightAnswers": [
+      0,
+      1,
+      4
+    ],
+    "title": "Les signes cliniques en faveur d'une dissection aortique sont :"
+  },
+  {
+    "A": "Une insuffisance mitrale",
+    "B": "Une endocardite infectieuse",
+    "C": "Une tamponnade",
+    "D": "Un EDC",
+    "E": "Une ischémie aiguë du membre inférieur",
+    "rightAnswers": [
+      2,
+      3,
+      4
+    ],
+    "title": "Sont des complications possibles de la dissection aortique :"
+  },
+  {
+    "A": "Une tamponnade",
+    "B": "Un EDC",
+    "C": "Une ischémie aiguë du membre inférieur",
+    "D": "Un AVC",
+    "E": "IDM",
+    "rightAnswers": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "title": "Sont des complications possibles de la dissection aortique :"
+  },
+  {
+    "A": "Une HVG",
+    "B": "Une bicuspidie aortique",
+    "C": "Un gradient systolique VG - Aorte",
+    "D": "Un flap intimal",
+    "E": "Une insuffisance aortique",
+    "rightAnswers": [
+      3
+    ],
+    "title": "Le signe échographique caractéristique de la dissection aortique est :"
+  },
+  {
+    "A": "Est réalisé sans injection de produit de contraste",
+    "B": "Est indiqué en deuxième intention après l'ETO",
+    "C": "Montre le faux chenal et les portes d'entrée et sortie",
+    "D": "Montre l'extension de la dissection",
+    "E": "Doit couvrir au moins l'aorte thoracique",
+    "rightAnswers": [
+      2,
+      3
+    ],
+    "title": "Au cours d'une dissection aortique, l'angioscanner aortique :"
+  },
+  {
+    "A": "Un traitement anticoagulant pour prévenir les complications ischémiques",
+    "B": "Un traitement antiagrégant pour prévenir une dissection coronaire",
+    "C": "Un traitement antihypertenseur par voie orale en cas de chiffres tensionnels élevés",
+    "D": "Une chirurgie dans les 24 heures",
+    "E": "Une hospitalisation en milieu de réanimation",
+    "rightAnswers": [
+      4
+    ],
+    "title": "La prise en charge d'une dissection aortique type A comporte :"
+  },
+  {
+    "A": "Maladie de Marfan",
+    "B": "Une cardiomyopathie dilatée",
+    "C": "Une HTA mal équilibrée",
+    "D": "Une HVG",
+    "E": "Un anévrisme de l'aorte ascendante",
+    "rightAnswers": [
+      0,
+      2,
+      4
+    ],
+    "title": "Parmi ces circonstances, lesquelles sont à risque de dissection aortique ?"
+  },
+  {
+    "A": "Il est moins fréquent que le pneumothorax secondaire",
+    "B": "Survient chez le sujet jeune longiligne",
+    "C": "Est plus fréquent avec les sujets de sexe féminin",
+    "D": "La rupture de blebs en constitue le principal mécanisme",
+    "E": "Il est souvent mal toléré",
+    "rightAnswers": [
+      1,
+      3
+    ],
+    "title": "Concernant le pneumothorax idiopathique :"
+  },
+  {
+    "A": "Il survient souvent sur un poumon pathologique",
+    "B": "Son diagnostic est facile",
+    "C": "Est secondaire à une rupture de bulle d'emphysème",
+    "D": "Il récidive moins fréquemment que le pneumothorax idiopathique",
+    "E": "Est souvent bien toléré",
+    "rightAnswers": [
+      0,
+      2
+    ],
+    "title": "Concernant le pneumothorax secondaire :"
+  },
+  {
+    "A": "La plongée sous marine",
+    "B": "Le port de charge lourde",
+    "C": "Le sniff",
+    "D": "L'insuffisance cardiaque",
+    "E": "L'infarctus pulmonaire",
+    "rightAnswers": [
+      0,
+      1,
+      2
+    ],
+    "title": "Les circonstances pouvant favoriser l'apparition d'un pneumothorax sont :"
+  },
+  {
+    "A": "Un spasme coronaire",
+    "B": "Une endocardite infectieuse",
+    "C": "Une embolie pulmonaire",
+    "D": "Une dissection de l'aorte",
+    "E": "Un pneumothorax",
+    "rightAnswers": [
+      0,
+      4
+    ],
+    "title": "La survenue d'une douleur thoracique aiguë chez un toxicomane à la cocaïne doit faire évoquer en premier lieu :"
+  },
+  {
+    "A": "Sa survenue à l'effort",
+    "B": "Sa survenue nocturne",
+    "C": "Son siège rétrosternal",
+    "D": "Sa sensibilité à la trinitrine",
+    "E": "Sa rythmicité avec les repas",
+    "rightAnswers": [
+      2,
+      3
+    ],
+    "title": "La douleur thoracique liée au spasme œsophagien peut simuler le tableau d'une angine de poitrine, par la (les) caractéristique(s) suivante(s) :"
+  },
+  {
+    "A": "Elle est de type brûlure",
+    "B": "Elle survient à l'effort",
+    "C": "Elle est reproductible à la palpation",
+    "D": "Elle est calmée par les repas",
+    "E": "Elle est positionnelle",
+    "rightAnswers": [
+      0,
+      1
+    ],
+    "title": "Une douleur thoracique angineuse est suspectée devant les signes suivants :"
+  },
+  {
+    "A": "Elle survient à l'effort",
+    "B": "Elle est reproductible à la palpation",
+    "C": "Elle est calmée par les repas",
+    "D": "Elle est positionnelle",
+    "E": "Elle est variable avec les mouvements respiratoires",
+    "rightAnswers": [
+      0
+    ],
+    "title": "Une douleur thoracique angineuse est suspectée devant les signes suivants :"
+  },
+  {
+    "A": "Une péricardite aiguë",
+    "B": "Un syndrome coronarien aigu",
+    "C": "Une pleurésie",
+    "D": "Une dissection de l'aorte",
+    "E": "Une embolie pulmonaire",
+    "rightAnswers": [
+      0,
+      2
+    ],
+    "title": "La douleur thoracique est rythmée avec les mouvements respiratoires dans les situations suivantes :"
+  },
+  {
+    "A": "Une embolie pulmonaire",
+    "B": "Un syndrome coronarien aigu",
+    "C": "Un spasme œsophagien",
+    "D": "Une péricardite aiguë",
+    "E": "Une myocardite aiguë",
+    "rightAnswers": [
+      3,
+      4
+    ],
+    "title": "Une douleur thoracique survenant 1 semaine après un syndrome grippal doit faire évoquer :"
+  },
+  {
+    "A": "Un syndrome coronarien aigu",
+    "B": "Un spasme œsophagien",
+    "C": "Une péricardite aiguë",
+    "D": "Une myocardite aiguë",
+    "E": "Une endocardite infectieuse",
+    "rightAnswers": [
+      2,
+      3
+    ],
+    "title": "Une douleur thoracique survenant une semaine après un syndrome grippal doit faire évoquer :"
+  },
+  {
+    "A": "Une embolie pulmonaire",
+    "B": "Un syndrome coronarien aigu",
+    "C": "Une dissection de l'aorte",
+    "D": "Une péri-myocardiopathie du post-partum",
+    "E": "Une endocardite infectieuse",
+    "rightAnswers": [
+      0,
+      2,
+      3
+    ],
+    "title": "Une douleur thoracique aiguë en post partum doit évoquer :"
+  },
+  {
+    "A": "Une myocardite aiguë",
+    "B": "Une embolie pulmonaire",
+    "C": "Un IDM antérieur compliqué d'EDC",
+    "D": "Une péricardite minime",
+    "E": "Un pneumothorax bilatéral compressif",
+    "rightAnswers": [
+      1,
+      4
+    ],
+    "title": "Une douleur thoracique aiguë associée à un tableau d'insuffisance cardiaque droite aiguë doit évoquer :"
+  },
+  {
+    "A": "Syndrome coronarien aigu",
+    "B": "Dissection aortique",
+    "C": "Embolie pulmonaire",
+    "D": "Reflux gastro-oesophagien",
+    "E": "Péricardite aiguë",
+    "rightAnswers": [
+      3
+    ],
+    "title": "Une brûlure rétrosternale majorée par l'antéflexion est en faveur de :"
+  },
+  {
+    "A": "Un dosage des D-Dimères est utile si la probabilité clinique est basse",
+    "B": "Une radiographie de thorax à la recherche d'un élargissement du médiastin est indiquée quelque soit la probabilité clinique",
+    "C": "L'existence d'une valvulopathie aortique constitue une situation favorisante",
+    "D": "Un angioscanner est indiqué d'emblée si la probabilité clinique est élevée",
+    "E": "L'échographie trans-oesophagienne est indiquée au bloc opératoire particulièrement en cas d'instabilité hémodynamique",
+    "rightAnswers": [
+      0,
+      2,
+      4
+    ],
+    "title": "Vous évoquer le diagnostic de dissection de l'aorte chez un patient âgé de 70 ans qui se présente aux urgences pour des douleurs thoraciques aiguës. Concernant votre démarche diagnostique chez ce patient :"
+  },
+  {
+    "A": "La présence d'un sus décalage de l'intervalle PQ à l'électrocardiogramme",
+    "B": "Le terrain",
+    "C": "La découverte d'un sus-décalage concave du segment ST localisé dans le territoire antérieur à l'électrocardiogramme",
+    "D": "La présence d'un frottement péricardique",
+    "E": "Les caractéristiques de la douleur",
+    "rightAnswers": [
+      1,
+      3,
+      4
+    ],
+    "title": "Une patiente âgée de 35 ans, suivie pour un lupus érythémateux disséminé, consulte pour des douleurs thoraciques évoluant depuis 06 heures, précordiales, dont l'intensité augmente à l'inspiration profonde. Vous évoquez le diagnostic de péricardite aiguë.\n<br>\n<br>Sont évocatrices du diagnostic chez cette patiente : \n<br>"
+  },
+  {
+    "A": "Il est utile pour la démarche diagnostique d'une péricardite aiguë",
+    "B": "Peuvent s'élever en cas de dissection de l'aorte",
+    "C": "Un dosage des D-dimères positif affirme le diagnostic d'embolie pulmonaire avec une forte valeur prédictive positive",
+    "D": "Est utile à la démarche diagnostique d'une embolie pulmonaire chez un patient opéré d'un carcinome gastrique",
+    "E": "En cas de négativité initiale, le dosage doit être refait après 3 heures",
+    "rightAnswers": [
+      1
+    ],
+    "title": "Concernant l'apport diagnostique du dosage des D-dimères chez un patient présentant une douleur thoracique :"
+  },
+  {
+    "A": "Est une pathologie grave qui peut se compliquer d'une mort subite",
+    "B": "Est de diagnostic certain si le dosage des D-dimères est élevé",
+    "C": "Est formellement éliminée si la scintigraphie pulmonaire de perfusion est normale",
+    "D": "Est exclue si l'angioscanner thoracique est normal sauf en cas de forte probabilité clinique où on doit poursuivre les explorations",
+    "E": "Nécessite un traitement par la thrombolyse dans tous les cas",
+    "rightAnswers": [
+      0,
+      2,
+      3
+    ],
+    "title": "L'embolie pulmonaire :"
+  },
+  {
+    "A": "Son siège rétrosternal",
+    "B": "Son type constrictif",
+    "C": "Sa durée qui est variable pouvant rester des heures",
+    "D": "Sa survenue à l'effort",
+    "E": "Sa sensibilité à la prise de trinitrine",
+    "rightAnswers": [
+      0,
+      1,
+      4
+    ],
+    "title": "La douleur angineuse au cours du syndrome coronarien aigu sans sus-décalage de ST se caractérise par :"
+  },
+  {
+    "A": "Elle est établie en prenant en compte les facteurs de risque d'EP",
+    "B": "Son évaluation peut être facilitée par des scores de probabilité clinique",
+    "C": "Quatre niveaux de probabilité clinique peuvent être distingués",
+    "D": "Lorsqu'elle est faible, le raisonnement diagnostique est basé sur la prescription de D-dimères",
+    "E": "Lorsqu'elle est élevée, la négativité de l'angioscanner thoracique permet d'écarter le diagnostic",
+    "rightAnswers": [
+      0,
+      1,
+      3
+    ],
+    "title": "Concernant la probabilité pré-test guidant le choix des examens complémentaires pour le diagnostic d'EP non à haut risque aux urgences ?"
+  },
+  {
+    "A": "Est d'installation brutale",
+    "B": "Est fugace, de durée brève",
+    "C": "Est typiquement constrictive",
+    "D": "Constitue le signe fonctionnel le plus fréquent",
+    "E": "Peut s'associer à des douleurs des membres inférieurs",
+    "rightAnswers": [
+      0,
+      3,
+      4
+    ],
+    "title": "La douleur thoracique dans la dissection aortique :"
+  },
+  {
+    "A": "Un pouls paradoxal de Kussmaul",
+    "B": "Un reflux hépato-jugulaire",
+    "C": "Des œdèmes des membres inférieurs",
+    "D": "Un frottement péricardique",
+    "E": "Un assourdissement des bruits du cœur",
+    "rightAnswers": [
+      0,
+      1,
+      4
+    ],
+    "title": "Les signes cliniques suivants sont évocateurs d'une tamponnade :"
+  },
+  {
+    "A": "Un swinging heart",
+    "B": "Une dilatation du ventricule droit",
+    "C": "Une dilatation du ventricule gauche",
+    "D": "Un septum inter-ventriculaire paradoxal",
+    "E": "Une compression des cavités cardiaques droites",
+    "rightAnswers": [
+      0,
+      3,
+      4
+    ],
+    "title": "Les signes échographiques suivants sont en faveur d'une tamponnade :"
+  },
+  {
+    "A": "Un angioscanner aortique",
+    "B": "Une radiographie de thorax",
+    "C": "Une échographie cardiaque trans-oesophagienne",
+    "D": "Un électrocardiogramme",
+    "E": "Une échographie abdominale",
+    "rightAnswers": [
+      0,
+      2
+    ],
+    "title": "Le diagnostic d'une dissection aortique peut être confirmé par :"
+  },
+  {
+    "A": "Un microvoltage",
+    "B": "Une alternance électrique",
+    "C": "Un bloc de branche droit",
+    "D": "Un aspect S en V1 et Q en V3",
+    "E": "Une ischémie sous épicardique de V1 à V3",
+    "rightAnswers": [
+      2,
+      4
+    ],
+    "title": "Les signes électriques suivants sont évocateurs d'une embolie pulmonaire :"
+  },
+  {
+    "A": "Des atélectasies en bandes",
+    "B": "Une opacité basale rétractile",
+    "C": "Une hyperclarté pulmonaire unilatérale",
+    "D": "Une sur-élévation de la coupole diaphragmatique",
+    "E": "Un élargissement médiastinal",
+    "rightAnswers": [
+      0,
+      2,
+      3
+    ],
+    "title": "Les signes radiologiques suivants sont évocateurs d’une embolie pulmonaire :"
+  },
+  {
+    "A": "Angioscanner thoracique",
+    "B": "Electrocardiogramme",
+    "C": "Echographie cardiaque",
+    "D": "D-dimères",
+    "E": "Scintigraphie pulmonaire de perfusion-ventilation",
+    "rightAnswers": [
+      4
+    ],
+    "title": "Parmi ces examens, lequel s'il est normal, permet d'éliminer formellement le diagnostic d'embolie pulmonaire quel que soit son niveau de probabilité ?"
+  },
+  {
+    "A": "Une embolie pulmonaire",
+    "B": "Une dissection de l'aorte",
+    "C": "Une péricardite aiguë",
+    "D": "Un angor spastique",
+    "E": "Une pneumopathie",
+    "rightAnswers": [
+      2
+    ],
+    "title": "Cas clinique 1 : Un patient âgé de 18 ans, consulte pour douleur thoracique précordiale évoluant depuis une semaine, associée à une fièvre et inhibée par l'inspiration profonde. L'examen physique est normal en dehors d'un souffle systolo-diastolique mésocardique.\n<br>\n<br>QCM (¼) : Quel est le diagnostic le plus probable ?\n<br>"
+  },
+  {
+    "A": "Un traumatisme thoracique",
+    "B": "Un syndrome grippal",
+    "C": "Le tabagisme",
+    "D": "Une hypertension artérielle mal équilibrée",
+    "E": "La survenue nocturne de la douleur",
+    "rightAnswers": [
+      1
+    ],
+    "title": "Suite du CC1 :\n<br>\n<br>QCM (2/4) : Que cherchez-vous à l'interrogatoire en faveur de votre diagnostic ?\n<br>"
+  },
+  {
+    "A": "Une radiographie de thorax",
+    "B": "Un ECG",
+    "C": "Un angioscanner thoracique",
+    "D": "Une échographie cardiaque",
+    "E": "Un angioscanner aortique",
+    "rightAnswers": [
+      3
+    ],
+    "title": "Suite du CC1 :\n<br>\n<br>QCM (¾) : Quel examen demandez-vous pour confirmer le diagnostic ?\n<br>"
+  },
+  {
+    "A": "Vous éliminez le diagnostic",
+    "B": "Vous demandez des troponines",
+    "C": "Vous demandez une scintigraphie pulmonaire",
+    "D": "Vous retenez toujours le diagnostic et commencez le traitement",
+    "E": "Vous demandez une coronarographie",
+    "rightAnswers": [
+      1,
+      3
+    ],
+    "title": "Suite du CC1 : L'examen que vous avez demandé est revenu normal.\n<br>\n<br>QCM (4/4) : Quelle serait votre démarche diagnostique ?\n<br>"
+  },
+  {
+    "A": "Une dissection aortique",
+    "B": "Une embolie pulmonaire",
+    "C": "Un pneumothorax",
+    "D": "Une pancréatite aiguë",
+    "E": "Un syndrome coronarien aigu",
+    "rightAnswers": [
+      0
+    ],
+    "title": "Cas clinique 2 : Un patient âgé de 50 ans, hypertendu, consulte aux urgences pour une douleur thoracique transfixiante, permanente, d'installation brutale et irradiante vers le dos.\n<br>\n<br>L'examen physique met en évidence une PA à 200/100 mmHg au bras droit et 120/70 mmHg au bras gauche. L'auscultation cardio pulmonaire ainsi que l'électrocardiogramme sont normaux.\n<br>\n<br>\n<br>QCM (⅓) : A ce stade de l'examen, quel est le diagnostic le plus probable ?\n<br>"
+  },
+  {
+    "A": "Un angioscanner aortique",
+    "B": "Un angioscanner thoracique",
+    "C": "Une échographie cardiaque trans-thoracique",
+    "D": "Une échographie cardiaque trans-oesophagienne",
+    "E": "Une radiographie de thorax",
+    "rightAnswers": [
+      2
+    ],
+    "title": "Suite du CC2 :\n<br>\n<br>QCM (⅔) : Quel examen demandez-vous de première intention pour confirmer votre diagnostic ?\n<br>"
+  },
+  {
+    "A": "Une insuffisance aortique aiguë secondaire à la dissection aortique",
+    "B": "Une insuffisance mitrale aiguë par rupture du pilier mitral",
+    "C": "Une insuffisance mitrale aiguë par rupture du cordage",
+    "D": "Une communication inter-ventriculaire par perforation septale",
+    "E": "Une HTAP sévère secondaire à une embolie pulmonaire massive",
+    "rightAnswers": [
+      0
+    ],
+    "title": "Suite du CC2 : Avant de réaliser cet examen, le patient a présenté brutalement une dyspnée aiguë. L'auscultation pulmonaire révèle des râles crépitants diffus et l'auscultation cardiaque met en évidence un souffle cardiaque.\n<br>\n<br>QCM (3/3) : Quel est votre diagnostic ?\n<br>"
+  },
+  {
+    "A": "Une dissection aortique",
+    "B": "Une embolie pulmonaire",
+    "C": "Un pneumothorax",
+    "D": "Une endocardite infectieuse",
+    "E": "Un syndrome coronarien aigu",
+    "rightAnswers": [
+      0
+    ],
+    "title": "Cas clinique 3 : Un patient âgé de 38 ans, longiligne et suivi pour une hyperlaxité ligamentaire, consulte pour une douleur thoracique brutale transfixiante irradiant vers le dos.\n<br>\n<br>L'examen physique trouve un patient algique, une PA à 220/110 mmHg, un souffle diastolique cardiaque et une auscultation pulmonaire normale. La température du patient est normale. \n<br>\n<br>\n<br>L'ECG montre un rythme régulier sinusal à 100 bpm avec absence de troubles de la repolarisation ou de la conduction.\n<br>\n<br>\n<br>QCM (¼) : Quel est le diagnostic le plus probable ?\n<br>"
+  },
+  {
+    "A": "Une hépatomégalie",
+    "B": "Un reflux hépato-jugulaire",
+    "C": "Un pouls paradoxal de Kussmaul",
+    "D": "Une asymétrie de pouls",
+    "E": "Une asymétrie tensionnelle",
+    "rightAnswers": [
+      3,
+      4
+    ],
+    "title": "Suite du CC3 :\n<br>\n<br>QCM (2/4) : Que cherchez-vous à l'examen physique pour conforter votre diagnostic ?\n<br>"
+  },
+  {
+    "A": "Une maladie de Marfan",
+    "B": "Une valvulopathie mitrale",
+    "C": "Une thrombophilie",
+    "D": "Le statut longiligne",
+    "E": "Une maladie de Behçet",
+    "rightAnswers": [
+      0
+    ],
+    "title": "Suite du CC3 :\n<br>\n<br>QCM (3/4) : Quelle est l'étiologie la plus probable du tableau clinique présenté par le patient ?\n<br>"
+  },
+  {
+    "A": "Angioscanner aortique",
+    "B": "Echographie cardiaque trans-oesophagienne",
+    "C": "Echographie cardiaque trans-thoracique",
+    "D": "Scintigraphie pulmonaire",
+    "E": "Coronarographie",
+    "rightAnswers": [
+      0,
+      1,
+      2
+    ],
+    "title": "Suite du CC3 :\n<br>\n<br>QCM (4/4) : Quel(s) examen(s) complémentaire(s) peut (peuvent) confirmer votre diagnostic ?\n<br>"
+  },
+  {
+    "A": "Embolie pulmonaire",
+    "B": "SCA avec sus-décalage de ST",
+    "C": "SCA sans sus-décalage de ST",
+    "D": "Dissection aortique",
+    "E": "Péricardite aiguë",
+    "rightAnswers": [
+      2
+    ],
+    "title": "Cas clinique 4 : Monsieur HA, âgé de 52 ans, consulte les urgences pour des douleurs thoraciques rétrosternales à type de brûlures évoluant depuis 3 heures de façon paroxystique (5-10 min). Il est tabagique à 40 PA et diabétique de type II depuis 10 ans.\n<br>\n<br>Il vous rapporte qu'il a un frère décédé par un IDM à l'âge de 45 ans. Au moment où vous examinez le patient, la douleur a complètement disparu. Sa PA est à 130/80 mmHg, son pouls est régulier à 80 BPM. Le reste de l'examen clinique est sans particularités. L'ECG est normal.\n<br>\n<br>\n<br>QCM (⅓) : Quelles sont, compte tenu des antécédents du patient et de la sémiologie présentée, le ou les diagnostic(s) à évoquer en priorité devant la douleur thoracique actuelle ?\n<br>"
+  },
+  {
+    "A": "Radiographie thoracique",
+    "B": "Angioscanner thoracique",
+    "C": "Répéter ECG à H6-H12 et si récidive des douleurs",
+    "D": "Echographie cardiaque transthoracique",
+    "E": "Cycle de troponines US H3-H6",
+    "rightAnswers": [
+      2,
+      3
+    ],
+    "title": "Suite du CC4 :\n<br>\n<br>QCM (⅔) : Quelle(s) est (sont) le ou les examens complémentaires à visée diagnostique qui vous semble(nt) utile(s) à ce stade ?\n<br>"
+  },
+  {
+    "A": "Retour à domicile avec conseil de consulter en cas de récidive de la douleur",
+    "B": "Retour à domicile avec un rendez-vous de consultation réglée en cardiologie",
+    "C": "Surveillance en unité de soins intensifs cardiologiques (USIC)",
+    "D": "Transfert immédiat en salle de cardiologie interventionnelle",
+    "E": "Angioscanner des coronaires en urgence",
+    "rightAnswers": [
+      2
+    ],
+    "title": "Suite du CC4 : Les examens demandés sont revenus normaux. Le patient n'a pas récidivé des douleurs thoraciques.\n<br>\n<br>QCM (3/3) : Quelle est votre conduite à tenir chez ce patient ?\n<br>"
+  }
+]
