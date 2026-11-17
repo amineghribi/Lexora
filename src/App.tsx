@@ -3,6 +3,7 @@ import { useAuth } from './lib/auth';
 import { ProtectedRoute } from './components/ProtectedRoute';
 
 import Dashboard from './pages/Dashboard';
+import Settings from './pages/Settings';
 
 function Login() {
   const { signIn } = useAuth();
@@ -74,6 +75,7 @@ export default function App() {
       <Route path="/hearings" element={<ProtectedRoute><Hearings /></ProtectedRoute>} />
       <Route path="/documents" element={<ProtectedRoute><Documents /></ProtectedRoute>} />
       <Route path="/financial" element={<ProtectedRoute><Financial /></ProtectedRoute>} />
+      <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
