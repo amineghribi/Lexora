@@ -28,7 +28,7 @@ function documentRow(doc: any): string {
     <td class="py-3 px-3"><div class="flex flex-col min-w-0"><span class="font-tabular-mono text-label-sm text-on-surface">${esc(doc.created_at ? new Date(doc.created_at).toLocaleString('fr-TN') : '—')}</span></div></td>
     <td class="py-3 px-3 text-right font-tabular-mono text-label-sm text-on-surface-variant">${esc(sizeLabel(doc.size_bytes))}</td>
     <td class="py-3 px-3 text-center"><span class="px-1.5 py-0.5 rounded bg-surface-container text-primary font-tabular-mono text-label-sm font-bold">v1</span></td>
-    <td class="pr-4 pl-2 py-3 text-right"><button type="button" data-download="${esc(doc.storage_path)}" class="p-1 hover:bg-surface-container rounded text-primary transition-colors" title="Télécharger"><span class="material-symbols-outlined text-lg">download</span></button></td>
+    <td class="pr-4 pl-2 py-3 text-right"><button type="button" data-download="${esc(doc.storage_path)}" data-provider="${esc(doc.storage_path?.startsWith('r2/') ? 'r2' : 'supabase')}" class="p-1 hover:bg-surface-container rounded text-primary transition-colors" title="Télécharger"><span class="material-symbols-outlined text-lg">download</span></button></td>
   </tr>`;
 }
 
@@ -97,7 +97,7 @@ export default function Documents() {
       const download = target.closest<HTMLElement>('[data-download]');
       if (download) {
         event.preventDefault();
-        const { url, error } = await getSignedUrl(download.dataset.download!);
+        const { url, error } = await getSignedUrl(download.dataset.download!, download.dataset.provider);
         if (url) window.open(url, '_blank', 'noopener,noreferrer');
         else if (error) window.alert(error);
         return;
