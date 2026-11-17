@@ -4,7 +4,7 @@ import StitchPage from '../components/StitchPage';
 import { useAuth } from '../lib/auth';
 import { getOrCreateOrg } from '../lib/org';
 import { listHearings, createHearing } from '../services/hearings';
-import { addLogoutLink, applyShell, esc, shellClick } from '../lib/stitch';
+import { addLogoutLink, applyShell, esc, hydrateChrome, shellClick } from '../lib/stitch';
 
 const html = addLogoutLink(raw);
 
@@ -31,6 +31,7 @@ export default function Hearings() {
   const setup = (root: HTMLElement) => {
     const opts = { navigate, pathname, signOut };
     applyShell(root, opts);
+    void hydrateChrome(root, user);
 
     const quickForm = root.querySelector<HTMLElement>('#quick-add-form');
     const createButton = Array.from(root.querySelectorAll<HTMLButtonElement>('button'))
@@ -51,17 +52,10 @@ export default function Hearings() {
       };
     });
 
-    const livePanel = document.createElement('section');
-    livePanel.className = 'mt-space-lg bg-surface-container-lowest rounded-xl shadow-sm p-space-lg';
-    livePanel.innerHTML = `
-      <div class="flex items-center justify-between pb-space-sm mb-space-sm border-b border-surface-container">
-        <div><h2 class="font-headline-md text-headline-md text-on-surface">Mes audiences</h2>
-        <p class="font-body-sm text-body-sm text-on-surface-variant">Données enregistrées dans votre cabinet</p></div>
-        <span class="material-symbols-outlined text-secondary">event_upcoming</span>
-      </div>
-      <div id="lexora-hearing-list" class="flex flex-col gap-space-xs"></div>`;
-    root.querySelector('main')?.appendChild(livePanel);
-    const list = livePanel.querySelector<HTMLElement>('#lexora-hearing-list')!;
+    const list = root.querySelector<HTMLElement>('#lexora-hearing-list')!;
+    const upcoming = root.querySelector<HTMLElement>('#lexora-hearing-upcoming')!;
+    const reminders = root.querySelector<HTMLElement>('#lexora-hearing-reminders')!;
+    const empty = '<p class="text-body-sm text-on-surface-variant py-space-lg text-center">Aucune audience enregistrée.</p>';
 
     let orgId: string | null = null;
     const load = async () => {
@@ -69,9 +63,11 @@ export default function Hearings() {
       orgId = await getOrCreateOrg(user.id);
       if (!orgId) return;
       const { data } = await listHearings(orgId);
-      list.innerHTML = data?.length
-        ? data.map(hearingRow).join('')
-        : '<p class="text-body-md text-on-surface-variant py-space-lg text-center">Aucune audience enregistrée.</p>';
+      const items = data ?? [];
+      const rows = items.length ? items.map(hearingRow).join('') : empty;
+      list.innerHTML = rows;
+      upcoming.innerHTML = rows;
+      reminders.innerHTML = '<p class="text-body-sm text-on-surface-variant">Aucun délai enregistré.</p>';
     };
 
     const form = quickForm?.querySelector<HTMLFormElement>('form');
@@ -83,7 +79,7 @@ export default function Hearings() {
         const selects = form.querySelectorAll<HTMLSelectElement>('select');
         const dateInput = Array.from(inputs).find((input) => input.type === 'date');
         const timeInput = Array.from(inputs).find((input) => input.type === 'time');
-        const courtInput = Array.from(inputs).find((input) => (input.placeholder ?? '').includes('TPI'));
+        const courtInput = Array.from(inputs).find((input) => (input.placeholder ?? '').startsWith('ex: Audience'));
         const notesInput = Array.from(inputs).find((input) => (input.placeholder ?? '').startsWith('Ex:'));
         const date = dateInput?.value;
         if (!date) return;

@@ -2,7 +2,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import StitchPage from '../components/StitchPage';
 import { useI18n } from '../lib/i18n';
 import { useAuth } from '../lib/auth';
-import { applyShell, shellClick, withShell } from '../lib/stitch';
+import { applyShell, hydrateChrome, shellClick, withShell } from '../lib/stitch';
 
 const mainContent = `
 <div class="flex flex-col w-full gap-space-lg">
@@ -33,13 +33,14 @@ const html = withShell(mainContent, 'Paramètres');
 
 export default function Settings() {
   const { setLang, lang } = useI18n();
-  const { signOut } = useAuth();
+  const { user, signOut } = useAuth();
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
   const setup = (root: HTMLElement) => {
     const opts = { navigate, pathname, signOut };
     applyShell(root, opts);
+    void hydrateChrome(root, user);
     root.onclick = (event) => shellClick(event, root, opts);
     const switcher = root.querySelector<HTMLElement>('#lexora-lang-switch')!;
     const paint = () => {

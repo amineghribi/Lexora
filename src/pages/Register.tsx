@@ -48,7 +48,7 @@ export default function Register() {
           </Link>
           <span className="hidden md:flex items-center gap-space-sm px-space-md py-1 rounded-full bg-surface-container-low border border-outline-variant/30 text-secondary">
             <span className="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">verified_user</span>
-            <span className="font-label-sm text-label-sm">Chiffrement TLS 256-bit • Serveur Certifié Tunisie</span>
+            <span className="font-label-sm text-label-sm">Connexion sécurisée</span>
           </span>
         </div>
       </header>
@@ -64,7 +64,7 @@ export default function Register() {
                   <span className="material-symbols-outlined text-[16px]" style={{ fontVariationSettings: "'FILL' 1" }}>
                     workspace_premium
                   </span>
-                  <span className="font-label-sm text-label-sm uppercase tracking-wider">Infrastructure Certifiée Barreau</span>
+                  <span className="font-label-sm text-label-sm uppercase tracking-wider">Espace sécurisé</span>
                 </div>
                 <div className="flex flex-col gap-space-sm mt-space-sm">
                   <span className="font-label-sm text-label-sm uppercase tracking-widest text-tertiary-fixed-dim">Espace Cabinet</span>
@@ -77,9 +77,9 @@ export default function Register() {
                 </div>
                 <div className="grid grid-cols-1 gap-space-sm mt-space-md">
                   {[
-                    ['enhanced_encryption', 'Chiffrement Bout-en-Bout', 'Conformité intégrale au secret professionnel de l’avocat.'],
-                    ['dns', 'Hébergement Souverain', 'Data centers souverains localisés en Tunisie (Tier III & ISO 27001).'],
-                    ['policy', 'Conforme Barreau National', 'Aligné sur le Code de Déontologie et les prérequis de l’Ordre.'],
+                    ['enhanced_encryption', 'Données protégées', 'Vos données restent dans l’espace privé de votre cabinet.'],
+                    ['dns', 'Espace dédié', 'Chaque cabinet dispose de son propre espace isolé.'],
+                    ['policy', 'Accès maîtrisé', 'Seuls les membres autorisés de votre cabinet y accèdent.'],
                   ].map(([icon, title, text]) => (
                     <div key={title} className="p-space-md rounded-lg bg-primary-container/60 shadow-sm flex items-start gap-space-md">
                       <div className="w-8 h-8 rounded-lg bg-inverse-surface flex items-center justify-center shrink-0 text-tertiary-fixed-dim">
@@ -131,7 +131,7 @@ export default function Register() {
                       <input
                         id="reg-name"
                         className={field}
-                        placeholder="Me. Karim Ben Ammar"
+                        placeholder="Votre nom complet"
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
                         required
@@ -196,7 +196,7 @@ export default function Register() {
 
       <footer className="w-full bg-surface-container-lowest/60 backdrop-blur-md border-t border-outline-variant/20 py-space-lg">
         <div className="max-w-7xl mx-auto px-gutter-lg text-center font-label-sm text-label-sm text-secondary">
-          Barreau National des Avocats de Tunisie • Conforme RGPD &amp; Loi n° 2004-63
+          Espace de travail sécurisé
         </div>
       </footer>
     </div>

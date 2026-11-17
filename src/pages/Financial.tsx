@@ -4,7 +4,7 @@ import { useAuth } from '../lib/auth';
 import { getOrCreateOrg } from '../lib/org';
 import { listCases } from '../services/cases';
 import { getFees, setFee, listPayments, addPayment } from '../services/financial';
-import { applyShell, esc, shellClick, withShell } from '../lib/stitch';
+import { applyShell, esc, hydrateChrome, shellClick, withShell } from '../lib/stitch';
 
 const mainContent = `
 <div class="flex flex-col w-full gap-space-lg">
@@ -56,6 +56,7 @@ export default function Financial() {
   const setup = (root: HTMLElement) => {
     const opts = { navigate, pathname, signOut };
     applyShell(root, opts);
+    void hydrateChrome(root, user);
     root.onclick = (event) => shellClick(event, root, opts);
 
     const casesBox = root.querySelector<HTMLElement>('#lexora-fin-cases')!;

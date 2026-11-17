@@ -5,7 +5,7 @@ import { useAuth } from '../lib/auth';
 import { getOrCreateOrg } from '../lib/org';
 import { listCases, createCase, deleteCase } from '../services/cases';
 import { listClients } from '../services/clients';
-import { addLogoutLink, applyShell, emptyRow, esc, setRows, shellClick } from '../lib/stitch';
+import { addLogoutLink, applyShell, emptyRow, esc, formatNumber, hydrateChrome, setRows, shellClick } from '../lib/stitch';
 
 const html = addLogoutLink(raw);
 
@@ -58,6 +58,7 @@ export default function Cases() {
   const setup = (root: HTMLElement) => {
     const opts = { navigate, pathname, signOut };
     applyShell(root, opts);
+    void hydrateChrome(root, user);
     root.insertAdjacentHTML('beforeend', addModal);
 
     const modal = root.querySelector<HTMLElement>('#lexora-add-case')!;
@@ -83,10 +84,32 @@ export default function Cases() {
       setRows(root, 'tbody', cases?.length
         ? cases.map(caseRow).join('')
         : emptyRow(10, 'Aucun dossier pour le moment.'));
+      const listCount = root.querySelector<HTMLElement>('[data-list-count]');
+      if (listCount) listCount.textContent = `${cases?.length ?? 0} dossier${cases?.length === 1 ? '' : 's'}`;
+      const all = cases ?? [];
+      const totals: Record<string, number> = {
+        all: all.length,
+        open: all.filter((c) => c.status === 'open').length,
+        closed: all.filter((c) => c.status === 'closed').length,
+        other: all.filter((c) => c.status !== 'open' && c.status !== 'closed').length,
+      };
+      root.querySelectorAll<HTMLElement>('[data-case-kpi]').forEach((el) => {
+        el.textContent = formatNumber(totals[el.dataset.caseKpi ?? ''] ?? 0);
+      });
       clientSelect.innerHTML =
         '<option value="">Sélectionner un client</option>' +
         (clients ?? []).map((c: any) => `<option value="${esc(c.id)}">${esc(c.full_name)}</option>`).join('');
     };
+
+    const search = root.querySelector<HTMLInputElement>('#caseSearchInput');
+    if (search) {
+      search.oninput = () => {
+        const needle = search.value.toLowerCase();
+        root.querySelectorAll<HTMLElement>('[data-case-row]').forEach((element) => {
+          element.classList.toggle('hidden', !element.textContent?.toLowerCase().includes(needle));
+        });
+      };
+    }
 
     root.onclick = async (event) => {
       const target = event.target as HTMLElement;

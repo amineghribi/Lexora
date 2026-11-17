@@ -1,5 +1,7 @@
 import type { NavigateFunction } from 'react-router-dom';
 import dashboardRaw from '../stitch/dashboard.html?raw';
+import { supabase } from './supabase';
+import { getOrCreateOrg } from './org';
 
 /** Stitch sidebar `data-path` values mapped to our React routes. */
 export const PATH_MAP: Record<string, string> = {
@@ -147,4 +149,34 @@ export function emptyRow(columns: number, label: string): string {
 /** Small helper for the count labels used on the dashboard. */
 export function formatNumber(n: number): string {
   return new Intl.NumberFormat('fr-TN').format(n);
+}
+
+interface ChromeUser {
+  id: string;
+  email?: string;
+  user_metadata?: Record<string, unknown>;
+}
+
+/**
+ * Replace the neutral placeholders in the Stitch chrome with the signed-in
+ * user's organisation, name and today's date. No sample values are rendered.
+ */
+export async function hydrateChrome(root: HTMLElement, user: ChromeUser | null): Promise<void> {
+  const today = new Intl.DateTimeFormat('fr-TN', {
+    weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
+  }).format(new Date());
+  root.querySelectorAll<HTMLElement>('[data-today]').forEach((el) => { el.textContent = today; });
+
+  const displayName = (user?.user_metadata?.full_name as string | undefined)
+    || user?.email?.split('@')[0]
+    || 'Mon espace';
+  root.querySelectorAll<HTMLElement>('[data-user-name]').forEach((el) => { el.textContent = displayName; });
+
+  if (!user) return;
+  const orgId = await getOrCreateOrg(user.id);
+  if (!orgId) return;
+  const { data } = await supabase.from('organizations').select('name').eq('id', orgId).maybeSingle();
+  if (!data?.name) return;
+  root.querySelectorAll<HTMLElement>('[data-org-name], [data-org-name-inline]')
+    .forEach((el) => { el.textContent = data.name; });
 }

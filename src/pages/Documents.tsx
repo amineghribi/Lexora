@@ -4,7 +4,7 @@ import StitchPage from '../components/StitchPage';
 import { useAuth } from '../lib/auth';
 import { getOrCreateOrg } from '../lib/org';
 import { listDocuments, uploadDocument, getSignedUrl } from '../services/documents';
-import { addLogoutLink, applyShell, emptyRow, esc, formatNumber, setRows, shellClick } from '../lib/stitch';
+import { addLogoutLink, applyShell, emptyRow, esc, hydrateChrome, setRows, shellClick } from '../lib/stitch';
 
 const html = addLogoutLink(raw);
 
@@ -40,6 +40,7 @@ export default function Documents() {
   const setup = (root: HTMLElement) => {
     const opts = { navigate, pathname, signOut };
     applyShell(root, opts);
+    void hydrateChrome(root, user);
 
     const fileInput = document.createElement('input');
     fileInput.type = 'file';
@@ -48,19 +49,22 @@ export default function Documents() {
     root.appendChild(fileInput);
 
     let orgId: string | null = null;
+    let documents: any[] = [];
 
     const load = async () => {
       if (!user) return;
       orgId = await getOrCreateOrg(user.id);
       if (!orgId) return;
       const { data } = await listDocuments(orgId);
-      setRows(root, 'tbody', data?.length
-        ? data.map(documentRow).join('')
+      documents = data ?? [];
+      setRows(root, 'tbody', documents.length
+        ? documents.map(documentRow).join('')
         : emptyRow(8, 'Aucun document pour le moment.'));
-      const total = root.querySelector<HTMLElement>('span.font-headline-md.font-tabular-mono');
-      if (total) {
-        total.innerHTML = `${formatNumber(data?.length ?? 0)} <span class="font-body-sm text-body-sm font-normal text-on-surface-variant">pièces</span>`;
-      }
+      root.querySelectorAll<HTMLElement>('[data-doc-total]').forEach((el) => {
+        el.textContent = String(documents.length);
+      });
+      const listCount = root.querySelector<HTMLElement>('[data-list-count]');
+      if (listCount) listCount.textContent = `${documents.length} document${documents.length === 1 ? '' : 's'}`;
     };
 
     root.onclick = async (event) => {
@@ -69,6 +73,24 @@ export default function Documents() {
       if ((target.closest('button')?.textContent ?? '').includes('Importer des Documents')) {
         event.preventDefault();
         fileInput.click();
+        return;
+      }
+
+      const row = target.closest<HTMLElement>('[data-document-row]');
+      if (row && !target.closest('button, input')) {
+        const doc = documents.find((item) => item.id === row.dataset.documentRow);
+        const preview = root.querySelector<HTMLElement>('#lexora-doc-preview');
+        if (doc && preview) {
+          preview.innerHTML = `<div class="flex flex-col gap-space-sm text-left">
+            <div class="w-12 h-12 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center"><span class="material-symbols-outlined text-2xl">description</span></div>
+            <div><p class="font-body-md text-body-md font-semibold text-on-surface break-all">${esc(doc.name)}</p>
+            <p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">${esc(doc.category || 'Divers')} • ${esc(sizeLabel(doc.size_bytes))}</p></div>
+            <div class="grid grid-cols-2 gap-2 p-2.5 rounded-lg bg-surface-container-low text-label-sm font-label-sm">
+              <div><span class="text-on-surface-variant block">Dossier</span><span class="font-medium text-on-surface">${esc(doc.case_title || '—')}</span></div>
+              <div><span class="text-on-surface-variant block">Ajouté le</span><span class="font-medium text-on-surface">${esc(doc.created_at ? new Date(doc.created_at).toLocaleDateString('fr-TN') : '—')}</span></div>
+            </div>
+          </div>`;
+        }
         return;
       }
 

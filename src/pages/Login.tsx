@@ -4,11 +4,9 @@ import StitchPage from '../components/StitchPage';
 import { useAuth } from '../lib/auth';
 import { useI18n } from '../lib/i18n';
 
-// Keep the Stitch markup byte-for-byte, only remove the demo credentials and
-// point the two help links at real routes.
+// Keep the Stitch markup, only point the help link at a real route and add
+// a register link for new practices.
 const html = raw
-  .replace('value="maitre.benammar@lexora-avocats.tn"', 'value=""')
-  .replace('value="SecretLegalPass2025#"', 'value=""')
   .replace('href="#">Mot de passe oublié ?', 'href="/recover">Mot de passe oublié ?')
   .replace(
     '</form>',

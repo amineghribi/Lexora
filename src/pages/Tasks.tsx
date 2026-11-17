@@ -3,7 +3,7 @@ import StitchPage from '../components/StitchPage';
 import { useAuth } from '../lib/auth';
 import { getOrCreateOrg } from '../lib/org';
 import { listTasks, createTask, updateTaskStatus } from '../services/tasks';
-import { applyShell, esc, shellClick, withShell } from '../lib/stitch';
+import { applyShell, esc, hydrateChrome, shellClick, withShell } from '../lib/stitch';
 
 const mainContent = `
 <div class="flex flex-col w-full gap-space-lg">
@@ -42,6 +42,7 @@ export default function Tasks() {
   const setup = (root: HTMLElement) => {
     const opts = { navigate, pathname, signOut };
     applyShell(root, opts);
+    void hydrateChrome(root, user);
     root.onclick = (event) => shellClick(event, root, opts);
 
     const list = root.querySelector<HTMLElement>('#lexora-task-list')!;

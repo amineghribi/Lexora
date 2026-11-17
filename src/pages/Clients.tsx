@@ -4,7 +4,7 @@ import StitchPage from '../components/StitchPage';
 import { useAuth } from '../lib/auth';
 import { getOrCreateOrg } from '../lib/org';
 import { listClients, createClient, deleteClient } from '../services/clients';
-import { addLogoutLink, applyShell, emptyRow, esc, setRows, shellClick } from '../lib/stitch';
+import { addLogoutLink, applyShell, emptyRow, esc, hydrateChrome, setRows, shellClick } from '../lib/stitch';
 
 const html = addLogoutLink(raw);
 
@@ -62,6 +62,7 @@ export default function Clients() {
   const setup = (root: HTMLElement) => {
     const opts = { navigate, pathname, signOut };
     applyShell(root, opts);
+    void hydrateChrome(root, user);
     root.insertAdjacentHTML('beforeend', addModal);
 
     const modal = root.querySelector<HTMLElement>('#lexora-add-client')!;
@@ -89,6 +90,8 @@ export default function Clients() {
     const render = (list: any[]) => {
       rows = list;
       setRows(root, 'tbody', list.length ? list.map(clientRow).join('') : emptyRow(9, 'Aucun client pour le moment.'));
+      const count = root.querySelector<HTMLElement>('[data-list-count]');
+      if (count) count.textContent = `${list.length} client${list.length === 1 ? '' : 's'}`;
     };
 
     const load = async () => {

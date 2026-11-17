@@ -6,9 +6,6 @@ import verifyRaw from '../stitch/verify.html?raw';
 import newPasswordRaw from '../stitch/newpassword.html?raw';
 import twoFactorRaw from '../stitch/2fa.html?raw';
 
-const newPasswordHtml = newPasswordRaw
-  .replace('value="KbaJuris#2025!Tunis"', 'value=""');
-
 function messageBox(): HTMLParagraphElement {
   const p = document.createElement('p');
   p.className = 'mt-space-md text-body-sm text-error text-center';
@@ -69,7 +66,7 @@ export function NewPassword() {
       else navigate('/login');
     };
   };
-  return <StitchPage html={newPasswordHtml} setup={setup} />;
+  return <StitchPage html={newPasswordRaw} setup={setup} />;
 }
 
 export function TwoFactor() {
