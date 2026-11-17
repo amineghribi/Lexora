@@ -1,50 +1,58 @@
-import { useEffect, useState } from 'react';
-import { getOrCreateOrg } from '../lib/org';
+import { useNavigate, useLocation } from 'react-router-dom';
+import raw from '../stitch/dashboard.html?raw';
+import StitchPage from '../components/StitchPage';
 import { useAuth } from '../lib/auth';
 import { supabase } from '../lib/supabase';
+import { getOrCreateOrg } from '../lib/org';
+import { addLogoutLink, applyShell, esc, formatNumber, shellClick } from '../lib/stitch';
+
+const html = addLogoutLink(raw);
 
 export default function Dashboard() {
   const { user, signOut } = useAuth();
-  // orgId managed implicitly via getOrCreateOrg
-  const [stats, setStats] = useState({ clients: 0, cases: 0, tasks: 0, hearings: 0 });
-  useEffect(() => {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  const setup = (root: HTMLElement) => {
+    const opts = { navigate, pathname, signOut };
+    applyShell(root, opts);
+    root.onclick = (event) => {
+      shellClick(event, root, opts);
+    };
+
     if (!user) return;
-    getOrCreateOrg(user.id).then(async o => {
-      if (!o) return;
-      const [c, ca, t, h] = await Promise.all([
-        supabase.from('clients').select('id', { count: 'exact', head: true }).eq('organization_id', o),
-        supabase.from('cases').select('id', { count: 'exact', head: true }).eq('organization_id', o),
-        supabase.from('tasks').select('id', { count: 'exact', head: true }).eq('organization_id', o),
-        supabase.from('hearings').select('id', { count: 'exact', head: true }).eq('organization_id', o),
+
+    // Personalise the Stitch greeting.
+    const greeting = root.querySelector<HTMLElement>('h1.font-headline-xl');
+    const name = (user.user_metadata?.full_name as string | undefined) || user.email?.split('@')[0] || 'Avocat';
+    if (greeting) greeting.textContent = `Bonjour, ${name}`;
+
+    void getOrCreateOrg(user.id).then(async (orgId) => {
+      if (!orgId) return;
+      const count = async (table: string, status?: string) => {
+        let query = supabase.from(table).select('id', { count: 'exact', head: true }).eq('organization_id', orgId);
+        if (status) query = query.eq('status', status);
+        const { count: value } = await query;
+        return value ?? 0;
+      };
+      const [clients, openCases, closedCases, hearings, tasks] = await Promise.all([
+        count('clients'),
+        count('cases', 'open'),
+        count('cases', 'closed'),
+        count('hearings'),
+        count('tasks'),
       ]);
-      setStats({ clients: c.count ?? 0, cases: ca.count ?? 0, tasks: t.count ?? 0, hearings: h.count ?? 0 });
+
+      const stats = root.querySelectorAll<HTMLElement>('span.font-headline-xl.text-headline-xl.font-bold');
+      [clients, openCases, closedCases, hearings, tasks].forEach((value, index) => {
+        if (stats[index]) stats[index].textContent = formatNumber(value);
+      });
+
+      // Replace the illustrative "critical deadlines" strip with a live count.
+      const deadline = root.querySelector<HTMLElement>('[data-deadline-count]');
+      if (deadline) deadline.textContent = esc(tasks);
     });
-  }, [user]);
-  return (
-    <div className="min-h-screen bg-slate-50 p-8">
-      <div className="max-w-4xl mx-auto space-y-6">
-        <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-semibold text-slate-900">Dashboard</h1>
-          <button onClick={signOut} className="text-sm border rounded-lg px-3 py-2">Sign out</button>
-        </div>
-        <p className="text-slate-600">Welcome, {user?.email}</p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {Object.entries(stats).map(([k, v]) => (
-            <div key={k} className="bg-white rounded-xl border p-4">
-              <div className="text-sm text-slate-500 capitalize">{k}</div>
-              <div className="text-2xl font-semibold text-slate-900">{v}</div>
-            </div>
-          ))}
-        </div>
-        <nav className="flex gap-3 text-sm">
-          <a href="/clients" className="underline">Clients</a>
-          <a href="/cases" className="underline">Cases</a>
-          <a href="/tasks" className="underline">Tasks</a>
-          <a href="/hearings" className="underline">Hearings</a>
-          <a href="/documents" className="underline">Documents</a>
-          <a href="/financial" className="underline">Financial</a>
-        </nav>
-      </div>
-    </div>
-  );
+  };
+
+  return <StitchPage html={html} setup={setup} />;
 }

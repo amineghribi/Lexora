@@ -10,3 +10,7 @@ export async function createClient(orgId: string, payload: { full_name: string; 
   const { data, error } = await supabase.from('clients').insert({ organization_id: orgId, reference: ref, ...payload }).select().single();
   return { data, error };
 }
+
+export async function deleteClient(id: string) {
+  return supabase.from('clients').delete().eq('id', id);
+}

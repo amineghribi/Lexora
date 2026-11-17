@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 
 const dict: Record<string, Record<string, string>> = {
@@ -13,6 +13,11 @@ const C = createContext<Ctx | undefined>(undefined);
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState('fr');
   const rtl = lang === 'ar';
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    document.documentElement.dir = rtl ? 'rtl' : 'ltr';
+  }, [lang, rtl]);
   return <C.Provider value={{ lang, setLang, t: (k) => dict[lang]?.[k] ?? k, rtl }}>{children}</C.Provider>;
 }
 export function useI18n() { const c = useContext(C); if (!c) throw new Error('no i18n'); return c; }

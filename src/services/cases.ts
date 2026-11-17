@@ -10,3 +10,7 @@ export async function createCase(orgId: string, payload: { client_id: string; ti
   const { data, error } = await supabase.from('cases').insert({ organization_id: orgId, reference: ref, status: 'open', ...payload }).select().single();
   return { data, error };
 }
+
+export async function deleteCase(id: string) {
+  return supabase.from('cases').delete().eq('id', id);
+}
