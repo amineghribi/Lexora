@@ -8,6 +8,6 @@ compatibility_date = "2026-11-18"
 [vars]
 SUPABASE_URL = "https://ixwssuxbltrldanctjaj.supabase.co"
 SUPABASE_PUBLISHABLE_KEY = "sb_publishable_JaqlDuMar7rQD_xWq7YNlw_t9EF-PAp"
-R2_ACCOUNT_ID = "REPLACE_WITH_CLOUDFLARE_ACCOUNT_ID"
+R2_ACCOUNT_ID = "5be47bad9d58e989cd2c422a10bda6ae"
 R2_BUCKET = "documents"
 APP_ORIGIN = "http://localhost:5173,https://lexora.vercel.app"
