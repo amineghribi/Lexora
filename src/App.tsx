@@ -41,6 +41,8 @@ function Login() {
 import { useState } from 'react';
 import Clients from './pages/Clients';
 import Cases from './pages/Cases';
+import Tasks from './pages/Tasks';
+import Hearings from './pages/Hearings';
 
 function Register() {
   const { signUp } = useAuth();
@@ -78,6 +80,8 @@ export default function App() {
       <Route path="/" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
       <Route path="/clients" element={<ProtectedRoute><Clients /></ProtectedRoute>} />
       <Route path="/cases" element={<ProtectedRoute><Cases /></ProtectedRoute>} />
+      <Route path="/tasks" element={<ProtectedRoute><Tasks /></ProtectedRoute>} />
+      <Route path="/hearings" element={<ProtectedRoute><Hearings /></ProtectedRoute>} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
