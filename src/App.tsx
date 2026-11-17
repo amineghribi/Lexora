@@ -43,6 +43,7 @@ import Clients from './pages/Clients';
 import Cases from './pages/Cases';
 import Tasks from './pages/Tasks';
 import Hearings from './pages/Hearings';
+import Documents from './pages/Documents';
 
 function Register() {
   const { signUp } = useAuth();
@@ -82,6 +83,7 @@ export default function App() {
       <Route path="/cases" element={<ProtectedRoute><Cases /></ProtectedRoute>} />
       <Route path="/tasks" element={<ProtectedRoute><Tasks /></ProtectedRoute>} />
       <Route path="/hearings" element={<ProtectedRoute><Hearings /></ProtectedRoute>} />
+      <Route path="/documents" element={<ProtectedRoute><Documents /></ProtectedRoute>} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
