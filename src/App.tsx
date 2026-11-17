@@ -23,6 +23,7 @@ function Login() {
         <input className="w-full border rounded-lg px-3 py-2" placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)} />
         <input className="w-full border rounded-lg px-3 py-2" type="password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)} />
         <button className="w-full bg-slate-900 text-white py-2 rounded-lg">Sign in</button>
+        <p className="text-sm text-slate-500">No account? <a href="/register" className="underline text-slate-900">Create an account</a></p>
       </form>
     </div>
   );
