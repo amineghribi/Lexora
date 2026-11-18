@@ -40,7 +40,9 @@ function corsFor(request: Request, env: Env): Headers | null {
   const allowed = env.APP_ORIGIN.split(',')
     .map((value) => value.trim())
     .filter(Boolean);
-  if (!origin || !allowed.includes(origin)) return null;
+  // Vercel preview/branch deploys use dynamic <project>-<hash>.vercel.app URLs.
+  const isVercelPreview = /^https:\/\/[a-z0-9-]+\.vercel\.app$/i.test(origin);
+  if (!origin || (!allowed.includes(origin) && !isVercelPreview)) return null;
   return {
     'Access-Control-Allow-Origin': origin,
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
