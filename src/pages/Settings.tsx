@@ -1,6 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import StitchPage from '../components/StitchPage';
-import { useI18n } from '../lib/i18n';
+import { paintLangChips, useI18n, wireLangChips } from '../lib/i18n';
 import { useAuth } from '../lib/auth';
 import { applyShell, hydrateChrome, shellClick, withShell } from '../lib/stitch';
 
@@ -42,23 +42,8 @@ export default function Settings() {
     applyShell(root, opts);
     void hydrateChrome(root, user);
     root.onclick = (event) => shellClick(event, root, opts);
-    const switcher = root.querySelector<HTMLElement>('#lexora-lang-switch')!;
-    const paint = () => {
-      switcher.querySelectorAll<HTMLButtonElement>('button').forEach((button) => {
-        const active = button.dataset.lang === lang;
-        button.classList.toggle('bg-surface-container-lowest', active);
-        button.classList.toggle('text-on-surface', active);
-        button.classList.toggle('shadow-sm', active);
-        button.classList.toggle('font-semibold', active);
-      });
-    };
-    switcher.onclick = (event) => {
-      const button = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-lang]');
-      if (!button) return;
-      setLang(button.dataset.lang!);
-      paint();
-    };
-    paint();
+    wireLangChips(root, setLang);
+    paintLangChips(root, lang);
   };
 
   return <StitchPage html={html} setup={setup} setupKey={lang} />;

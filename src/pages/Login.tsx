@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import raw from '../stitch/login.html?raw';
 import StitchPage from '../components/StitchPage';
 import { useAuth } from '../lib/auth';
-import { useI18n } from '../lib/i18n';
+import { useI18n, wireLangChips } from '../lib/i18n';
 
 // Keep the Stitch markup, only point the help link at a real route and add
 // a register link for new practices.
@@ -68,12 +68,7 @@ export default function Login() {
       };
     }
 
-    root.querySelectorAll<HTMLButtonElement>('button').forEach((buttonEl) => {
-      const label = buttonEl.textContent?.trim();
-      if (label === 'Français' || label === 'FR') buttonEl.onclick = () => setLang('fr');
-      if (label === 'العربية' || label === 'العربى') buttonEl.onclick = () => setLang('ar');
-      if (label === 'English' || label === 'EN') buttonEl.onclick = () => setLang('en');
-    });
+    wireLangChips(root, setLang);
   };
 
   return <StitchPage html={html} setup={setup} />;

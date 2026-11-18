@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import StitchPage from '../components/StitchPage';
 import { supabase } from '../lib/supabase';
+import { useI18n, wireLangChips } from '../lib/i18n';
 import recoverRaw from '../stitch/recover.html?raw';
 import verifyRaw from '../stitch/verify.html?raw';
 import newPasswordRaw from '../stitch/newpassword.html?raw';
@@ -13,7 +14,9 @@ function messageBox(): HTMLParagraphElement {
 }
 
 export function Recover() {
+  const { setLang, t } = useI18n();
   const setup = (root: HTMLElement) => {
+    wireLangChips(root, setLang);
     const form = root.querySelector<HTMLFormElement>('#recoveryForm');
     const email = root.querySelector<HTMLInputElement>('#recoveryEmail');
     if (!form) return;
@@ -24,7 +27,7 @@ export function Recover() {
       const { error } = await supabase.auth.resetPasswordForEmail(email?.value ?? '', {
         redirectTo: `${window.location.origin}/newpassword`,
       });
-      box.textContent = error ? error.message : 'Un lien de réinitialisation a été envoyé à votre adresse.';
+      box.textContent = error ? error.message : t('Un lien de réinitialisation a été envoyé à votre adresse.');
       box.className = `mt-space-md text-body-sm text-center ${error ? 'text-error' : 'text-on-secondary-container'}`;
     };
   };
@@ -32,23 +35,25 @@ export function Recover() {
 }
 
 export function VerifyEmail() {
+  const { setLang } = useI18n();
   const setup = (root: HTMLElement) => {
-    root.querySelectorAll<HTMLButtonElement>('button').forEach((button) => {
-      if ((button.textContent ?? '').toLowerCase().includes('renvoyer')) {
-        button.onclick = async () => {
-          const { data } = await supabase.auth.getUser();
-          const email = data.user?.email;
-          if (email) await supabase.auth.resend({ type: 'signup', email });
-        };
-      }
-    });
+    wireLangChips(root, setLang);
+    const resend = root.querySelector<HTMLButtonElement>('#resend-btn');
+    if (!resend) return;
+    resend.onclick = async () => {
+      const { data } = await supabase.auth.getUser();
+      const email = data.user?.email;
+      if (email) await supabase.auth.resend({ type: 'signup', email });
+    };
   };
   return <StitchPage html={verifyRaw} setup={setup} />;
 }
 
 export function NewPassword() {
   const navigate = useNavigate();
+  const { setLang, t } = useI18n();
   const setup = (root: HTMLElement) => {
+    wireLangChips(root, setLang);
     const form = root.querySelector<HTMLFormElement>('#reset-password-form');
     const password = root.querySelector<HTMLInputElement>('#new-password');
     const confirm = root.querySelector<HTMLInputElement>('#confirm-password');
@@ -58,7 +63,7 @@ export function NewPassword() {
     form.onsubmit = async (event) => {
       event.preventDefault();
       if (password?.value !== confirm?.value) {
-        box.textContent = 'Les mots de passe ne correspondent pas.';
+        box.textContent = t('Les mots de passe ne correspondent pas.');
         return;
       }
       const { error } = await supabase.auth.updateUser({ password: password?.value ?? '' });
@@ -71,7 +76,9 @@ export function NewPassword() {
 
 export function TwoFactor() {
   const navigate = useNavigate();
+  const { setLang } = useI18n();
   const setup = (root: HTMLElement) => {
+    wireLangChips(root, setLang);
     const form = root.querySelector<HTMLFormElement>('#otp-form');
     if (!form) return;
     form.onsubmit = (event) => {

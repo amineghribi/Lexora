@@ -2,6 +2,7 @@ import type { NavigateFunction } from 'react-router-dom';
 import dashboardRaw from '../stitch/dashboard.html?raw';
 import { supabase } from './supabase';
 import { getOrCreateOrg } from './org';
+import { getLocale } from './i18n';
 
 /** Stitch sidebar `data-path` values mapped to our React routes. */
 export const PATH_MAP: Record<string, string> = {
@@ -99,15 +100,8 @@ export function shellClick(e: MouseEvent, root: HTMLElement, opts: ShellOpts): b
   const quick = target.closest<HTMLAnchorElement>('#quick-add-dropdown a');
   if (quick) {
     e.preventDefault();
-    const text = quick.textContent ?? '';
-    const path = text.includes('Dossier')
-      ? '/cases'
-      : text.includes('Audience')
-        ? '/hearings'
-        : text.includes('Client')
-          ? '/clients'
-          : '/financial';
-    opts.navigate(path);
+    const path = quick.dataset.quick ?? 'financial';
+    opts.navigate(`/${path}`);
     return true;
   }
 
@@ -148,7 +142,7 @@ export function emptyRow(columns: number, label: string): string {
 
 /** Small helper for the count labels used on the dashboard. */
 export function formatNumber(n: number): string {
-  return new Intl.NumberFormat('fr-TN').format(n);
+  return new Intl.NumberFormat(getLocale()).format(n);
 }
 
 interface ChromeUser {
@@ -162,7 +156,7 @@ interface ChromeUser {
  * user's organisation, name and today's date. No sample values are rendered.
  */
 export async function hydrateChrome(root: HTMLElement, user: ChromeUser | null): Promise<void> {
-  const today = new Intl.DateTimeFormat('fr-TN', {
+  const today = new Intl.DateTimeFormat(getLocale(), {
     weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
   }).format(new Date());
   root.querySelectorAll<HTMLElement>('[data-today]').forEach((el) => { el.textContent = today; });

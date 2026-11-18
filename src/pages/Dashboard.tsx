@@ -8,6 +8,7 @@ import { addLogoutLink, applyShell, esc, formatNumber, hydrateChrome, shellClick
 import { listCases } from '../services/cases';
 import { listHearings } from '../services/hearings';
 import { listTasks } from '../services/tasks';
+import { getLocale } from '../lib/i18n';
 
 const html = addLogoutLink(raw);
 const EMPTY = '<p class="text-body-sm text-on-surface-variant py-space-lg text-center">Aucune donnée pour le moment.</p>';
@@ -152,7 +153,7 @@ export default function Dashboard() {
 
       const agreed = (fees.data ?? []).reduce((sum: number, item) => sum + Number(item.agreed_amount ?? 0), 0);
       const received = (payments.data ?? []).reduce((sum: number, item) => sum + Number(item.amount ?? 0), 0);
-      const money = (value: number) => `${new Intl.NumberFormat('fr-TN', { minimumFractionDigits: 3, maximumFractionDigits: 3 }).format(value)} TND`;
+      const money = (value: number) => `${new Intl.NumberFormat(getLocale(), { minimumFractionDigits: 3, maximumFractionDigits: 3 }).format(value)} TND`;
       const finance = root.querySelector<HTMLElement>('[data-analytics="finance"]');
       if (finance) {
         finance.textContent = agreed || received

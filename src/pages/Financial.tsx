@@ -5,6 +5,7 @@ import { getOrCreateOrg } from '../lib/org';
 import { listCases } from '../services/cases';
 import { getFees, setFee, listPayments, addPayment } from '../services/financial';
 import { applyShell, esc, hydrateChrome, shellClick, withShell } from '../lib/stitch';
+import { getLocale } from '../lib/i18n';
 
 const mainContent = `
 <div class="flex flex-col w-full gap-space-lg">
@@ -46,7 +47,7 @@ const mainContent = `
 const html = withShell(mainContent, 'Honoraires & Règlements');
 
 const money = (value: number) =>
-  new Intl.NumberFormat('fr-TN', { minimumFractionDigits: 3, maximumFractionDigits: 3 }).format(value) + ' TND';
+  new Intl.NumberFormat(getLocale(), { minimumFractionDigits: 3, maximumFractionDigits: 3 }).format(value) + ' TND';
 
 export default function Financial() {
   const { user, signOut } = useAuth();

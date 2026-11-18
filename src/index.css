@@ -130,3 +130,72 @@ html, body {
   padding: 0;
   overscroll-behavior: none;
 }
+
+/* -------------------------------------------------------------------------- */
+/* Arabic / RTL                                                               */
+/* -------------------------------------------------------------------------- */
+
+[dir="rtl"] {
+  --font-headline-xl: 'Noto Sans Arabic', Inter, sans-serif;
+  --font-headline-lg: 'Noto Sans Arabic', Inter, sans-serif;
+  --font-headline-md: 'Noto Sans Arabic', Inter, sans-serif;
+  --font-headline-sm: 'Noto Sans Arabic', Inter, sans-serif;
+  --font-body-lg: 'Noto Sans Arabic', Inter, sans-serif;
+  --font-body-md: 'Noto Sans Arabic', Inter, sans-serif;
+  --font-body-sm: 'Noto Sans Arabic', Inter, sans-serif;
+  --font-label-md: 'Noto Sans Arabic', Inter, sans-serif;
+  --font-label-sm: 'Noto Sans Arabic', Inter, sans-serif;
+  --font-tabular-mono: 'Noto Sans Arabic', Inter, sans-serif;
+}
+
+[dir="rtl"] html,
+[dir="rtl"] body {
+  font-family: 'Noto Sans Arabic', Inter, sans-serif;
+}
+
+/* The Stitch screens use physical Tailwind utilities. Mirror them in RTL. */
+[dir="rtl"] .left-0 { left: auto !important; right: 0 !important; }
+[dir="rtl"] .left-2\.5 { left: auto !important; right: 0.625rem !important; }
+[dir="rtl"] .left-20 { left: auto !important; right: 5rem !important; }
+[dir="rtl"] .left-24 { left: auto !important; right: 6rem !important; }
+[dir="rtl"] .left-3 { left: auto !important; right: 0.75rem !important; }
+[dir="rtl"] .left-64 { left: auto !important; right: 16rem !important; }
+[dir="rtl"] .left-space-md { left: auto !important; right: var(--spacing-space-md) !important; }
+[dir="rtl"] .right-0 { right: auto !important; left: 0 !important; }
+[dir="rtl"] .right-1 { right: auto !important; left: 0.25rem !important; }
+[dir="rtl"] .right-2 { right: auto !important; left: 0.5rem !important; }
+[dir="rtl"] .right-2\.5 { right: auto !important; left: 0.625rem !important; }
+[dir="rtl"] .right-3 { right: auto !important; left: 0.75rem !important; }
+[dir="rtl"] .right-10 { right: auto !important; left: 2.5rem !important; }
+[dir="rtl"] .right-12 { right: auto !important; left: 3rem !important; }
+[dir="rtl"] .right-20 { right: auto !important; left: 5rem !important; }
+[dir="rtl"] .right-24 { right: auto !important; left: 6rem !important; }
+[dir="rtl"] .right-space-md { right: auto !important; left: var(--spacing-space-md) !important; }
+[dir="rtl"] .ml-1 { margin-left: 0 !important; margin-right: 0.25rem !important; }
+[dir="rtl"] .ml-6 { margin-left: 0 !important; margin-right: 1.5rem !important; }
+[dir="rtl"] .mr-1 { margin-right: 0 !important; margin-left: 0.25rem !important; }
+[dir="rtl"] .mr-20 { margin-right: 0 !important; margin-left: 5rem !important; }
+[dir="rtl"] .pl-2 { padding-left: 0 !important; padding-right: 0.5rem !important; }
+[dir="rtl"] .pl-3 { padding-left: 0 !important; padding-right: 0.75rem !important; }
+[dir="rtl"] .pl-4 { padding-left: 0 !important; padding-right: 1rem !important; }
+[dir="rtl"] .pl-6 { padding-left: 0 !important; padding-right: 1.5rem !important; }
+[dir="rtl"] .pl-7 { padding-left: 0 !important; padding-right: 1.75rem !important; }
+[dir="rtl"] .pl-8 { padding-left: 0 !important; padding-right: 2rem !important; }
+[dir="rtl"] .pl-10 { padding-left: 0 !important; padding-right: 2.5rem !important; }
+[dir="rtl"] .pl-11 { padding-left: 0 !important; padding-right: 2.75rem !important; }
+[dir="rtl"] .pl-64 { padding-left: 0 !important; padding-right: 16rem !important; }
+[dir="rtl"] .pl-space-sm { padding-left: 0 !important; padding-right: var(--spacing-space-sm) !important; }
+[dir="rtl"] .pl-space-md { padding-left: 0 !important; padding-right: var(--spacing-space-md) !important; }
+[dir="rtl"] .pr-2 { padding-right: 0 !important; padding-left: 0.5rem !important; }
+[dir="rtl"] .pr-3 { padding-right: 0 !important; padding-left: 0.75rem !important; }
+[dir="rtl"] .pr-4 { padding-right: 0 !important; padding-left: 1rem !important; }
+[dir="rtl"] .pr-8 { padding-right: 0 !important; padding-left: 2rem !important; }
+[dir="rtl"] .pr-10 { padding-right: 0 !important; padding-left: 2.5rem !important; }
+[dir="rtl"] .pr-11 { padding-right: 0 !important; padding-left: 2.75rem !important; }
+[dir="rtl"] .pr-16 { padding-right: 0 !important; padding-left: 4rem !important; }
+[dir="rtl"] .pr-28 { padding-right: 0 !important; padding-left: 7rem !important; }
+[dir="rtl"] .pr-space-xs { padding-right: 0 !important; padding-left: var(--spacing-space-xs) !important; }
+[dir="rtl"] .pr-space-md { padding-right: 0 !important; padding-left: var(--spacing-space-md) !important; }
+[dir="rtl"] .pr-space-lg { padding-right: 0 !important; padding-left: var(--spacing-space-lg) !important; }
+[dir="rtl"] .text-right { text-align: left !important; }
+[dir="rtl"] .text-left { text-align: right !important; }
