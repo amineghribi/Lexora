@@ -4,7 +4,11 @@ import { supabase } from '../lib/supabase';
 const SIGNER_URL = (import.meta.env.VITE_R2_SIGNER_URL as string) || '';
 
 export async function listDocuments(orgId: string) {
-  const { data, error } = await supabase.from('documents').select('*').eq('organization_id', orgId).order('created_at', { ascending: false });
+  const { data, error } = await supabase
+    .from('documents')
+    .select('*, document_categories(name)')
+    .eq('organization_id', orgId)
+    .order('created_at', { ascending: false });
   return { data, error };
 }
 
@@ -40,7 +44,7 @@ interface SignedUpload {
   headers: Record<string, string>;
 }
 
-export async function uploadDocument(orgId: string, userId: string, file: File) {
+export async function uploadDocument(orgId: string, userId: string, file: File, categoryId: string | null = null) {
   if (SIGNER_URL) {
     const { data: signed, error: signError } = await callSigner<SignedUpload>('upload-url', {
       name: file.name,
@@ -63,6 +67,7 @@ export async function uploadDocument(orgId: string, userId: string, file: File) 
       mime_type: file.type,
       size_bytes: file.size,
       uploaded_by: userId,
+      category_id: categoryId,
     }).select().single();
     return { data, error: error?.message ?? null };
   }
@@ -73,6 +78,7 @@ export async function uploadDocument(orgId: string, userId: string, file: File) 
   if (upErr) return { data: null, error: upErr.message };
   const { data, error } = await supabase.from('documents').insert({
     organization_id: orgId, name: file.name, storage_path: path, mime_type: file.type, size_bytes: file.size, uploaded_by: userId,
+    category_id: categoryId,
   }).select().single();
   return { data, error: error?.message ?? null };
 }

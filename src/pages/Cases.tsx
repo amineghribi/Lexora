@@ -59,7 +59,8 @@ export default function Cases() {
     const opts = { navigate, pathname, signOut };
     applyShell(root, opts);
     void hydrateChrome(root, user);
-    root.insertAdjacentHTML('beforeend', addModal);
+    // StrictMode re-runs setup in dev; never inject the modal twice.
+    if (!root.querySelector('#lexora-add-case')) root.insertAdjacentHTML('beforeend', addModal);
 
     const modal = root.querySelector<HTMLElement>('#lexora-add-case')!;
     const form = root.querySelector<HTMLFormElement>('#lexora-add-case-form')!;

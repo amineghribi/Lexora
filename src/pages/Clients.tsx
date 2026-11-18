@@ -63,7 +63,8 @@ export default function Clients() {
     const opts = { navigate, pathname, signOut };
     applyShell(root, opts);
     void hydrateChrome(root, user);
-    root.insertAdjacentHTML('beforeend', addModal);
+    // StrictMode re-runs setup in dev; never inject the modal twice.
+    if (!root.querySelector('#lexora-add-client')) root.insertAdjacentHTML('beforeend', addModal);
 
     const modal = root.querySelector<HTMLElement>('#lexora-add-client')!;
     const form = root.querySelector<HTMLFormElement>('#lexora-add-client-form')!;
