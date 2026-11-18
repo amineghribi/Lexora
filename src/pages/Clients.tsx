@@ -57,7 +57,7 @@ function clientRow(client: any): string {
 export default function Clients() {
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
-  const { pathname } = useLocation();
+  const { pathname, search: routeSearch } = useLocation();
 
   const setup = (root: HTMLElement) => {
     const opts = { navigate, pathname, signOut };
@@ -105,7 +105,7 @@ export default function Clients() {
     root.onclick = async (event) => {
       const target = event.target as HTMLElement;
 
-      if (target.closest('#quick-add-dropdown a') && (target.closest('a')?.textContent ?? '').includes('Client')) {
+      if (target.closest('[data-action="new-client"]')) {
         event.preventDefault();
         openModal();
         return;
@@ -179,7 +179,9 @@ export default function Clients() {
       };
     }
 
-    void load();
+    void load().then(() => {
+      if (new URLSearchParams(routeSearch).get('new') === '1') openModal();
+    });
   };
 
   return <StitchPage html={html} setup={setup} />;

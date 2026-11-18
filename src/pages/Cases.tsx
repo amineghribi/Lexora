@@ -53,7 +53,7 @@ function caseRow(caseItem: any): string {
 export default function Cases() {
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
-  const { pathname } = useLocation();
+  const { pathname, search: routeSearch } = useLocation();
 
   const setup = (root: HTMLElement) => {
     const opts = { navigate, pathname, signOut };
@@ -113,8 +113,7 @@ export default function Cases() {
 
     root.onclick = async (event) => {
       const target = event.target as HTMLElement;
-      const quickText = target.closest('#quick-add-dropdown a')?.textContent ?? '';
-      if (quickText.includes('Dossier')) {
+      if (target.closest('[data-action="new-case"]')) {
         event.preventDefault();
         openModal();
         return;
@@ -155,7 +154,9 @@ export default function Cases() {
       await load();
     };
 
-    void load();
+    void load().then(() => {
+      if (new URLSearchParams(routeSearch).get('new') === '1') openModal();
+    });
   };
 
   return <StitchPage html={html} setup={setup} />;

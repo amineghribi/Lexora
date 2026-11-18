@@ -26,7 +26,7 @@ function hearingRow(item: any): string {
 export default function Hearings() {
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
 
   const setup = (root: HTMLElement) => {
     const opts = { navigate, pathname, signOut };
@@ -34,11 +34,6 @@ export default function Hearings() {
     void hydrateChrome(root, user);
 
     const quickForm = root.querySelector<HTMLElement>('#quick-add-form');
-    const createButton = Array.from(root.querySelectorAll<HTMLButtonElement>('button'))
-      .find((button) => (button.textContent ?? '').includes('Nouvel événement'));
-    if (createButton && quickForm) {
-      createButton.onclick = () => quickForm.classList.toggle('hidden');
-    }
 
     // Stitch calendar tabs: keep the selected pill in sync.
     root.querySelectorAll<HTMLButtonElement>('.tab-btn').forEach((button) => {
@@ -68,6 +63,7 @@ export default function Hearings() {
       list.innerHTML = rows;
       upcoming.innerHTML = rows;
       reminders.innerHTML = '<p class="text-body-sm text-on-surface-variant">Aucun délai enregistré.</p>';
+      if (new URLSearchParams(search).get('new') === '1') quickForm?.classList.remove('hidden');
     };
 
     const form = quickForm?.querySelector<HTMLFormElement>('form');
@@ -98,7 +94,15 @@ export default function Hearings() {
       };
     }
 
-    root.onclick = (event) => shellClick(event, root, opts);
+    root.onclick = (event) => {
+      const target = event.target as HTMLElement;
+      if (target.closest('[data-action="new-hearing"]')) {
+        event.preventDefault();
+        quickForm?.classList.toggle('hidden');
+        return;
+      }
+      shellClick(event, root, opts);
+    };
     void load();
   };
 

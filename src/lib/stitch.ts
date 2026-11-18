@@ -74,6 +74,16 @@ export function applyShell(root: HTMLElement, opts: ShellOpts): void {
 export function shellClick(e: MouseEvent, root: HTMLElement, opts: ShellOpts): boolean {
   const target = e.target as HTMLElement;
 
+  // Stable, language-independent creation actions. Pages may intercept these
+  // first to open a local modal; otherwise navigate to the creation screen.
+  const action = target.closest<HTMLElement>('[data-action]')?.dataset.action;
+  if (action === 'new-case' || action === 'new-client' || action === 'new-hearing') {
+    e.preventDefault();
+    const route = action === 'new-case' ? '/cases' : action === 'new-client' ? '/clients' : '/hearings';
+    opts.navigate(`${route}?new=1`);
+    return true;
+  }
+
   const nav = target.closest<HTMLAnchorElement>('nav a[data-path]');
   if (nav) {
     e.preventDefault();

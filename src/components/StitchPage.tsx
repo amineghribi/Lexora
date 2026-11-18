@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { paintLangChips, translateDom, useI18n } from '../lib/i18n';
+import { paintLangChips, translateDom, useI18n, wireLangChips } from '../lib/i18n';
 
 type Setup = (root: HTMLElement) => void;
 
@@ -17,7 +17,7 @@ interface Props {
  */
 export default function StitchPage({ html, setup, setupKey = 0 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
-  const { lang } = useI18n();
+  const { lang, setLang } = useI18n();
 
   useEffect(() => {
     if (ref.current && setup) setup(ref.current);
@@ -27,9 +27,10 @@ export default function StitchPage({ html, setup, setupKey = 0 }: Props) {
 
   useEffect(() => {
     if (!ref.current) return;
+    wireLangChips(ref.current, setLang);
     translateDom(ref.current, lang);
     paintLangChips(ref.current, lang);
-  }, [html, lang, setupKey]);
+  }, [html, lang, setupKey, setLang]);
 
   return <div ref={ref} className="contents" dangerouslySetInnerHTML={{ __html: html }} />;
 }

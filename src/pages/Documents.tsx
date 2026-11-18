@@ -70,7 +70,7 @@ export default function Documents() {
     root.onclick = async (event) => {
       const target = event.target as HTMLElement;
 
-      if ((target.closest('button')?.textContent ?? '').includes('Importer des Documents')) {
+      if (target.closest('[data-action="import-documents"]')) {
         event.preventDefault();
         fileInput.click();
         return;
