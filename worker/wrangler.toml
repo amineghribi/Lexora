@@ -1,6 +1,7 @@
 name = "lexora-r2-signer"
 main = "src/index.ts"
 compatibility_date = "2026-11-18"
+account_id = "5be47bad9d58e989cd2c422a10bda6ae"
 
 # Public configuration. The R2 credentials are secrets, set them with:
 #   npx wrangler secret put R2_ACCESS_KEY_ID
